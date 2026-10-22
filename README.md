@@ -97,11 +97,19 @@ FROM sentinel_passages
 
 The adapter uses the REST shape in the official 21 October Participant Setup Guide: `POST /api/v1.0/sql-editor/sqls/run`, bearer token, `X-Org-ID`, `X-Request-ID`, `queryId`, `sql`, `source`, `limit`. Meterless implements the [official Runtime provider contract](https://meterless.ai/engines.html): normalized `/v1`, model discovery, bearer authentication, `meterless-app`, `meterless-scope`, and distinct unauthorized/offline errors. `meterless/auto` is a routing mode, not proof that Nemotron executed anything.
 
-Run `npm run preflight` with the configured environment, then an actual live example and verify quotes, traces and the Nightshift model receipt. The committed preflight result currently reports missing configuration and `submission_ready:false`.
+Run `npm run preflight` with the configured environment, then an actual live example and verify quotes, traces and the Nightshift model receipt. The committed preflight result currently reports missing configuration and `submission_ready:false`. A separate fail-closed script, `node --env-file=.env --import tsx scripts/live-acceptance.mjs`, demands a real authenticated SQL query, a populated versioned view, Nightshift model discovery, an actual model proposal, evidence validation and H-MEM writes. Mock-backed tests are explicitly distinct from that live check.
+
+## Hackathon demonstration and live acceptance
+
+- [2-minute narrated **offline-prototype** video](deliverables/evidence-change-sentinel-offline-demonstration.mp4), composed of screenshots captured by a real automated browser run on the sample application. **This is not the required live sponsor demonstration, and is not a completed HackOS entry.**
+- [8-slide prototype presentation](deliverables/evidence-change-sentinel-prototype.pptx), labelled as an interim deck.
+- [Step-by-step sponsor acceptance and HackOS delivery gates](docs/FINAL_ACCEPTANCE_AND_SUBMISSION.md).
+- For real authenticated sponsor testing: `npm run preflight` and `npm run live:accept` after loading private credentials, e.g. `node --env-file=.env --import tsx scripts/live-acceptance.mjs`.
+- When the code or sample harness reports `mode: "live"` it may still be using **mocked** providers injected by tests. Only authenticated acceptance plus independently inspected sponsor receipts establishes actual Zetaris / Meterless integration.
 
 ## Evidence and evaluation
 
-- 24 application tests: dependency invalidation, missing/added evidence, applicant changes, abstention, invented quotes, source instructions as data, bounded repair, time budgets, failure reporting and H-MEM persistence. Adapter checks use a **local mock service**, never a claimed sponsor endpoint.
+- 26 application tests: dependency invalidation, missing/added evidence, applicant changes, abstention, invented quotes, source instructions as data, bounded repair, time budgets, failure reporting and H-MEM persistence. Adapter checks use a **local mock service**, never a claimed sponsor endpoint.
 - Upstream H-MEM conformance: 13/13 checks.
 - `npm run evaluate`: 55 controlled synthetic cases; correct expected outcomes in all 55 and preservation of unaffected criteria. This measures the documented grammar and change propagation only. It is not independent, natural-language, real-world, legal or model-quality validation.
 - `evidence/evaluation.json`: every case and its expected/actual label. `evidence/preflight.json`: current live blockers. `output_examples/`: actual results. `evidence/demo-screen.png`: browser screenshot of the offline workflow.
