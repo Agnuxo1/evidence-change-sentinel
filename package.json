@@ -4,14 +4,19 @@
   "private": true,
   "type": "module",
   "description": "Passage-linked funding-call change review with audited Meterless H-MEM memory",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "start": "tsx run.mjs serve",
     "demo": "tsx run.mjs demo",
     "test": "tsx --test tests/*.test.mjs",
     "evaluate": "tsx scripts/evaluate.mjs",
     "conformance": "node scripts/conformance.mjs",
-    "preflight": "tsx scripts/preflight.mjs"
+    "preflight": "node --import tsx scripts/preflight.mjs",
+    "live:accept": "node --import tsx scripts/live-acceptance.mjs"
   },
-  "dependencies": { "tsx": "4.20.6" }
+  "dependencies": {
+    "tsx": "4.20.6"
+  }
 }
