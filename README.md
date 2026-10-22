@@ -101,7 +101,7 @@ Run `npm run preflight` with the configured environment, then an actual live exa
 
 ## Hackathon demonstration and live acceptance
 
-- [2-minute narrated **offline-prototype** video](deliverables/evidence-change-sentinel-offline-demonstration.mp4), composed of screenshots captured by a real automated browser run on the sample application. **This is not the required live sponsor demonstration, and is not a completed HackOS entry.**
+- [3-minute narrated **offline-prototype** video](deliverables/evidence-change-sentinel-offline-demonstration.mp4), composed of screenshots captured by a real automated browser run on the sample application. **This is not the required live sponsor demonstration, and is not a completed HackOS entry.**
 - [8-slide prototype presentation](deliverables/evidence-change-sentinel-prototype.pptx), labelled as an interim deck.
 - [Step-by-step sponsor acceptance and HackOS delivery gates](docs/FINAL_ACCEPTANCE_AND_SUBMISSION.md).
 - For real authenticated sponsor testing: `npm run preflight` and `npm run live:accept` after loading private credentials, e.g. `node --env-file=.env --import tsx scripts/live-acceptance.mjs`.
