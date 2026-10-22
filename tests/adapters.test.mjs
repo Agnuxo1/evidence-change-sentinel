@@ -32,3 +32,14 @@ test('real HTTP contract: headers, auth states, model discovery and text request
 test('SQL identifier injection is rejected before making a request', async () => {
   await assert.rejects(new Zetaris({ZETARIS_VIEW:'x; DROP TABLE y'}).passages(), /SQL identifier/);
 });
+
+test('Zetaris supports its real container.view syntax while rejecting SQL expressions', async () => {
+  const z = new Zetaris({ZETARIS_VIEW:'sentinel_review.sentinel_passages'});
+  let sql;
+  z.query = async value => { sql=value; return {data:[['call','before','staff','A synthetic clause.','https://example.org/call']]}; };
+  assert.equal((await z.passages()).length,1);
+  assert.equal(sql,'SELECT source_id, version, passage_id, passage_text, source_url FROM sentinel_review.sentinel_passages');
+  for(const name of ['a.b.c','a..b','a.b--','a.b WHERE 1=1','a."b"']) {
+    await assert.rejects(new Zetaris({ZETARIS_VIEW:name}).passages(), /SQL identifier/);
+  }
+});

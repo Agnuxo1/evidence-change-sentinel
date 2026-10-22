@@ -1,0 +1,3 @@
+source_id,version,passage_id,passage_text,source_url
+notice,before,deadline,Applications must be submitted by 2026-11-30.,https://example.org/synthetic/notice#deadline
+notice,after,deadline,Applications must be submitted by 2026-11-30.,https://example.org/synthetic/notice#deadline

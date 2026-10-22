@@ -2,7 +2,7 @@
 
 **What is new?** The application ties each assessment to a specific source passage and input fingerprint, invalidates affected conclusions, preserves unaffected work and queues unmapped changes. The pre-existing Meterless H-MEM reference supplies the memory services; it is attributed rather than presented as a new engine.
 
-**What actually runs now?** A browser UI, JSON CLI and HTTP API run the offline synthetic examples. 28 application tests, 13 upstream H-MEM conformance checks and 55 controlled synthetic cases pass. The adapters are implemented and mock-tested. Authenticated sponsor operation is still pending.
+**What actually runs now?** A browser UI, JSON CLI and HTTP API run the offline synthetic examples. 29 application tests, 13 upstream H-MEM conformance checks and 55 controlled synthetic cases pass. The adapters are implemented and mock-tested. Authenticated sponsor operation is still pending.
 
 **Is this an autonomous agent?** The offline version is a deterministic evidence-review engine. The live design adds a bounded proposal/validator loop through Nightshift; it can request a repair and abstain. It is not claimed as an authenticated live multi-agent demonstration yet. Mentor feedback on agentic scope has been requested.
 
@@ -19,3 +19,5 @@
 **How is the mandatory sponsor setup verified?** `npm run live:accept` checks real SQL from Zetaris, the versioned passage view, Nightshift model discovery, actual model proposals, quote validation and H-MEM writes. With no credentials it correctly fails and emits `integration_verified:false`. Do not claim a successful run until proven.
 
 **What is needed before submission?** Configure Zetaris and Nightshift, provision the actual multi-source view, execute the complete live workflow, verify Cursor development, record the real sponsor demo, confirm the final roster/track and submit all final artifacts before the official deadline. No paid plans, new contracts or credential creation are silently activated.
+
+**What changed in the later Zetaris audit?** Its real installed REST API and the application adapter now retrieve six exact versioned rows from a view unioning two separate synthetic CSV tables. Authentication used an existing user session bearer, not a newly created permanent API key. Nightshift inference, Cursor use and final delivery are still pending; this individual database success is not combined acceptance.

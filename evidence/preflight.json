@@ -1,17 +1,16 @@
 {
-  "checked_at": "2026-10-22T01:47:43.827Z",
+  "checked_at": "2026-10-22T18:41:48.316Z",
   "checks": {
     "zetaris_sql": {
-      "state": "unauthorized",
-      "message": "Configure a Zetaris API key."
+      "state": "online"
     },
     "zetaris_passages": {
-      "state": "unauthorized",
-      "message": "Configure a Zetaris API key."
+      "state": "online",
+      "rows": 6
     },
     "meterless_models": {
-      "state": "unauthorized",
-      "message": "Configure a real Nightshift runtime token."
+      "state": "offline",
+      "message": "Meterless is unreachable or timed out."
     }
   },
   "submission_ready": false,

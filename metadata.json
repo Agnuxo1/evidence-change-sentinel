@@ -13,9 +13,10 @@
   ],
   "sponsors": {
     "zetaris": {
-      "status": "adapter_only_live_unverified",
+      "status": "real_authenticated_sql_and_versioned_view_verified",
       "code": "app/adapters.mjs",
-      "evidence": "evidence/preflight.json"
+      "evidence": "evidence/zetaris-20261022.json",
+      "authentication": "existing local user session bearer; no permanent app key created"
     },
     "meterless_hmem": {
       "status": "working_reference_integration",
@@ -23,7 +24,7 @@
       "evidence": "npm run conformance; tests/core.test.mjs"
     },
     "meterless_nightshift": {
-      "status": "authenticated_discovery_verified_proposal_blocked_no_provider",
+      "status": "currently_unreachable_during_setup_previous_discovery_verified_no_provider",
       "code": "app/adapters.mjs",
       "evidence": "evidence/audit-20261022.json"
     },
@@ -36,7 +37,7 @@
     }
   },
   "validation": {
-    "application_tests": 28,
+    "application_tests": 29,
     "hmem_conformance": 13,
     "synthetic_cases": 55,
     "real_world_accuracy": "not_evaluated"

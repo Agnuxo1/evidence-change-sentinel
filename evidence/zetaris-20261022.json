@@ -1,0 +1,152 @@
+{
+  "checked_at": "2026-10-22T18:41:52Z",
+  "dataset": "synthetic; two separate CSV files, six versioned rows",
+  "official_bundle_sha256": "14c6a811a140378bec1749ceffd7fa123bafb2f178545b26354e8f9433b413d3",
+  "installation": {
+    "project": "sentinel-zetaris",
+    "data_on_drive": "D:",
+    "ports": "127.0.0.1 only",
+    "cpu_limit_total": 4,
+    "registry_credentials_removed_after_pull": true,
+    "long_running_services": "postgres, driver, api, ui healthy",
+    "official_verification": "8/9 pass; bundled sample-data bootstrap still running"
+  },
+  "real_sql": {
+    "utc": "2026-10-22T18:38:13.813615+00:00",
+    "checks": {
+      "login": {
+        "http_status": 200,
+        "token_received": true,
+        "org_id": "1"
+      },
+      "direct_rest_sql": {
+        "http_status": 200,
+        "response": {
+          "headers": [
+            "one"
+          ],
+          "data": [
+            [
+              "1"
+            ]
+          ],
+          "total": 1,
+          "timeUsed": 3103
+        }
+      },
+      "datasources": {
+        "http_status": 200
+      },
+      "openapi": {
+        "http_status": 200
+      }
+    }
+  },
+  "real_view": {
+    "utc": "2026-10-22T18:40:17.336561+00:00",
+    "dataset": "synthetic; two separate CSV sources",
+    "operations": [
+      {
+        "sql": "CREATE LIGHTNING DATABASE sentinel_evidence DESCRIBE BY \"Explicitly synthetic hackathon evidence\"",
+        "state": "created"
+      },
+      {
+        "sql": "CREATE LIGHTNING FILESTORE TABLE calls FROM sentinel_evidence FORMAT CSV OPTIONS (path \"/home/zetaris/customer-data/shared/sentinel/calls.csv\", header \"true\", delimiter \",\")",
+        "state": "created"
+      },
+      {
+        "sql": "CREATE LIGHTNING FILESTORE TABLE notices FROM sentinel_evidence FORMAT CSV OPTIONS (path \"/home/zetaris/customer-data/shared/sentinel/notices.csv\", header \"true\", delimiter \",\")",
+        "state": "created"
+      },
+      {
+        "sql": "CREATE SCHEMASTORE CONTAINER sentinel_review",
+        "state": "created"
+      },
+      {
+        "sql": "CREATE SCHEMASTORE VIEW sentinel_passages WITH CONTAINER sentinel_review AS SELECT source_id, version, passage_id, passage_text, source_url FROM sentinel_evidence.calls UNION ALL SELECT source_id, version, passage_id, passage_text, source_url FROM sentinel_evidence.notices",
+        "state": "created"
+      }
+    ],
+    "existing_database_count": 0,
+    "verified": true,
+    "rows": 6,
+    "actual_rows": [
+      [
+        "call",
+        "before",
+        "eligibility",
+        "Applicants must have at most 50 employees.",
+        "https://example.org/synthetic/call#eligibility"
+      ],
+      [
+        "call",
+        "after",
+        "eligibility",
+        "Applicants must have at most 20 employees.",
+        "https://example.org/synthetic/call#eligibility"
+      ],
+      [
+        "call",
+        "before",
+        "regions",
+        "Eligible regions: ES, PT.",
+        "https://example.org/synthetic/call#regions"
+      ],
+      [
+        "call",
+        "after",
+        "regions",
+        "Eligible regions: ES, PT.",
+        "https://example.org/synthetic/call#regions"
+      ],
+      [
+        "notice",
+        "before",
+        "deadline",
+        "Applications must be submitted by 2026-11-30.",
+        "https://example.org/synthetic/notice#deadline"
+      ],
+      [
+        "notice",
+        "after",
+        "deadline",
+        "Applications must be submitted by 2026-11-30.",
+        "https://example.org/synthetic/notice#deadline"
+      ]
+    ]
+  },
+  "application_preflight": {
+    "checked_at": "2026-10-22T18:41:48.316Z",
+    "checks": {
+      "zetaris_sql": {
+        "state": "online"
+      },
+      "zetaris_passages": {
+        "state": "online",
+        "rows": 6
+      },
+      "meterless_models": {
+        "state": "offline",
+        "message": "Meterless is unreachable or timed out."
+      }
+    },
+    "submission_ready": false,
+    "note": "Connectivity alone does not prove a complete feature, Cursor development or Nemotron routing. An actual live run and recording are also required."
+  },
+  "combined_acceptance": {
+    "checked_at": "2026-10-22T18:41:51.345Z",
+    "evidence_kind": "live_sponsor_connectivity",
+    "dataset_kind": "synthetic_example",
+    "checked": {
+      "zetaris_sql": "pass",
+      "zetaris_versioned_view": "pass",
+      "zetaris_rows": 6
+    },
+    "integration_verified": false,
+    "submitted_to_hackos": false,
+    "error": "Meterless is unreachable or timed out.",
+    "note": "A failed or incomplete live check must never be reported as a successful sponsor integration."
+  },
+  "authentication": "Existing local user session bearer used only in child process environment. No permanent application API key created or published.",
+  "submission_ready": false
+}

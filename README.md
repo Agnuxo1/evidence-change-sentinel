@@ -2,7 +2,7 @@
 
 A funding-call evidence review prototype: when a source passage changes, identify the affected assessments, quote the evidence, preserve unaffected assessments and queue uncertainty for human review.
 
-**Status, 22 October 2026:** working offline prototype with synthetic data. Live Zetaris and Meterless Nightshift integration is **not yet verified**. This is not a completed hackathon submission. The offline path is deterministic, not an autonomous LLM demonstration. It does not determine official eligibility.
+**Status, 22 October 2026:** working offline prototype with synthetic data. Real local Zetaris SQL and the six-row versioned view are now **verified**. The combined Zetaris / Meterless Nightshift feature is **not yet verified**. This is not a completed hackathon submission. The offline path is deterministic, not an autonomous LLM demonstration. It does not determine official eligibility.
 
 ![Actual offline run](evidence/demo-screen.png)
 
@@ -70,8 +70,8 @@ H-MEM stores assessments with provenance, source fingerprints and a mutation led
 | Technology | Implemented role | Verified status |
 |---|---|---|
 | Meterless H-MEM | Assessment provenance, exact evidence recall, supersession and ledger | Reference conformance 13/13; application persistence test passes |
-| Meterless Nightshift | OpenAI-compatible rule proposals, discovery, authentication and review feedback | Adapter/mock tests pass; installed Runtime authenticated discovery passes, but real proposal fails: no_provider_configured |
-| Zetaris | SQL retrieval from one view joining versioned call and notice evidence | Adapter written; authenticated SQL and actual data-view query pending |
+| Meterless Nightshift | OpenAI-compatible rule proposals, discovery, authentication and review feedback | Adapter/mock tests pass; authenticated discovery previously passed, then a real proposal failed with no_provider_configured; Runtime currently unreachable during setup |
+| Zetaris | SQL retrieval from one view joining versioned call and notice evidence | Real authenticated SELECT 1 and six versioned view rows verified; see evidence/zetaris-20261022.json |
 | Cursor | Required development environment | Installed executable located; interactive development verification pending; code in this snapshot was authored with Codex |
 | NVIDIA | Optional Nemotron provider routed through Nightshift | Not configured or claimed; verify actual provider/model receipt before any award claim |
 
@@ -86,18 +86,18 @@ node --env-file=.env --import tsx run.mjs serve
 
 For live mode set `SAMPLE_MODE=false`. Supply a Zetaris instance, organisation ID and API key; a Nightshift URL, **real** Runtime token and discovered routing mode. The application does not create accounts, activate paid plans, generate keys, read the Nightshift token file or accept service terms for you. Any NVIDIA key belongs in Nightshift's Providers settings, not in this repository or in a submission.
 
-Zetaris view `sentinel_passages` must return five string columns in this order:
+Zetaris view `sentinel_review.sentinel_passages` must return five string columns in this order:
 
 ```sql
 SELECT source_id, version, passage_id, passage_text, source_url
-FROM sentinel_passages
+FROM sentinel_review.sentinel_passages
 ```
 
-`version` is `before` or `after`; identities must be unique. Live mode reads these rows from Zetaris rather than trusting the input's sample rows. This view should combine the call and official notices, retain stable passage identifiers and expose both versions. Populate it with public or explicitly synthetic data; keep private applicant data outside the public repository. Fewer than 1000 rows are accepted; this prototype refuses a possibly truncated result. The remaining view provisioning is intentionally not fabricated as completed.
+`version` is `before` or `after`; identities must be unique. Live mode reads these rows from Zetaris rather than trusting the input's sample rows. This view should combine the call and official notices, retain stable passage identifiers and expose both versions. Populate it with public or explicitly synthetic data; keep private applicant data outside the public repository. Fewer than 1000 rows are accepted; this prototype refuses a possibly truncated result. The audited local view unions separate synthetic calls and notices tables. Reproduce it with `docs/zetaris-provision.sql` and `data/zetaris/`, copied to the installation shared path shown in that SQL. It creates new objects and does not replace existing views.
 
 The adapter uses the REST shape in the official 21 October Participant Setup Guide: `POST /api/v1.0/sql-editor/sqls/run`, bearer token, `X-Org-ID`, `X-Request-ID`, `queryId`, `sql`, `source`, `limit`. Meterless implements the [official Runtime provider contract](https://meterless.ai/engines.html): normalized `/v1`, model discovery, bearer authentication, `meterless-app`, `meterless-scope`, and distinct unauthorized/offline errors. `meterless/auto` is a routing mode, not proof that Nemotron executed anything.
 
-Run `npm run preflight` with the configured environment, then an actual live example and verify quotes, traces and the Nightshift model receipt. The committed preflight result currently reports missing configuration and `submission_ready:false`. A separate fail-closed script, `node --env-file=.env --import tsx scripts/live-acceptance.mjs`, demands a real authenticated SQL query, a populated versioned view, Nightshift model discovery, an actual model proposal, evidence validation and H-MEM writes. Mock-backed tests are explicitly distinct from that live check.
+Run `npm run preflight` with the configured environment, then an actual live example and verify quotes, traces and the Nightshift model receipt. The latest committed preflight verifies real Zetaris connectivity and six rows, while Meterless Runtime is currently unreachable during setup; `submission_ready:false` remains explicit. A separate fail-closed script, `node --env-file=.env --import tsx scripts/live-acceptance.mjs`, demands a real authenticated SQL query, a populated versioned view, Nightshift model discovery, an actual model proposal, evidence validation and H-MEM writes. Mock-backed tests are explicitly distinct from that live check.
 
 ## Hackathon demonstration and live acceptance
 
@@ -109,7 +109,7 @@ Run `npm run preflight` with the configured environment, then an actual live exa
 
 ## Evidence and evaluation
 
-- 28 application tests: dependency invalidation, missing/added evidence, applicant changes, abstention, invented quotes, source instructions as data, bounded repair, time budgets, failure reporting and H-MEM persistence. Adapter checks use a **local mock service**, never a claimed sponsor endpoint.
+- 29 application tests: dependency invalidation, missing/added evidence, applicant changes, abstention, invented quotes, source instructions as data, bounded repair, time budgets, failure reporting and H-MEM persistence. Adapter checks use a **local mock service**, never a claimed sponsor endpoint.
 - Upstream H-MEM conformance: 13/13 checks.
 - `npm run evaluate`: 55 controlled synthetic cases; correct expected outcomes in all 55 and preservation of unaffected criteria. This measures the documented grammar and change propagation only. It is not independent, natural-language, real-world, legal or model-quality validation.
 - `evidence/evaluation.json`: every case and its expected/actual label. `evidence/preflight.json`: current live blockers. `output_examples/`: actual results. `evidence/demo-screen.png`: browser screenshot of the offline workflow.
@@ -130,4 +130,8 @@ For hackathon rules and the current deadline use the [official event page](https
 
 ## Audit checkpoint: 22 October 2026
 
-A clean dependency install, 28/28 application tests, 13/13 H-MEM checks, 55/55 synthetic cases and the sample Docker HTTP workflow pass. `npm audit --omit=dev` reports zero known vulnerabilities. The acceptance gate now rejects all-abstention runs and verifies each fixture outcome and its exact evidence. Authenticated installed Nightshift discovery succeeds; an actual proposal returns `no_provider_configured`. Zetaris has no running instance or configured application API key. HackOS was read directly and shows zero submissions. Cursor use and the final sponsor-connected video/deck remain pending. These are blockers, not a completed entry. See [machine-readable checkpoint](evidence/audit-20261022.json).
+29/29 application tests pass. The previous clean-install audit also passed 13/13 H-MEM checks, 55/55 synthetic cases, the Docker sample HTTP workflow and npm dependency auditing with zero known vulnerabilities. The acceptance gate rejects all-abstention runs and verifies each controlled outcome and its exact evidence. Real Zetaris SQL and the versioned view now pass. Combined acceptance remains false: the Nightshift Runtime is currently unreachable during desktop setup. Cursor use and the final sponsor-connected video/deck remain pending. Historical receipts are retained rather than rewritten.
+
+### Real Zetaris milestone, 22 October 2026, 18:41 UTC
+
+The official local Docker stack is installed and isolated on localhost. Its REST API executed SELECT 1 and the application adapter read six exact fixture rows from `sentinel_review.sentinel_passages`, unioning two separately registered CSV sources. Authentication used an existing local user session bearer in a temporary child environment; no permanent API key is published or claimed. The official installer verification passes 8/9 checks while its optional example-data bootstrap is still running. Combined acceptance fails because Nightshift currently has no responding Runtime; earlier it reported no configured provider. This remains an unsubmitted prototype. [Detailed receipt](evidence/zetaris-20261022.json).

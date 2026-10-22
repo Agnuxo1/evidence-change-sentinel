@@ -70,7 +70,7 @@ export class Zetaris {
   }
   async passages(options = {}) {
     const view = this.env.ZETARIS_VIEW || 'sentinel_passages';
-    if (!/^[A-Za-z_][A-Za-z0-9_]*$/.test(view)) throw new Error('ZETARIS_VIEW must be a simple SQL identifier.');
+    if (!/^[A-Za-z_][A-Za-z0-9_]*(?:\.[A-Za-z_][A-Za-z0-9_]*)?$/.test(view)) throw new Error('ZETARIS_VIEW must be a simple SQL identifier or container.view.');
     const payload = await this.query(`SELECT source_id, version, passage_id, passage_text, source_url FROM ${view}`, options);
     if (!Array.isArray(payload.data) || payload.data.length >= 1000) throw new ServiceError('Zetaris', 'invalid_response', 'Expected fewer than 1000 passage rows; paginate larger corpora.');
     return payload.data.map(row => {

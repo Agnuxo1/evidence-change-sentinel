@@ -1,0 +1,5 @@
+source_id,version,passage_id,passage_text,source_url
+call,before,eligibility,Applicants must have at most 50 employees.,https://example.org/synthetic/call#eligibility
+call,after,eligibility,Applicants must have at most 20 employees.,https://example.org/synthetic/call#eligibility
+call,before,regions,"Eligible regions: ES, PT.",https://example.org/synthetic/call#regions
+call,after,regions,"Eligible regions: ES, PT.",https://example.org/synthetic/call#regions
