@@ -2,7 +2,7 @@
 
 **What is new?** The application ties each assessment to a specific source passage and input fingerprint, invalidates affected conclusions, preserves unaffected work and queues unmapped changes. The pre-existing Meterless H-MEM reference supplies the memory services; it is attributed rather than presented as a new engine.
 
-**What actually runs now?** A browser UI, JSON CLI and HTTP API run the offline synthetic examples. 26 application tests, 13 upstream H-MEM conformance checks and 55 controlled synthetic cases pass. The adapters are implemented and mock-tested. Authenticated sponsor operation is still pending.
+**What actually runs now?** A browser UI, JSON CLI and HTTP API run the offline synthetic examples. 28 application tests, 13 upstream H-MEM conformance checks and 55 controlled synthetic cases pass. The adapters are implemented and mock-tested. Authenticated sponsor operation is still pending.
 
 **Is this an autonomous agent?** The offline version is a deterministic evidence-review engine. The live design adds a bounded proposal/validator loop through Nightshift; it can request a repair and abstain. It is not claimed as an authenticated live multi-agent demonstration yet. Mentor feedback on agentic scope has been requested.
 

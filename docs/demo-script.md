@@ -9,7 +9,7 @@
 - **Example 1** — 35 employees previously qualify under a 50-person limit but not under an amended 20-person limit; exactly one decision changes, two unchanged criteria are preserved.
 - **Example 2** — no relevant change; three assessments are preserved.
 - **Example 3** — ambiguous changed wording generates one human-review item, not a guessed legal decision.
-- **Evidence** — 26/26 local application tests, 13/13 official H-MEM reference conformance checks and 55/55 narrow controlled synthetic cases.
+- **Evidence at recording time** — 26/26 local application tests, 13/13 official H-MEM reference conformance checks and 55/55 narrow controlled synthetic cases. The later audit adds two regression tests; those are not part of the recorded footage.
 - **Limitations** — explicitly state live Zetaris SQL and Nightshift model calls are **not yet verified**, and there is no Nemotron, independent legal validation or official submitted entry.
 
 ## Replacement required before final HackOS submission

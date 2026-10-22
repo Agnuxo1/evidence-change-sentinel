@@ -22,12 +22,12 @@ The working offline example uses **fictional** sources and a fictional applicant
 
 | Gate | Required proof | Current state |
 |---|---|---|
-| Identity/team/track | Team appears in the authenticated HackOS workspace and track selected | Historical authenticated checkpoint confirms the solo team; reconfirm before submission |
+| Identity/team/track | Team appears in the authenticated HackOS workspace and track selected | Authenticated HackOS recheck on 22 October confirms the solo leader and 1/5 roster; no saved submission or primary track yet |
 | Data: Zetaris | Running instance and successful authenticated SQL, including a versioned `sentinel_passages` view with real provider rows | **Blocked**: account email received, but no configured API key/view |
 | Build: Meterless Engine | H-MEM used in a real product feature with memory reuse/ledger conformance | **Working offline:** 13/13 upstream checks and application tests. Verify inside sponsor-connected run |
-| Power: Meterless Nightshift | Nightshift Runtime reachable, real token, model discovery and at least one *real* proposal | **Blocked:** no installed and authenticated runtime confirmed |
+| Power: Meterless Nightshift | Nightshift Runtime reachable, real token, model discovery and at least one *real* proposal | **Blocked:** installed Runtime answers authenticated model discovery; actual proposal fails with `no_provider_configured` |
 | NVIDIA special prize | Verifiable Nemotron model receipt for an actual product request | **Not claimed / optional special prize** |
-| Tests | Application, conformance, controlled evaluation + live run | 26 application tests including new HTTP **mock** integration, 13 upstream conformance and 55/55 synthetic cases; real-provider check pending |
+| Tests | Application, conformance, controlled evaluation + live run | 28 application tests including new HTTP **mock** integration, 13 upstream conformance and 55/55 synthetic cases; real-provider check pending |
 | Demo | Working **1–4 minute** screen recording proving user workflow and integrations, hosted via acceptable link | **Not recorded with live services** |
 | Deck | Problem, user, result, architecture, Zetaris, H-MEM, Nightshift, evidence and limits | Existing `deliverables/evidence-change-sentinel-prototype.pptx` (interim deck; review/revise once live data exist) |
 | Submission | Project description 150–2000 characters, track, video link, repository, deck and sponsor explanation | **Not submitted**, no confirmation number |
@@ -79,3 +79,7 @@ Only change the tense of the sponsor-integration sentence after the acceptance c
 ## 6. Platform continuity (previously documented)
 
 Authenticated HackOS checks previously found the solo team already present, 14 onboarding board tasks, an unsaved 0/3 submission hub, and a project update posted in #Progress Update. Do not accidentally create a new team, use an alternate account or replace the original evidence with a separate entry. The final HackOS state must be re-read and checked after any future action.
+
+## Audit continuation, 22 October 2026
+
+Authenticated HackOS recheck: registration checklist complete, team present, 1/5 member, no organizer notices, zero submissions. An installed Nightshift Runtime 1.2.1 now answers authenticated `/v1/models`; a real request returns HTTP 400 `no_provider_configured` (request `chatcmpl-6005ef87-8cc2-4b11-87eb-1af2ff3a7f8e`). A cloud panel session existed but expired: the Zetaris bundle download returned Unauthorized, and login now requires its emailed code. No Zetaris container is running. Clean-install tests and Docker sample HTTP tests pass. The interim deck/video retain historical test counts from before this audit and require final revision after real integration succeeds. No submission ID or acceptance receipt exists.

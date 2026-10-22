@@ -6,6 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { runSentinel } from '../app/core.mjs';
 import { Meterless, Zetaris } from '../app/adapters.mjs';
+import { assertLiveResult } from './assert-live-result.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const json = file => JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
@@ -47,7 +48,7 @@ try {
   // Live path: the application's own code must query Zetaris, call Nightshift
   // for at least one proposal, validate a quote and write H-MEM.
   const result = await runSentinel(template, { sample: false, maxDurationMs: 180000 });
-  assert.equal(result.mode, 'live');
+  assertLiveResult(result, template);
   assert.ok(result.trace.some(e => e.agent === 'EvidenceReader' &&
     e.action === 'zetaris_query' && e.verified_live === true));
   assert.ok(result.trace.some(e => e.agent === 'RuleProposer' &&

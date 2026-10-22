@@ -1,0 +1,168 @@
+{
+  "checked_at": "2026-10-22T17:33:12.254360+00:00",
+  "status": "not_submission_ready",
+  "application_tests": {
+    "passed": 28,
+    "total": 28,
+    "providers": "mocked where injected"
+  },
+  "hmem_conformance": {
+    "passed": 13,
+    "total": 13
+  },
+  "synthetic_evaluation": {
+    "passed": 55,
+    "total": 55,
+    "real_world_validation": false
+  },
+  "dependency_audit": {
+    "known_vulnerabilities": 0,
+    "scope": "npm production dependencies; not a security certification"
+  },
+  "docker_http": {
+    "utc": "2026-10-22T17:32:07.244551+00:00",
+    "checks": [
+      {
+        "check": "health",
+        "status": 200,
+        "body": {
+          "status": "ok",
+          "mode": "offline_sample",
+          "integration_claim": "not_verified"
+        }
+      },
+      {
+        "check": "example_1",
+        "status": 200,
+        "summary": {
+          "total": 3,
+          "affected": 1,
+          "preserved": 2,
+          "changed_decisions": 1,
+          "human_review": 0,
+          "model_calls": 0,
+          "memory_reuses": 2
+        },
+        "run_id": "ed6a91a9-39ad-4fd9-a9e6-16955db1cf57"
+      },
+      {
+        "check": "example_2",
+        "status": 200,
+        "summary": {
+          "total": 3,
+          "affected": 0,
+          "preserved": 3,
+          "changed_decisions": 0,
+          "human_review": 0,
+          "model_calls": 0,
+          "memory_reuses": 3
+        },
+        "run_id": "5c6cd4fd-22f9-4c1b-93b9-8660fbfd5ab4"
+      },
+      {
+        "check": "example_3",
+        "status": 200,
+        "summary": {
+          "total": 3,
+          "affected": 1,
+          "preserved": 2,
+          "changed_decisions": 1,
+          "human_review": 1,
+          "model_calls": 0,
+          "memory_reuses": 2
+        },
+        "run_id": "fdd1b40f-618b-4d7d-a455-6a1d1baba3ed"
+      },
+      {
+        "check": "foreign-origin",
+        "status": 403
+      },
+      {
+        "check": "wrong-content-type",
+        "status": 415
+      },
+      {
+        "check": "invalid-json",
+        "status": 400
+      },
+      {
+        "check": "oversized-body",
+        "status": 413
+      }
+    ],
+    "container_id": "f41153629292fb9c624e91dd5d471772f8bf5f1e90c4b4d89d09fb2ac6db6720",
+    "passed": true
+  },
+  "nightshift": {
+    "checked_at": "2026-10-22T17:29:26.222Z",
+    "source": "installed Nightshift Runtime; existing local token used privately",
+    "integration_verified": false,
+    "stage": "model_proposal",
+    "discovery": {
+      "state": "online",
+      "models": [
+        "meterless/auto",
+        "meterless/fast",
+        "meterless/deep",
+        "meterless/cheap",
+        "meterless/local",
+        "meterless/fusion",
+        "meterless/cluster",
+        "meterless/text",
+        "meterless/code",
+        "meterless/vision",
+        "meterless/perception",
+        "meterless/image",
+        "meterless/video",
+        "meterless/speech",
+        "meterless/transcribe",
+        "meterless/music",
+        "meterless/embed",
+        "meterless/judge"
+      ]
+    },
+    "state": "offline",
+    "error_type": "Error",
+    "error": "Meterless returned HTTP 400."
+  },
+  "nightshift_real_request": {
+    "utc": "2026-10-22T17:29:45.935Z",
+    "status": 400,
+    "response": {
+      "error": {
+        "message": "No provider is configured. Add a cloud key in Setup or install/start a local model.",
+        "type": "invalid_request_error",
+        "code": "no_provider_configured",
+        "param": null,
+        "meterless_detail": "no_provider_configured"
+      },
+      "meterless": {
+        "request_id": "chatcmpl-6005ef87-8cc2-4b11-87eb-1af2ff3a7f8e",
+        "requested_model": "meterless/auto",
+        "provider_model": "meterless/auto",
+        "app": "evidence-change-sentinel",
+        "mode": "auto",
+        "scope": "user"
+      }
+    }
+  },
+  "zetaris": {
+    "running_instance_verified": false,
+    "application_api_key_configured": false,
+    "bundle_download": "Unauthorized; expired browser login"
+  },
+  "hackos": {
+    "team_id": "01a0d1aa-4b39-7f43-8a40-57c6354be936",
+    "members": 1,
+    "capacity": 5,
+    "leader": "Francisco Angulo Lafuente",
+    "submissions": 0,
+    "submission_id": null,
+    "accepted": false,
+    "track": "intended only: The Agent That Can Explain Why"
+  },
+  "cursor_development_verified": false,
+  "nvidia_model_use_verified": false,
+  "final_demo_ready": false,
+  "deadline_utc": "2026-10-27T23:45:00Z"
+}

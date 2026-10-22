@@ -6,15 +6,41 @@
   "status": "offline_prototype_live_integration_pending",
   "submitted": false,
   "data": "synthetic funding-call clauses and fictional applicant, created 22 October 2026",
-  "pre_existing": ["concept and team description before the build window", "Meterless H-MEM reference at 1742dec56a66e58eef9dda2d2b865823758ca8cd", "Node.js and tsx open-source dependencies"],
+  "pre_existing": [
+    "concept and team description before the build window",
+    "Meterless H-MEM reference at 1742dec56a66e58eef9dda2d2b865823758ca8cd",
+    "Node.js and tsx open-source dependencies"
+  ],
   "sponsors": {
-    "zetaris": {"status":"adapter_only_live_unverified", "code":"app/adapters.mjs", "evidence":"evidence/preflight.json"},
-    "meterless_hmem": {"status":"working_reference_integration", "code":"app/core.mjs", "evidence":"npm run conformance; tests/core.test.mjs"},
-    "meterless_nightshift": {"status":"adapter_mock_tested_live_unverified", "code":"app/adapters.mjs", "evidence":"tests/adapters.test.mjs; evidence/preflight.json"},
-    "cursor": {"status":"interactive_development_verification_pending", "authorship":"Codex assisted"},
-    "nvidia": {"status":"not_configured_not_claimed"}
+    "zetaris": {
+      "status": "adapter_only_live_unverified",
+      "code": "app/adapters.mjs",
+      "evidence": "evidence/preflight.json"
+    },
+    "meterless_hmem": {
+      "status": "working_reference_integration",
+      "code": "app/core.mjs",
+      "evidence": "npm run conformance; tests/core.test.mjs"
+    },
+    "meterless_nightshift": {
+      "status": "authenticated_discovery_verified_proposal_blocked_no_provider",
+      "code": "app/adapters.mjs",
+      "evidence": "evidence/audit-20261022.json"
+    },
+    "cursor": {
+      "status": "interactive_development_verification_pending",
+      "authorship": "Codex assisted"
+    },
+    "nvidia": {
+      "status": "not_configured_not_claimed"
+    }
   },
-  "validation": {"application_tests":24, "hmem_conformance":13, "synthetic_cases":55, "real_world_accuracy":"not_evaluated"},
+  "validation": {
+    "application_tests": 28,
+    "hmem_conformance": 13,
+    "synthetic_cases": 55,
+    "real_world_accuracy": "not_evaluated"
+  },
   "sample_run": "npm ci && npm run demo",
   "deadline_utc": "2026-10-27T23:45:00Z"
 }

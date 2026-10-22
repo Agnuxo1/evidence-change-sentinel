@@ -36,7 +36,7 @@ curl -X POST http://127.0.0.1:8788/run \
 
 Three inputs and their actual generated outputs are in `input_examples/` and `output_examples/`. A run writes a factual JSONL execution record under `logs/`. No private internal reasoning or credentials are logged. Inputs are limited to 500 KB over HTTP, 100 requirements and 500 versioned passages.
 
-Optional Docker path (Docker daemon required; **not yet built on this host**):
+Optional Docker path (Docker daemon required; **built and HTTP-tested in isolation on 22 October 2026, sample mode only**):
 
 ```sh
 docker build -t evidence-change-sentinel .
@@ -70,7 +70,7 @@ H-MEM stores assessments with provenance, source fingerprints and a mutation led
 | Technology | Implemented role | Verified status |
 |---|---|---|
 | Meterless H-MEM | Assessment provenance, exact evidence recall, supersession and ledger | Reference conformance 13/13; application persistence test passes |
-| Meterless Nightshift | OpenAI-compatible rule proposals, discovery, authentication and review feedback | Adapter and local mock HTTP tests pass; real Runtime token and live feature test pending |
+| Meterless Nightshift | OpenAI-compatible rule proposals, discovery, authentication and review feedback | Adapter/mock tests pass; installed Runtime authenticated discovery passes, but real proposal fails: no_provider_configured |
 | Zetaris | SQL retrieval from one view joining versioned call and notice evidence | Adapter written; authenticated SQL and actual data-view query pending |
 | Cursor | Required development environment | Installed executable located; interactive development verification pending; code in this snapshot was authored with Codex |
 | NVIDIA | Optional Nemotron provider routed through Nightshift | Not configured or claimed; verify actual provider/model receipt before any award claim |
@@ -109,7 +109,7 @@ Run `npm run preflight` with the configured environment, then an actual live exa
 
 ## Evidence and evaluation
 
-- 26 application tests: dependency invalidation, missing/added evidence, applicant changes, abstention, invented quotes, source instructions as data, bounded repair, time budgets, failure reporting and H-MEM persistence. Adapter checks use a **local mock service**, never a claimed sponsor endpoint.
+- 28 application tests: dependency invalidation, missing/added evidence, applicant changes, abstention, invented quotes, source instructions as data, bounded repair, time budgets, failure reporting and H-MEM persistence. Adapter checks use a **local mock service**, never a claimed sponsor endpoint.
 - Upstream H-MEM conformance: 13/13 checks.
 - `npm run evaluate`: 55 controlled synthetic cases; correct expected outcomes in all 55 and preservation of unaffected criteria. This measures the documented grammar and change propagation only. It is not independent, natural-language, real-world, legal or model-quality validation.
 - `evidence/evaluation.json`: every case and its expected/actual label. `evidence/preflight.json`: current live blockers. `output_examples/`: actual results. `evidence/demo-screen.png`: browser screenshot of the offline workflow.
@@ -127,3 +127,7 @@ Project concept, team description and pre-event planning existed before the buil
 Meterless H-MEM is a declared pre-existing third-party dependency, vendored from [Meterless/Meterless](https://github.com/Meterless/Meterless) commit `1742dec56a66e58eef9dda2d2b865823758ca8cd`. Its Apache 2.0 licence and provenance are retained under `vendor/hmem/`. tsx and its dependencies retain their package licences. The original application is provided as a research submission snapshot; no additional third-party code rights are implied.
 
 For hackathon rules and the current deadline use the [official event page](https://hackathon.genai.works/event/open-agent-hackathon-2026). The local package is not evidence of a submitted or accepted entry.
+
+## Audit checkpoint: 22 October 2026
+
+A clean dependency install, 28/28 application tests, 13/13 H-MEM checks, 55/55 synthetic cases and the sample Docker HTTP workflow pass. `npm audit --omit=dev` reports zero known vulnerabilities. The acceptance gate now rejects all-abstention runs and verifies each fixture outcome and its exact evidence. Authenticated installed Nightshift discovery succeeds; an actual proposal returns `no_provider_configured`. Zetaris has no running instance or configured application API key. HackOS was read directly and shows zero submissions. Cursor use and the final sponsor-connected video/deck remain pending. These are blockers, not a completed entry. See [machine-readable checkpoint](evidence/audit-20261022.json).
