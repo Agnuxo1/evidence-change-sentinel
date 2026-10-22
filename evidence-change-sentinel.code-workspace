@@ -1,0 +1,11 @@
+{
+  "folders": [{"path":"."}],
+  "tasks": {
+    "version":"2.0.0",
+    "tasks":[
+      {"label":"Sentinel: test","type":"shell","command":"npm test","group":"test"},
+      {"label":"Sentinel: offline demo","type":"shell","command":"npm start","isBackground":true},
+      {"label":"Sentinel: sponsor preflight","type":"shell","command":"node --env-file=.env --import tsx scripts/preflight.mjs"}
+    ]
+  }
+}

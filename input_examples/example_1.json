@@ -1,0 +1,76 @@
+{
+  "project_id": "synthetic-funding-call",
+  "synthetic": true,
+  "applicant": {
+    "employees": 35,
+    "submitted_on": "2026-11-20",
+    "region": "ES"
+  },
+  "requirements": [
+    {
+      "id": "staff",
+      "label": "Company size",
+      "kind": "staff_limit",
+      "source_id": "call",
+      "passage_id": "eligibility"
+    },
+    {
+      "id": "date",
+      "label": "Submission date",
+      "kind": "deadline",
+      "source_id": "notice",
+      "passage_id": "deadline"
+    },
+    {
+      "id": "region",
+      "label": "Registered region",
+      "kind": "regions",
+      "source_id": "call",
+      "passage_id": "regions"
+    }
+  ],
+  "passages": [
+    {
+      "source_id": "call",
+      "passage_id": "eligibility",
+      "version": "before",
+      "text": "Applicants must have at most 50 employees.",
+      "url": "https://example.org/synthetic/call#eligibility"
+    },
+    {
+      "source_id": "call",
+      "passage_id": "eligibility",
+      "version": "after",
+      "text": "Applicants must have at most 20 employees.",
+      "url": "https://example.org/synthetic/call#eligibility"
+    },
+    {
+      "source_id": "notice",
+      "passage_id": "deadline",
+      "version": "before",
+      "text": "Applications must be submitted by 2026-11-30.",
+      "url": "https://example.org/synthetic/notice#deadline"
+    },
+    {
+      "source_id": "notice",
+      "passage_id": "deadline",
+      "version": "after",
+      "text": "Applications must be submitted by 2026-11-30.",
+      "url": "https://example.org/synthetic/notice#deadline"
+    },
+    {
+      "source_id": "call",
+      "passage_id": "regions",
+      "version": "before",
+      "text": "Eligible regions: ES, PT.",
+      "url": "https://example.org/synthetic/call#regions"
+    },
+    {
+      "source_id": "call",
+      "passage_id": "regions",
+      "version": "after",
+      "text": "Eligible regions: ES, PT.",
+      "url": "https://example.org/synthetic/call#regions"
+    }
+  ]
+}

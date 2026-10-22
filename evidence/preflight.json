@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-10-22T01:47:43.827Z",
+  "checks": {
+    "zetaris_sql": {
+      "state": "unauthorized",
+      "message": "Configure a Zetaris API key."
+    },
+    "zetaris_passages": {
+      "state": "unauthorized",
+      "message": "Configure a Zetaris API key."
+    },
+    "meterless_models": {
+      "state": "unauthorized",
+      "message": "Configure a real Nightshift runtime token."
+    }
+  },
+  "submission_ready": false,
+  "note": "Connectivity alone does not prove a complete feature, Cursor development or Nemotron routing. An actual live run and recording are also required."
+}

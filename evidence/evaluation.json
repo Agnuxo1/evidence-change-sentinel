@@ -1,0 +1,453 @@
+{
+  "generated_at": "2026-10-22T01:53:42.821Z",
+  "dataset": "55 controlled synthetic cases; rule-engine and invalidation evaluation only",
+  "total": 55,
+  "correct": 55,
+  "preserved_unaffected": true,
+  "limitations": [
+    "Not independent or real-world validation.",
+    "Does not measure natural-language understanding, sponsor connectivity, legal accuracy or agent autonomy."
+  ],
+  "rows": [
+    {
+      "id": "staff-0-0",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-0-1",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-0-19",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-0-20",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-0-21",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-0-35",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-0-50",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-0-51",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-0-100",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-0-101",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-1-0",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-1-1",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-1-19",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-1-20",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-1-21",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-1-35",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-1-50",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-1-51",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-1-100",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-1-101",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-20-0",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-20-1",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-20-19",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-20-20",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-20-21",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-20-35",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-20-50",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-20-51",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-20-100",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-20-101",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-50-0",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 0,
+      "preserved": 3
+    },
+    {
+      "id": "staff-50-1",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 0,
+      "preserved": 3
+    },
+    {
+      "id": "staff-50-19",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 0,
+      "preserved": 3
+    },
+    {
+      "id": "staff-50-20",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 0,
+      "preserved": 3
+    },
+    {
+      "id": "staff-50-21",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 0,
+      "preserved": 3
+    },
+    {
+      "id": "staff-50-35",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 0,
+      "preserved": 3
+    },
+    {
+      "id": "staff-50-50",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 0,
+      "preserved": 3
+    },
+    {
+      "id": "staff-50-51",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 0,
+      "preserved": 3
+    },
+    {
+      "id": "staff-50-100",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 0,
+      "preserved": 3
+    },
+    {
+      "id": "staff-50-101",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 0,
+      "preserved": 3
+    },
+    {
+      "id": "staff-100-0",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-100-1",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-100-19",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-100-20",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-100-21",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-100-35",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-100-50",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-100-51",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-100-100",
+      "expected": "meets",
+      "actual": "meets",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "staff-100-101",
+      "expected": "does_not_meet",
+      "actual": "does_not_meet",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "abstain-50",
+      "expected": "human_review",
+      "actual": "human_review",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "abstain-51",
+      "expected": "human_review",
+      "actual": "human_review",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "abstain-52",
+      "expected": "human_review",
+      "actual": "human_review",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "abstain-53",
+      "expected": "human_review",
+      "actual": "human_review",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    },
+    {
+      "id": "abstain-54",
+      "expected": "human_review",
+      "actual": "human_review",
+      "correct": true,
+      "affected": 1,
+      "preserved": 2
+    }
+  ]
+}
