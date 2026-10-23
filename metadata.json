@@ -31,8 +31,9 @@
       "cloud_spend_usd": 0
     },
     "cursor": {
-      "status": "CLI_installed_login_blocked_by_human_verification_development_pending",
-      "authorship": "Codex assisted"
+      "status": "optional_under_official_20261022_announcement_not_used",
+      "authorship": "Codex assisted",
+      "evidence": "docs/RULE_UPDATE_20261022.md"
     },
     "nvidia": {
       "status": "CUDA_local_inference_on_RTX_3090_verified",
@@ -55,5 +56,14 @@
     }
   },
   "sample_run": "npm ci && npm run demo",
-  "deadline_utc": "2026-10-27T23:45:00Z"
+  "deadline_utc": "2026-10-27T23:45:00Z",
+  "coding_tool": {
+    "name": "Codex",
+    "created_and_executed_project_code": true,
+    "cursor_use_claimed": false
+  },
+  "deliverables": {
+    "video": "deliverables/evidence-change-sentinel-live-demo.mp4",
+    "slides": "deliverables/evidence-change-sentinel-live-v3.pptx"
+  }
 }

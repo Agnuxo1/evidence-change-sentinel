@@ -1,25 +1,39 @@
-# Interim 3:07 narrated prototype — recorded, not sponsor-connected
+# Live-feature demonstration narration
 
-**Recorded artifact:** [Offline prototype MP4](../deliverables/evidence-change-sentinel-offline-demonstration.mp4) — verified duration 3:07, 1280×720 H.264 + AAC narration. Recorded from screenshots of three actual Selenium browser executions of the application on Windows, combined with pre-existing deck images. **This is not footage of live Zetaris or Meterless sponsor endpoints.**
+Narrated sequence of actual connected-workflow browser captures and explanatory slides; synthetic Microsoft Zira narration. Duration: 220.93 seconds.
 
-## Actual recorded story
+## Scene 1
 
-- **Opening and problem** — funding-call amendments can affect previous eligibility reviews. One fictional applicant and synthetic grant clauses only.
-- **Workflow and components** — source references, dependency analysis, quote validation, H-MEM provenance and review queue.
-- **Example 1** — 35 employees previously qualify under a 50-person limit but not under an amended 20-person limit; exactly one decision changes, two unchanged criteria are preserved.
-- **Example 2** — no relevant change; three assessments are preserved.
-- **Example 3** — ambiguous changed wording generates one human-review item, not a guessed legal decision.
-- **Evidence at recording time** — 26/26 local application tests, 13/13 official H-MEM reference conformance checks and 55/55 narrow controlled synthetic cases. The later audit adds two regression tests; those are not part of the recorded footage.
-- **Limitations** — explicitly state live Zetaris SQL and Nightshift model calls are **not yet verified**, and there is no Nemotron, independent legal validation or official submitted entry.
+Evidence Change Sentinel helps a funding call reviewer understand which assessments need another look when a source changes. This demonstration shows a real local Zetaris and Meterless workflow using explicitly synthetic data and a fictional applicant.
 
-## Replacement required before final HackOS submission
+## Scene 2
 
-Record a new *authenticated* 1–4 minute application demo once the two sponsor services operate and `npm run live:accept` returns a genuine validated result. On-screen proof should show:
+Our reviewer has already checked three criteria. The applicant has thirty five employees. The call used to allow fifty employees and now allows only twenty. The region and submission date are unchanged. The useful action is to reassess the staff criterion and preserve the other two, with evidence for each result.
 
-1. An actual `SELECT source_id, version, passage_id, passage_text, source_url FROM sentinel_passages` executed by Zetaris.
-2. The real Nightshift provider / model selection and a successful model-proposal response (**mask all keys**).
-3. Changed/preserved assessments in the application and the evidence quotes and human review queue.
-4. H-MEM memory records and the execution trace, plus the separation of sponsor integration and synthetic evaluation metrics.
-5. Appropriate final video link, deck, README and sponsor explanation in the real HackOS submission form.
+## Scene 3
 
-**Do not submit the interim MP4 as proof of sponsor integration.**
+The planner retrieves versioned evidence through Zetaris and identifies the affected dependencies. Nightshift proposes a typed rule and an exact quotation. A separate deterministic validator checks the quotation and value against the source. It can request one repair, then abstains if the proposal is still unsupported. H Mem stores the assessment, provenance and supersession links.
+
+## Scene 4
+
+This is our actual Zetaris installation. Separate calls and notices CSV files are registered as sources. The Sentinel passages view unions them into six rows, retaining source identifiers, passage identifiers and before and after versions. The real application queries this view over the authenticated REST API. The clauses and example dot org URLs are fictional, not official grant documents.
+
+## Scene 5
+
+Here is the result from the connected browser application. Company size changes from meets to does not meet because thirty five employees exceed the new limit of twenty. The date and region assessments remain meets. Each row includes the supporting quotation, a source link and a source fingerprint. One criterion was reassessed; two assessments were preserved.
+
+## Scene 6
+
+The execution record shows the actual sequence: Zetaris retrieval, Nightshift discovery, model proposals, independent validation and H Mem writes. The captured run contains four provenance records and twelve ledger events. Four fresh Nightshift responses came from the local Llama three point two one billion parameter model. All four compute receipts report local only execution and zero dollar compute cost, and their signatures verify against the local daemon public key.
+
+## Scene 7
+
+Twenty nine application tests pass, along with thirteen H Mem conformance checks and fifty five controlled synthetic cases. We fixed real input echo and structured output problems without weakening the validator. These tests measure a narrow functional contract. They do not establish real world grant accuracy. Unsupported language or missing evidence requires human review.
+
+## Scene 8
+
+Zetaris supplies the joined versioned evidence. Meterless Nightshift supplies model proposals and compute receipts. Meterless H Mem supplies auditable memory. NVIDIA CUDA runs the local model on the R T X thirty ninety. The application and tests were developed with Codex. We do not claim use of a Nemotron model or its special prize.
+
+## Scene 9
+
+The public repository contains setup instructions, source, tests, synthetic inputs and the captured live evidence. Future work includes licensed real datasets, multilingual rules and measured reviewer feedback. Evidence Change Sentinel is a research review tool. A person remains responsible for any official eligibility decision.

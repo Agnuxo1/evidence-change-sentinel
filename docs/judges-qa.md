@@ -1,23 +1,23 @@
 # Questions and evidence
 
-**What is new?** The application ties each assessment to a specific source passage and input fingerprint, invalidates affected conclusions, preserves unaffected work and queues unmapped changes. The pre-existing Meterless H-MEM reference supplies the memory services; it is attributed rather than presented as a new engine.
+**What is new?** The application ties assessments to source passages and exact input fingerprints, invalidates affected conclusions, preserves unaffected work and queues unmapped changes. The attributed H-MEM reference is pre-existing code.
 
-**What actually runs now?** A browser UI, JSON CLI and HTTP API run the offline synthetic examples. 29 application tests, 13 upstream H-MEM conformance checks and 55 controlled synthetic cases pass. The adapters are implemented and mock-tested. Authenticated sponsor operation is still pending.
+**What runs?** Browser UI, JSON CLI and HTTP API. The real sponsor feature queries six Zetaris rows, obtains four fresh local Nightshift proposals, validates three criteria and writes four H-MEM records. Results and signed envelopes are in `evidence/live-feature-20261023.json`.
 
-**Is this an autonomous agent?** The offline version is a deterministic evidence-review engine. The live design adds a bounded proposal/validator loop through Nightshift; it can request a repair and abstain. It is not claimed as an authenticated live multi-agent demonstration yet. Mentor feedback on agentic scope has been requested.
+**What is agentic?** The planner selects dependencies; the model proposes rules; an independent validator may request one repair and then abstains. H-MEM stores provenance. Offline mode uses a deterministic proposer and is labelled separately.
 
-**How do you stop hallucinated evidence?** The model cannot choose the final quotation: the independent parser supplies the complete supported clause. Values must match that parser. Missing passages, unsupported wording and failed repairs go to review.
+**How is invented evidence rejected?** A proposal needs an exact quotation and a typed value matching the independent narrow parser. Structured JSON constrains syntax, not truth. Missing evidence and failed revisions go to review. Original integration failures remain in the local audit.
 
-**What do the evaluation numbers mean?** The 55-case synthetic grid checks employee-count boundaries and abstention against expected labels, plus preservation of unrelated criteria. It does not establish real-world, natural-language, legal or model accuracy.
+**What do the numbers mean?** 29 application tests, 13 H-MEM checks and 55 synthetic cases cover the documented functional contract. The live fixture has one changed assessment, two preserved and zero abstentions. This is not real-world grant or legal accuracy.
 
-**What happens when a source disappears or a new clause is added?** Missing required evidence invalidates the affected assessment. Changed unmapped passages enter a review queue. The prototype does not certify a source URL or independently detect a caller silently removing a requirement definition.
+**Do signatures prove organizer approval?** No. Four signatures verify against the returned local daemon public key, establishing local integrity. HackOS acceptance requires a separate receipt.
 
-**How is memory reused safely?** Exact fingerprints include project, applicant, requirement, source text, URL and sample/live mode. Similarity ranking cannot authorize reuse by itself. Source version labels are reconstructed for the current comparison; prior results are retained with supersession records.
+**How is memory reused?** Exact fingerprints include project, applicant, requirement, source text, URL and sample/live mode. Similarity alone cannot authorize reuse. Changed records retain supersession links and ledger history.
 
-**Was the new video actually recorded?** Yes: a 3:07 H.264/AAC interim walkthrough generated from Selenium screenshots of the local application and project slides. It is real sample-program execution, but it is NOT evidence of authenticated Zetaris SQL or Nightshift model calls. The live sponsor demo must replace it.
+**What is in the video?** A 3:41 H.264/AAC narrated sequence of real connected-workflow captures and slides. It is not an uninterrupted screen recording. The earlier offline video remains separate.
 
-**How is the mandatory sponsor setup verified?** `npm run live:accept` checks real SQL from Zetaris, the versioned passage view, Nightshift model discovery, actual model proposals, quote validation and H-MEM writes. With no credentials it correctly fails and emits `integration_verified:false`. Do not claim a successful run until proven.
+**How is NVIDIA used?** Nightshift places the model on CUDA0 of RTX 3090. The lane PID appears in NVIDIA's compute-process list. No Nemotron model or special-prize eligibility is claimed.
 
-**What is needed before submission?** Configure Zetaris and Nightshift, provision the actual multi-source view, execute the complete live workflow, verify Cursor development, record the real sponsor demo, confirm the final roster/track and submit all final artifacts before the official deadline. No paid plans, new contracts or credential creation are silently activated.
+**Why Codex?** The organizer's 22 October announcement makes Cursor optional. This code was created and executed with Codex; Cursor authorship is not claimed. See `RULE_UPDATE_20261022.md`.
 
-**What changed in the later Zetaris audit?** Its real installed REST API and the application adapter now retrieve six exact versioned rows from a view unioning two separate synthetic CSV tables. Authentication used an existing user session bearer, not a newly created permanent API key. Nightshift inference, Cursor use and final delivery are still pending; this individual database success is not combined acceptance.
+**What are the limits?** Three explicit English rule grammars, a synthetic fixture, supplied source URLs, fewer than 1000 rows per query and single-process JSON memory. Real licensed datasets, multilingual extraction, pagination and durable multi-user storage remain future work.

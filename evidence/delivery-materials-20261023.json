@@ -1,0 +1,25 @@
+{
+  "utc": "2026-10-23T02:48:50.631289+00:00",
+  "files": [
+    {
+      "path": "deliverables/evidence-change-sentinel-live-demo.mp4",
+      "bytes": 5360456,
+      "sha256": "5a0c85d6444eb48a0bdbaebcd76f54348c0fdad0645a4e455d99e3a5e151c331"
+    },
+    {
+      "path": "deliverables/evidence-change-sentinel-live-v3.pptx",
+      "bytes": 142960,
+      "sha256": "8bbb32df3069bbbcd9e010651d22d6e4e0213c8d26d882f2d13340ae26996627"
+    }
+  ],
+  "video_seconds": 220.93,
+  "track": "The Agent That Can Explain Why",
+  "cursor_required": false,
+  "video_kind": "Narrated sequence of actual live-workflow browser captures and explanatory slides; not an uninterrupted screen recording",
+  "narration": "Synthetic Microsoft Zira Desktop voice",
+  "decode_test": "pass",
+  "slides": 8,
+  "slide_package_and_layout": "pass",
+  "visual_review": "all 8 slides inspected; product crop corrected",
+  "submitted": false
+}

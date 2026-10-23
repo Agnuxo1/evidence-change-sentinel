@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-10-23T02:50:17.657Z",
+  "evidence_kind": "live_sponsor_connectivity",
+  "dataset_kind": "synthetic_example",
+  "checked": {
+    "zetaris_sql": "pass",
+    "zetaris_versioned_view": "pass",
+    "zetaris_rows": 6,
+    "meterless_discovery": "pass",
+    "live_agent_execution": "pass",
+    "validated_evidence_count": 3,
+    "nightshift_model_calls": 4,
+    "hmem_records": 4,
+    "abstentions": 0
+  },
+  "integration_verified": true,
+  "submitted_to_hackos": false,
+  "note": "This checks real sponsor endpoints with a synthetic, pre-loaded Zetaris dataset. It does not prove independent real-world grant evaluation, Nemotron model selection, Cursor use, eligibility or a completed HackOS submission."
+}

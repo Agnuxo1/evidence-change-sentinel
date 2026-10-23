@@ -2,7 +2,7 @@
 
 A funding-call evidence review prototype: when a source passage changes, identify the affected assessments, quote the evidence, preserve unaffected assessments and queue uncertainty for human review.
 
-**Status, 23 October 2026:** the real local Zetaris / Meterless Nightshift feature is **verified with synthetic evidence**: four new local-model responses, three validated requirements, one changed assessment and two preserved assessments. H-MEM records provenance. Cursor development and the final video/deck remain pending. This is not a completed hackathon submission. The offline path is deterministic, not an autonomous LLM demonstration. It does not determine official eligibility.
+**Status, 23 October 2026:** the real local Zetaris / Meterless Nightshift feature is **verified with synthetic evidence**: four new local-model responses, three validated requirements, one changed assessment and two preserved assessments. H-MEM records provenance. A narrated 3:41 demonstration and eight-slide deck document this run. Final HackOS submission is pending. This is not a completed hackathon submission. The offline path is deterministic, not an autonomous LLM demonstration. It does not determine official eligibility.
 
 ![Actual offline run](evidence/demo-screen.png)
 
@@ -72,7 +72,7 @@ H-MEM stores assessments with provenance, source fingerprints and a mutation led
 | Meterless H-MEM | Assessment provenance, exact evidence recall, supersession and ledger | Reference conformance 13/13; application persistence test passes |
 | Meterless Nightshift | OpenAI-compatible rule proposals, discovery, authentication and review feedback | Real local Llama 3.2 1B proposals and complete controlled feature pass; signed provider envelopes retained in evidence/live-feature-20261023.json |
 | Zetaris | SQL retrieval from one view joining versioned call and notice evidence | Real authenticated SELECT 1 and six versioned view rows verified; see evidence/zetaris-20261022.json |
-| Cursor | Required development environment | Cursor 3.2.11 and official Windows CLI located; account login requires human verification; development proof remains pending; Codex assisted |
+| Coding tool | Codex created and executed the code | Cursor is optional under the official Build update; see docs/RULE_UPDATE_20261022.md |
 | NVIDIA | CUDA acceleration for Nightshift local inference on RTX 3090 | Real lane placement and GPU process verified; no Nemotron special-prize claim |
 
 ### Live setup
@@ -99,7 +99,7 @@ The adapter uses the REST shape in the official 21 October Participant Setup Gui
 
 Run `npm run preflight` with the configured environment, then an actual live example and verify quotes, traces and the Nightshift model receipt. The latest preflight verifies both endpoint connections and six Zetaris rows; `submission_ready:false` remains explicit. A separate fail-closed script, `node --env-file=.env --import tsx scripts/live-acceptance.mjs`, demands a real authenticated SQL query, a populated versioned view, Nightshift model discovery, an actual model proposal, evidence validation and H-MEM writes. Mock-backed tests are explicitly distinct from that live check.
 
-## Hackathon demonstration and live acceptance
+## Historical prototype files and live acceptance
 
 - [3-minute narrated **offline-prototype** video](deliverables/evidence-change-sentinel-offline-demonstration.mp4), composed of screenshots captured by a real automated browser run on the sample application. **This is not the required live sponsor demonstration, and is not a completed HackOS entry.**
 - [8-slide prototype presentation](deliverables/evidence-change-sentinel-prototype.pptx), labelled as an interim deck.
@@ -130,7 +130,7 @@ For hackathon rules and the current deadline use the [official event page](https
 
 ## Audit checkpoint: 22 October 2026
 
-29/29 application tests pass. The previous clean-install audit also passed 13/13 H-MEM checks, 55/55 synthetic cases, the Docker sample HTTP workflow and npm dependency auditing with zero known vulnerabilities. The acceptance gate rejects all-abstention runs and verifies each controlled outcome and its exact evidence. Real Zetaris SQL and the versioned view now pass. The complete real sponsor feature now passes on the controlled synthetic fixture; the original failed receipts remain as history. Cursor use and the final sponsor-connected video/deck remain pending. Historical receipts are retained rather than rewritten.
+29/29 application tests pass. The previous clean-install audit also passed 13/13 H-MEM checks, 55/55 synthetic cases, the Docker sample HTTP workflow and npm dependency auditing with zero known vulnerabilities. The acceptance gate rejects all-abstention runs and verifies each controlled outcome and its exact evidence. Real Zetaris SQL and the versioned view now pass. The complete real sponsor feature now passes on the controlled synthetic fixture; the original failed receipts remain as history. The connected demonstration and deck are prepared; HackOS submission is pending. Historical receipts are retained rather than rewritten.
 
 ### Historical Zetaris milestone, 22 October 2026, 18:41 UTC
 
@@ -140,4 +140,12 @@ The official local Docker stack is installed and isolated on localhost. Its REST
 
 [Captured result and provider receipts](evidence/live-feature-20261023.json): actual Zetaris rows, four fresh Nightshift responses from Llama 3.2 1B, independent quotation/value validation, four H-MEM records, one changed assessment, two preserved, zero abstentions. Every captured response reports local-only execution and actual cost $0. The narrow rule grammar remains a limitation; this is not independent real-world accuracy. Output schemas avoid an observed small-model input-echo failure and require separate country-code array entries. A real llama.cpp grammar failure with \d was fixed using explicit ASCII digit ranges. [CUDA placement](evidence/nvidia-local-20261023.json) records full GPU weight placement on RTX 3090 and the same PID in NVIDIA's compute-process list. No Nemotron model was used.
 
-The official Zetaris installation check subsequently completed **9/9** after its sample bootstrap finished; the earlier 8/9 snapshot is retained as a historical receipt. All four captured receipt signatures verify with Ed25519 against the returned local daemon public key; this establishes local receipt integrity, not external organizer acceptance. Cursor authentication, final presentation/recording and HackOS delivery remain open gates. No submission ID or acceptance is claimed.
+The official Zetaris installation check subsequently completed **9/9** after its sample bootstrap finished; the earlier 8/9 snapshot is retained as a historical receipt. All four captured receipt signatures verify with Ed25519 against the returned local daemon public key; this establishes local receipt integrity, not external organizer acceptance. The [official Build update](docs/RULE_UPDATE_20261022.md) makes Cursor optional. Codex was used. Final HackOS delivery remains pending. No submission ID or acceptance is claimed.
+
+### Submission materials, 23 October 2026
+
+- [3:41 narrated live-feature demonstration](deliverables/evidence-change-sentinel-live-demo.mp4): real connected-workflow browser captures and slides, with synthetic narration. This is a narrated capture sequence, not an uninterrupted screen recording.
+- [Eight-slide live-feature deck](deliverables/evidence-change-sentinel-live-v3.pptx).
+- [Prepared description](docs/submission-description.md), [judge questions](docs/judges-qa.md) and [official coding-tool update](docs/RULE_UPDATE_20261022.md).
+
+The prototype deck and offline video remain historical artifacts. Use these new files for the planned Track 02 submission. No HackOS submission identifier or acceptance has yet been received.
