@@ -2,7 +2,7 @@
 
 A funding-call evidence review prototype: when a source passage changes, identify the affected assessments, quote the evidence, preserve unaffected assessments and queue uncertainty for human review.
 
-**Status, 23 October 2026:** the real local Zetaris / Meterless Nightshift feature is **verified with synthetic evidence**: four new local-model responses, three validated requirements, one changed assessment and two preserved assessments. H-MEM records provenance. A narrated 3:41 demonstration and eight-slide deck document this run. Final HackOS submission is pending. This is not a completed hackathon submission. The offline path is deterministic, not an autonomous LLM demonstration. It does not determine official eligibility.
+**Status, 23 October 2026:** the real local Zetaris / Meterless Nightshift feature is **verified with synthetic evidence**: four new local-model responses, three validated requirements, one changed assessment and two preserved assessments. H-MEM records provenance. A narrated 3:41 demonstration and eight-slide deck document this run. **Submitted in HackOS on 23 October at 07:06:59 UTC**, ID `01a16795-98e3-765a-a05d-a699ba45c5f8`, Track 02. Status `submitted` persists after a full reload; organizer eligibility/judging approval is not yet evidenced. [Delivery receipt](evidence/submission-receipt-20261023.json). The offline path is deterministic, not an autonomous LLM demonstration. It does not determine official eligibility.
 
 ![Actual offline run](evidence/demo-screen.png)
 
@@ -126,11 +126,11 @@ Project concept, team description and pre-event planning existed before the buil
 
 Meterless H-MEM is a declared pre-existing third-party dependency, vendored from [Meterless/Meterless](https://github.com/Meterless/Meterless) commit `1742dec56a66e58eef9dda2d2b865823758ca8cd`. Its Apache 2.0 licence and provenance are retained under `vendor/hmem/`. tsx and its dependencies retain their package licences. The original application is provided as a research submission snapshot; no additional third-party code rights are implied.
 
-For hackathon rules and the current deadline use the [official event page](https://hackathon.genai.works/event/open-agent-hackathon-2026). The local package is not evidence of a submitted or accepted entry.
+For hackathon rules and the current deadline use the [official event page](https://hackathon.genai.works/event/open-agent-hackathon-2026). The [HackOS receipt](evidence/submission-receipt-20261023.json) separately evidences delivery; it does not establish organizer eligibility or judging acceptance.
 
 ## Audit checkpoint: 22 October 2026
 
-29/29 application tests pass. The previous clean-install audit also passed 13/13 H-MEM checks, 55/55 synthetic cases, the Docker sample HTTP workflow and npm dependency auditing with zero known vulnerabilities. The acceptance gate rejects all-abstention runs and verifies each controlled outcome and its exact evidence. Real Zetaris SQL and the versioned view now pass. The complete real sponsor feature now passes on the controlled synthetic fixture; the original failed receipts remain as history. The connected demonstration and deck are prepared; HackOS submission is pending. Historical receipts are retained rather than rewritten.
+29/29 application tests pass. The previous clean-install audit also passed 13/13 H-MEM checks, 55/55 synthetic cases, the Docker sample HTTP workflow and npm dependency auditing with zero known vulnerabilities. The acceptance gate rejects all-abstention runs and verifies each controlled outcome and its exact evidence. Real Zetaris SQL and the versioned view now pass. The complete real sponsor feature now passes on the controlled synthetic fixture; the original failed receipts remain as history. The connected demonstration and deck were submitted in HackOS; see the delivery receipt above. Historical receipts are retained rather than rewritten.
 
 ### Historical Zetaris milestone, 22 October 2026, 18:41 UTC
 
@@ -140,7 +140,7 @@ The official local Docker stack is installed and isolated on localhost. Its REST
 
 [Captured result and provider receipts](evidence/live-feature-20261023.json): actual Zetaris rows, four fresh Nightshift responses from Llama 3.2 1B, independent quotation/value validation, four H-MEM records, one changed assessment, two preserved, zero abstentions. Every captured response reports local-only execution and actual cost $0. The narrow rule grammar remains a limitation; this is not independent real-world accuracy. Output schemas avoid an observed small-model input-echo failure and require separate country-code array entries. A real llama.cpp grammar failure with \d was fixed using explicit ASCII digit ranges. [CUDA placement](evidence/nvidia-local-20261023.json) records full GPU weight placement on RTX 3090 and the same PID in NVIDIA's compute-process list. No Nemotron model was used.
 
-The official Zetaris installation check subsequently completed **9/9** after its sample bootstrap finished; the earlier 8/9 snapshot is retained as a historical receipt. All four captured receipt signatures verify with Ed25519 against the returned local daemon public key; this establishes local receipt integrity, not external organizer acceptance. The [official Build update](docs/RULE_UPDATE_20261022.md) makes Cursor optional. Codex was used. Final HackOS delivery remains pending. No submission ID or acceptance is claimed.
+The official Zetaris installation check subsequently completed **9/9** after its sample bootstrap finished; the earlier 8/9 snapshot is retained as a historical receipt. All four captured receipt signatures verify with Ed25519 against the returned local daemon public key; this establishes local receipt integrity, not external organizer acceptance. The [official Build update](docs/RULE_UPDATE_20261022.md) makes Cursor optional. Codex was used. HackOS delivery subsequently succeeded at 07:06:59 UTC; the delivery receipt above records the identifier and readback. No organizer eligibility acceptance is claimed.
 
 ### Submission materials, 23 October 2026
 
@@ -148,4 +148,4 @@ The official Zetaris installation check subsequently completed **9/9** after its
 - [Eight-slide live-feature deck](deliverables/evidence-change-sentinel-live-v3.pptx).
 - [Prepared description](docs/submission-description.md), [judge questions](docs/judges-qa.md) and [official coding-tool update](docs/RULE_UPDATE_20261022.md).
 
-The prototype deck and offline video remain historical artifacts. Use these new files for the planned Track 02 submission. No HackOS submission identifier or acceptance has yet been received.
+The prototype deck and offline video remain historical artifacts. These new files were delivered in the Track 02 submission. The receipt records the server-assigned identifier; organizer eligibility/judging remains pending.

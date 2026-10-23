@@ -1,0 +1,71 @@
+{
+  "format": "factual HackOS delivery evidence, not an organizer eligibility certificate",
+  "verified_at_utc": "2026-10-23T07:13:07.333837+00:00",
+  "submission_id": "01a16795-98e3-765a-a05d-a699ba45c5f8",
+  "status": "submitted",
+  "created_at_utc": "2026-10-23T07:06:59.604954Z",
+  "server_updated_at_utc": "2026-10-23T07:07:01.023221Z",
+  "team_id": "01a0d1aa-4b39-7f43-8a40-57c6354be936",
+  "hackathon_id": "019fd164-82b9-7382-a536-d9093c576ed2",
+  "project": "Evidence Change Sentinel",
+  "track": "The Agent That Can Explain Why",
+  "hub_url": "https://hackathon.genai.works/submissions?hackathon_id=019fd164-82b9-7382-a536-d9093c576ed2",
+  "repo_url": "https://github.com/Agnuxo1/evidence-change-sentinel",
+  "video_url": "https://iframe.mediadelivery.net/embed/778121/7c48f06c-bcec-4207-af2e-5871d8c11b96",
+  "pitch_deck_url": "https://hackathon-server.genai.works/api/v1/cdn/proxy/hackathon/3b6b9534541e469ca7c008335d6f6a5d.pptx",
+  "delivered_source_commit": "03781fb7ccbb680abce166d24e196b9306c6b6e8",
+  "ci_url": "https://github.com/Agnuxo1/evidence-change-sentinel/actions/runs/39891856719",
+  "ci_conclusion": "success",
+  "readback_after_full_reload": true,
+  "persisted_entries": 1,
+  "submitted_entries": 1,
+  "description_matches_prepared_packet": true,
+  "files": [
+    {
+      "path": "deliverables/evidence-change-sentinel-live-demo.mp4",
+      "bytes": 5360456,
+      "sha256": "5a0c85d6444eb48a0bdbaebcd76f54348c0fdad0645a4e455d99e3a5e151c331"
+    },
+    {
+      "path": "deliverables/evidence-change-sentinel-live-v3.pptx",
+      "bytes": 142960,
+      "sha256": "8bbb32df3069bbbcd9e010651d22d6e4e0213c8d26d882f2d13340ae26996627"
+    }
+  ],
+  "hosted_video_check": {
+    "utc": "2026-10-23T07:08:19.942Z",
+    "url": "https://iframe.mediadelivery.net/embed/778121/7c48f06c-bcec-4207-af2e-5871d8c11b96",
+    "player": [
+      {
+        "currentTime": 0.036483,
+        "duration": 220.91200000000015,
+        "error": null,
+        "paused": false,
+        "readyState": 4,
+        "videoHeight": 720,
+        "videoWidth": 1280
+      }
+    ]
+  },
+  "hosted_deck_check": {
+    "utc": "2026-10-23T07:08:36.0973923Z",
+    "status": 200,
+    "bytes": 142960,
+    "sha256": "8bbb32df3069bbbcd9e010651d22d6e4e0213c8d26d882f2d13340ae26996627",
+    "matchesFinal": true
+  },
+  "deadline_utc": "2026-10-27T23:45:00Z",
+  "submitted_before_deadline": true,
+  "organizer_eligibility_approval": "not yet evidenced",
+  "server_is_disqualified": false,
+  "server_feedback": [],
+  "confirmation_source": "Authenticated HackOS UI readback and observed HTTP 200 submissions response after reload",
+  "local_evidence": [
+    "submitted-first.txt",
+    "submitted-readback.txt",
+    "submitted.png",
+    "hackos-submission-response.json",
+    "submitted-video-player.json",
+    "submitted-deck-verification.json"
+  ]
+}

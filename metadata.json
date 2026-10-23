@@ -3,8 +3,8 @@
   "project": "Evidence Change Sentinel",
   "team": "Evidence Change Sentinel",
   "intended_track": "The Agent That Can Explain Why",
-  "status": "live_sponsor_feature_verified_submission_pending",
-  "submitted": false,
+  "status": "submitted_live_sponsor_feature_verified",
+  "submitted": true,
   "data": "synthetic funding-call clauses and fictional applicant, created 22 October 2026",
   "pre_existing": [
     "concept and team description before the build window",
@@ -65,5 +65,10 @@
   "deliverables": {
     "video": "deliverables/evidence-change-sentinel-live-demo.mp4",
     "slides": "deliverables/evidence-change-sentinel-live-v3.pptx"
-  }
+  },
+  "submission_id": "01a16795-98e3-765a-a05d-a699ba45c5f8",
+  "submitted_at_utc": "2026-10-23T07:06:59.604954Z",
+  "official_track": "The Agent That Can Explain Why",
+  "organizer_eligibility_approval": "not yet evidenced",
+  "submission_receipt": "evidence/submission-receipt-20261023.json"
 }
