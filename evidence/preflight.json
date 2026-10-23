@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-22T18:41:48.316Z",
+  "checked_at": "2026-10-23T02:18:09.216Z",
   "checks": {
     "zetaris_sql": {
       "state": "online"
@@ -9,8 +9,27 @@
       "rows": 6
     },
     "meterless_models": {
-      "state": "offline",
-      "message": "Meterless is unreachable or timed out."
+      "state": "online",
+      "models": [
+        "meterless/auto",
+        "meterless/fast",
+        "meterless/deep",
+        "meterless/cheap",
+        "meterless/local",
+        "meterless/fusion",
+        "meterless/cluster",
+        "meterless/text",
+        "meterless/code",
+        "meterless/vision",
+        "meterless/perception",
+        "meterless/image",
+        "meterless/video",
+        "meterless/speech",
+        "meterless/transcribe",
+        "meterless/music",
+        "meterless/embed",
+        "meterless/judge"
+      ]
     }
   },
   "submission_ready": false,

@@ -25,8 +25,18 @@ test('real HTTP contract: headers, auth states, model discovery and text request
     const adapter = new Meterless({METERLESS_BASE_URL:base,METERLESS_RUNTIME_TOKEN:'test-only-token'});
     assert.equal((await adapter.probe()).models.includes('meterless/future'),true);
     assert.equal((await adapter.propose({passage:'text',kind:'unknown'})).kind,'unknown');
+    await adapter.propose({passage:'Eligible regions: NL, BE.',kind:'regions'});
     const chat = seen.at(-1); assert.equal(chat.headers['meterless-app'],'evidence-change-sentinel'); assert.equal(chat.headers['meterless-scope'],'user');
     assert.equal(chat.body.model,'meterless/auto');
+    assert.equal(chat.body.max_tokens,512);
+    assert.equal(chat.body.response_format.type,'json_schema');
+    const schema=chat.body.response_format.json_schema.schema;
+    assert.equal(schema.additionalProperties,false);
+    assert.deepEqual(schema.required,['kind','value','quote']);
+    assert.deepEqual(schema.properties.kind.enum,['regions','unknown']);
+    assert.equal(schema.properties.value.anyOf[0].items.pattern,'^[A-Z]{2}$');
+    assert.equal(schema.properties.value.anyOf[1].type,'null');
+    assert.ok(chat.body.messages.at(-1).content.includes('Return the extracted rule, not the input object.'));
   } finally { await new Promise(resolve=>server.close(resolve)); }
 });
 test('SQL identifier injection is rejected before making a request', async () => {

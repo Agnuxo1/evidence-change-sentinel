@@ -2,7 +2,7 @@
 
 **Team:** Evidence Change Sentinel (solo). **Candidate:** Francisco Angulo de Lafuente. **Track:** The Agent That Can Explain Why.  
 **Official build window:** 22–27 October 2026. **Submission deadline:** 27 October 2026, 23:45 UTC (28 October, 00:45 Europe/Madrid).  
-**Status as of this document:** OFFLINE PROTOTYPE; **NOT SUBMITTED**. Real Zetaris SQL and versioned rows are verified. The combined Nightshift/Zetaris feature is not verified.
+**Status, 23 October 2026:** REAL SPONSOR FEATURE VERIFIED WITH SYNTHETIC DATA; **NOT SUBMITTED**. Actual Zetaris SQL, four fresh local Nightshift responses and H-MEM provenance pass the controlled acceptance gate. Cursor development and final delivery materials remain pending.
 
 > Source of truth: the [live event's Rules](https://hackathon.genai.works/event/open-agent-hackathon-2026), the [participant guide](https://docs.google.com/document/d/1_d3osxbXZRpp4Ln80w6Obc5xx06SmkIMrgp6BOj0Ofc/edit), the repo's code and explicit evidence JSON. Some older Academy and HackOS resources describe obsolete dates/prizes; use the event's updated deadline. Confirm current judge requirements in HackOS.
 
@@ -24,10 +24,10 @@ The working offline example uses **fictional** sources and a fictional applicant
 |---|---|---|
 | Identity/team/track | Team appears in the authenticated HackOS workspace and track selected | Authenticated HackOS recheck on 22 October confirms the solo leader and 1/5 roster; no saved submission or primary track yet |
 | Data: Zetaris | Running instance and successful authenticated SQL, including a versioned `sentinel_passages` view with real provider rows | **Verified:** authenticated SELECT 1 and six exact rows from the actual view; temporary existing user session bearer, no permanent app key created |
-| Build: Meterless Engine | H-MEM used in a real product feature with memory reuse/ledger conformance | **Working offline:** 13/13 upstream checks and application tests. Verify inside sponsor-connected run |
-| Power: Meterless Nightshift | Nightshift Runtime reachable, real token, model discovery and at least one *real* proposal | **Blocked:** earlier authenticated discovery succeeded and proposal returned `no_provider_configured`; Runtime is currently unreachable during desktop setup |
+| Build: Meterless Engine | H-MEM used in a real product feature with memory reuse/ledger conformance | **Verified in real feature:** four provenance records, plus 13/13 upstream checks |
+| Power: Meterless Nightshift | Nightshift Runtime reachable, real token, model discovery and at least one *real* proposal | **Verified:** four new Llama 3.2 1B responses through Nightshift, independently validated; see evidence/live-feature-20261023.json |
 | NVIDIA special prize | Verifiable Nemotron model receipt for an actual product request | **Not claimed / optional special prize** |
-| Tests | Application, conformance, controlled evaluation + live run | 29 application tests including new HTTP **mock** integration, 13 upstream conformance and 55/55 synthetic cases; real-provider check pending |
+| Tests | Application, conformance, controlled evaluation + live run | 29 application tests including new HTTP **mock** integration, 13 upstream conformance and 55/55 synthetic cases; real controlled feature passes with zero abstentions |
 | Demo | Working **1–4 minute** screen recording proving user workflow and integrations, hosted via acceptable link | **Not recorded with live services** |
 | Deck | Problem, user, result, architecture, Zetaris, H-MEM, Nightshift, evidence and limits | Existing `deliverables/evidence-change-sentinel-prototype.pptx` (interim deck; review/revise once live data exist) |
 | Submission | Project description 150–2000 characters, track, video link, repository, deck and sponsor explanation | **Not submitted**, no confirmation number |
@@ -87,3 +87,7 @@ Authenticated HackOS recheck: registration checklist complete, team present, 1/5
 ## Real Zetaris milestone, 22 October, 18:41 UTC
 
 Login was recovered. The owner explicitly authorized registry access and confirmed the personal-credential licensing declaration. The official bundle was downloaded, checked and installed under the isolated `sentinel-zetaris` Docker project: all four persistent services are healthy. Its exact six synthetic rows and SELECT 1 were verified through both the actual REST API and the application adapter. `sentinel_review.sentinel_passages` unions calls and notices CSV tables. The adapter now supports the required safe `container.view` name. A temporary local user session bearer was used privately; a persistent application API key remains unconfigured. Nightshift is currently unreachable while its desktop setup is being resolved. Cursor and final sponsor-connected recording/deck/submission remain pending. Earlier blockers above are historical snapshots; use this milestone and `evidence/zetaris-20261022.json` for the updated Zetaris state.
+
+## Verified feature continuation, 23 October 2026
+
+The previous setup failures remain historical records. Zetaris is installed (official verification 9/9). The final captured live feature at 02:21 UTC passes with six real SQL rows and four fresh Nightshift local-model responses; request IDs, signed provider envelopes, result trace and source hashes are in `evidence/live-feature-20261023.json`. CUDA lane placement on RTX 3090 is in `evidence/nvidia-local-20261023.json`; no Nemotron prize claim. Cursor's existing-account login is blocked by its human-verification check. All source authored so far is Codex assisted; do not imply Cursor authorship before an actual Cursor workflow. HackOS rechecked on 23 October: still 0/3 submissions. Preserve this state until the remaining materials and required Cursor use can be evidenced.

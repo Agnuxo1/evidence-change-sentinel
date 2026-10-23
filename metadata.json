@@ -3,7 +3,7 @@
   "project": "Evidence Change Sentinel",
   "team": "Evidence Change Sentinel",
   "intended_track": "The Agent That Can Explain Why",
-  "status": "offline_prototype_live_integration_pending",
+  "status": "live_sponsor_feature_verified_submission_pending",
   "submitted": false,
   "data": "synthetic funding-call clauses and fictional applicant, created 22 October 2026",
   "pre_existing": [
@@ -21,26 +21,38 @@
     "meterless_hmem": {
       "status": "working_reference_integration",
       "code": "app/core.mjs",
-      "evidence": "npm run conformance; tests/core.test.mjs"
+      "evidence": "evidence/live-feature-20261023.json; npm run conformance"
     },
     "meterless_nightshift": {
-      "status": "currently_unreachable_during_setup_previous_discovery_verified_no_provider",
+      "status": "real_local_rule_proposals_and_full_feature_verified",
       "code": "app/adapters.mjs",
-      "evidence": "evidence/audit-20261022.json"
+      "evidence": "evidence/live-feature-20261023.json",
+      "model": "Llama 3.2 1B Instruct Q4_K_M",
+      "cloud_spend_usd": 0
     },
     "cursor": {
-      "status": "interactive_development_verification_pending",
+      "status": "CLI_installed_login_blocked_by_human_verification_development_pending",
       "authorship": "Codex assisted"
     },
     "nvidia": {
-      "status": "not_configured_not_claimed"
+      "status": "CUDA_local_inference_on_RTX_3090_verified",
+      "evidence": "evidence/nvidia-local-20261023.json",
+      "nemotron_special_prize": "not_claimed"
     }
   },
   "validation": {
     "application_tests": 29,
     "hmem_conformance": 13,
     "synthetic_cases": 55,
-    "real_world_accuracy": "not_evaluated"
+    "real_world_accuracy": "not_evaluated",
+    "live_controlled_fixture": {
+      "verified_at_utc": "2026-10-23T02:21:22.470Z",
+      "requirements": 3,
+      "changed": 1,
+      "preserved": 2,
+      "abstentions": 0,
+      "new_provider_responses": 4
+    }
   },
   "sample_run": "npm ci && npm run demo",
   "deadline_utc": "2026-10-27T23:45:00Z"

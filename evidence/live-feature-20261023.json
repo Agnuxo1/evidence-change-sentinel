@@ -1,0 +1,3048 @@
+{
+  "utc": "2026-10-23T02:21:22.470Z",
+  "synthetic": true,
+  "verified": true,
+  "result": {
+    "project_id": "synthetic-funding-call",
+    "mode": "live",
+    "synthetic": true,
+    "summary": {
+      "total": 3,
+      "affected": 1,
+      "preserved": 2,
+      "changed_decisions": 1,
+      "human_review": 0,
+      "model_calls": 4,
+      "memory_reuses": 2
+    },
+    "results": [
+      {
+        "requirement_id": "staff",
+        "label": "Company size",
+        "affected": true,
+        "decision_changed": true,
+        "previous": {
+          "decision": "meets",
+          "reason": "35 employees; limit 50.",
+          "rule": {
+            "kind": "staff_limit",
+            "value": 50,
+            "quote": "Applicants must have at most 50 employees."
+          },
+          "evidence": {
+            "source_id": "call",
+            "passage_id": "eligibility",
+            "url": "https://example.org/synthetic/call#eligibility",
+            "quote": "Applicants must have at most 50 employees.",
+            "sha256": "90bcdbab870d5b47a51543db775eda6f0c2a6ff3d31209b6809797f3ce4de128",
+            "version": "before"
+          },
+          "memory_id": "mem-1",
+          "reused": false
+        },
+        "current": {
+          "decision": "does_not_meet",
+          "reason": "35 employees; limit 20.",
+          "rule": {
+            "kind": "staff_limit",
+            "value": 20,
+            "quote": "Applicants must have at most 20 employees."
+          },
+          "evidence": {
+            "source_id": "call",
+            "passage_id": "eligibility",
+            "url": "https://example.org/synthetic/call#eligibility",
+            "quote": "Applicants must have at most 20 employees.",
+            "sha256": "4545696d2d1a167de359cc012a2329694a8491fa48134e614fcaed030e7fe63a",
+            "version": "after"
+          },
+          "memory_id": "mem-2",
+          "reused": false
+        }
+      },
+      {
+        "requirement_id": "date",
+        "label": "Submission date",
+        "affected": false,
+        "decision_changed": false,
+        "previous": {
+          "decision": "meets",
+          "reason": "Submitted 2026-11-20; date limit 2026-11-30.",
+          "rule": {
+            "kind": "deadline",
+            "value": "2026-11-30",
+            "quote": "Applications must be submitted by 2026-11-30."
+          },
+          "evidence": {
+            "source_id": "notice",
+            "passage_id": "deadline",
+            "url": "https://example.org/synthetic/notice#deadline",
+            "quote": "Applications must be submitted by 2026-11-30.",
+            "sha256": "418f08d4ae94504835f65883e5ba07aadb115c33c15827298dc93e9206bd934b",
+            "version": "before"
+          },
+          "memory_id": "mem-3",
+          "reused": false
+        },
+        "current": {
+          "decision": "meets",
+          "reason": "Submitted 2026-11-20; date limit 2026-11-30.",
+          "rule": {
+            "kind": "deadline",
+            "value": "2026-11-30",
+            "quote": "Applications must be submitted by 2026-11-30."
+          },
+          "evidence": {
+            "source_id": "notice",
+            "passage_id": "deadline",
+            "url": "https://example.org/synthetic/notice#deadline",
+            "quote": "Applications must be submitted by 2026-11-30.",
+            "sha256": "418f08d4ae94504835f65883e5ba07aadb115c33c15827298dc93e9206bd934b",
+            "version": "after"
+          },
+          "memory_id": "mem-3",
+          "reused": true
+        }
+      },
+      {
+        "requirement_id": "region",
+        "label": "Registered region",
+        "affected": false,
+        "decision_changed": false,
+        "previous": {
+          "decision": "meets",
+          "reason": "Region ES; listed ES, PT.",
+          "rule": {
+            "kind": "regions",
+            "value": [
+              "ES",
+              "PT"
+            ],
+            "quote": "Eligible regions: ES, PT."
+          },
+          "evidence": {
+            "source_id": "call",
+            "passage_id": "regions",
+            "url": "https://example.org/synthetic/call#regions",
+            "quote": "Eligible regions: ES, PT.",
+            "sha256": "fa1f59f7ee3ed8cfdbd25dbafc0f94b9214dc6eddde61da141e865c0d81afe52",
+            "version": "before"
+          },
+          "memory_id": "mem-4",
+          "reused": false
+        },
+        "current": {
+          "decision": "meets",
+          "reason": "Region ES; listed ES, PT.",
+          "rule": {
+            "kind": "regions",
+            "value": [
+              "ES",
+              "PT"
+            ],
+            "quote": "Eligible regions: ES, PT."
+          },
+          "evidence": {
+            "source_id": "call",
+            "passage_id": "regions",
+            "url": "https://example.org/synthetic/call#regions",
+            "quote": "Eligible regions: ES, PT.",
+            "sha256": "fa1f59f7ee3ed8cfdbd25dbafc0f94b9214dc6eddde61da141e865c0d81afe52",
+            "version": "after"
+          },
+          "memory_id": "mem-4",
+          "reused": true
+        }
+      }
+    ],
+    "review_queue": [],
+    "trace": [
+      {
+        "sequence": 1,
+        "agent": "Planner",
+        "action": "begin",
+        "mode": "live",
+        "requirements": 3
+      },
+      {
+        "sequence": 2,
+        "agent": "EvidenceReader",
+        "action": "zetaris_query",
+        "rows": 6,
+        "verified_live": true
+      },
+      {
+        "sequence": 3,
+        "agent": "Planner",
+        "action": "meterless_model_discovery",
+        "state": "online"
+      },
+      {
+        "sequence": 4,
+        "agent": "RuleProposer",
+        "action": "propose_rule",
+        "requirement_id": "staff",
+        "version": "before",
+        "attempt": 0,
+        "provider": "meterless"
+      },
+      {
+        "sequence": 5,
+        "agent": "Validator",
+        "action": "accepted",
+        "requirement_id": "staff",
+        "version": "before",
+        "attempt": 0
+      },
+      {
+        "sequence": 6,
+        "agent": "MemoryWriter",
+        "action": "hmem_store",
+        "requirement_id": "staff",
+        "memory_id": "mem-1",
+        "decision": "meets"
+      },
+      {
+        "sequence": 7,
+        "agent": "Planner",
+        "action": "invalidate_dependency",
+        "requirement_id": "staff",
+        "old_memory_id": "mem-1"
+      },
+      {
+        "sequence": 8,
+        "agent": "RuleProposer",
+        "action": "propose_rule",
+        "requirement_id": "staff",
+        "version": "after",
+        "attempt": 0,
+        "provider": "meterless"
+      },
+      {
+        "sequence": 9,
+        "agent": "Validator",
+        "action": "accepted",
+        "requirement_id": "staff",
+        "version": "after",
+        "attempt": 0
+      },
+      {
+        "sequence": 10,
+        "agent": "MemoryWriter",
+        "action": "hmem_store",
+        "requirement_id": "staff",
+        "memory_id": "mem-2",
+        "decision": "does_not_meet"
+      },
+      {
+        "sequence": 11,
+        "agent": "RuleProposer",
+        "action": "propose_rule",
+        "requirement_id": "date",
+        "version": "before",
+        "attempt": 0,
+        "provider": "meterless"
+      },
+      {
+        "sequence": 12,
+        "agent": "Validator",
+        "action": "accepted",
+        "requirement_id": "date",
+        "version": "before",
+        "attempt": 0
+      },
+      {
+        "sequence": 13,
+        "agent": "MemoryWriter",
+        "action": "hmem_store",
+        "requirement_id": "date",
+        "memory_id": "mem-3",
+        "decision": "meets"
+      },
+      {
+        "sequence": 14,
+        "agent": "Planner",
+        "action": "preserve_unaffected",
+        "requirement_id": "date",
+        "memory_id": "mem-3"
+      },
+      {
+        "sequence": 15,
+        "agent": "RuleProposer",
+        "action": "propose_rule",
+        "requirement_id": "region",
+        "version": "before",
+        "attempt": 0,
+        "provider": "meterless"
+      },
+      {
+        "sequence": 16,
+        "agent": "Validator",
+        "action": "accepted",
+        "requirement_id": "region",
+        "version": "before",
+        "attempt": 0
+      },
+      {
+        "sequence": 17,
+        "agent": "MemoryWriter",
+        "action": "hmem_store",
+        "requirement_id": "region",
+        "memory_id": "mem-4",
+        "decision": "meets"
+      },
+      {
+        "sequence": 18,
+        "agent": "Planner",
+        "action": "preserve_unaffected",
+        "requirement_id": "region",
+        "memory_id": "mem-4"
+      },
+      {
+        "sequence": 19,
+        "agent": "Planner",
+        "action": "complete",
+        "affected": 1,
+        "human_review": 0
+      }
+    ],
+    "memory": {
+      "engine": "Meterless H-MEM reference",
+      "records": 4,
+      "ledger_events": 12
+    },
+    "duration_ms": 2659.77,
+    "limitations": [
+      "Research prototype for reviewing evidence, not an official eligibility determination.",
+      "Only three explicit English rule grammars are automatically evaluated; other language goes to human review.",
+      "Offline sample mode does not demonstrate Zetaris, Nightshift, NVIDIA or Cursor use."
+    ]
+  },
+  "receipts": [
+    {
+      "request_id": "chatcmpl-d4fd97ea-cca3-4ce3-b7e9-ef4ec0e095b9",
+      "model": "local-runtime/llama-3.2-1b-instruct",
+      "http_status": 200,
+      "text": "{\"kind\":\"staff_limit\",\"value\":50,\"quote\":\"Applicants must have at most 50 employees.\"}",
+      "meterless": {
+        "schema": "meterless.compute_receipt.v1",
+        "receipt_id": "rcpt_req_vlikuhr7",
+        "decision_id": "req_vlikuhr7",
+        "requested_model": "meterless/local",
+        "provider_model": "meterless/auto",
+        "routed_model": "local-runtime/llama-3.2-1b-instruct",
+        "winning_route": {
+          "model": "local-runtime/llama-3.2-1b-instruct",
+          "label": "Llama 3.2 1B (Runtime GGUF)",
+          "provider": "local-runtime",
+          "kind": "local",
+          "tier": "A"
+        },
+        "requires_review": false,
+        "phases": [
+          {
+            "phase": "final_synthesis",
+            "model": "local-runtime/llama-3.2-1b-instruct",
+            "ms": 360,
+            "tokensIn": 332,
+            "tokensOut": 24,
+            "outputTps": 66.66666666666667,
+            "coherence": null,
+            "tier": "B",
+            "reflex_decided_in_ms": 0
+          }
+        ],
+        "usage": {
+          "input_tokens": 332,
+          "output_tokens": 24,
+          "total_tokens": 356,
+          "output_tps": 66.66666666666667,
+          "latency_ms": 360
+        },
+        "cost": {
+          "actual_usd": 0,
+          "naive_usd": 0.001356,
+          "baseline": {
+            "model": "claude-sonnet-4-5-20250929",
+            "label": "Claude 4.5 Sonnet",
+            "source": "fixed-reference"
+          },
+          "verifier_usd": 0,
+          "race_overhead_usd": 0
+        },
+        "savings": {
+          "amount": 0.001356,
+          "currency": "USD",
+          "vs": "Claude 4.5 Sonnet",
+          "baseline_source": "fixed-reference"
+        },
+        "cache": {
+          "status": "miss",
+          "losers_reclaimed": 0,
+          "partials_reclaimed": 0
+        },
+        "privacy": {
+          "path": "local-only",
+          "redaction": {
+            "applied": false,
+            "spans": 0
+          }
+        },
+        "from_cache": false,
+        "losers_reclaimed": 0,
+        "receipt": {
+          "app": "evidence-change-sentinel",
+          "app_policy": {
+            "app": "evidence-change-sentinel",
+            "bound_mode": "auto",
+            "cross_check": "auto",
+            "has_rule": true,
+            "lanes": null,
+            "mode_coerced": true,
+            "premium_budget": null,
+            "privacy": "cloud-ok",
+            "race_width": 6,
+            "requested_mode": "local",
+            "routed_mode": "auto"
+          },
+          "autopilot": {
+            "ctx_dropped": [],
+            "ctx_unfilterable": false,
+            "envelope": {
+              "allocatable_mb": 0,
+              "pressure": "unknown",
+              "remaining_mb": 0,
+              "used_mb": 0
+            },
+            "needs": {
+              "coding": true,
+              "tools": false,
+              "vision": false
+            },
+            "prompt_tokens": 329,
+            "scout": {
+              "candidates": [
+                {
+                  "id": "CODE_SPLITTER",
+                  "score": 8
+                },
+                {
+                  "id": "ABSTRACTION_EXTRACTOR",
+                  "score": 7
+                },
+                {
+                  "id": "FEATURE_TOGGLER",
+                  "score": 7
+                }
+              ],
+              "category": "Workspace",
+              "confident": false,
+              "mode": "CODE_SPLITTER",
+              "ms": 1.01,
+              "score": 8,
+              "source": "detected",
+              "tier": "B"
+            },
+            "tier_hint": null,
+            "why": [
+              "scout read CODE_SPLITTER (not confident \u00e2\u20ac\u201d no tier opinion)",
+              "a coder is preferred",
+              "~329 prompt tokens \u00e2\u20ac\u201d lanes whose slot cannot hold them are not asked"
+            ]
+          },
+          "bar": null,
+          "budget_degrade": null,
+          "cache": {
+            "losers_reclaimed": 0,
+            "partials_reclaimed": 0,
+            "status": "miss"
+          },
+          "consensus": {
+            "agree": 1,
+            "coherence": null,
+            "detail": "one model handled this \u00e2\u20ac\u201d no cross-model agreement to check",
+            "label": "single route",
+            "level": "solo",
+            "raced": 1,
+            "tone": "neutral",
+            "verified": null
+          },
+          "consensus_escalation": null,
+          "cost": {
+            "actual_usd": 0,
+            "baseline": {
+              "label": "Claude 4.5 Sonnet",
+              "model": "claude-sonnet-4-5-20250929",
+              "source": "fixed-reference"
+            },
+            "naive_usd": 0.001356,
+            "race_overhead_usd": 0,
+            "verifier_usd": 0
+          },
+          "created_at": 1792722084573,
+          "cross_check": {
+            "app": "evidence-change-sentinel",
+            "blocking": false,
+            "checks": [
+              {
+                "message": "No destructive ops detected.",
+                "status": "passed",
+                "type": "destructive_action"
+              },
+              {
+                "message": "No PII/credential detected in response.",
+                "status": "passed",
+                "type": "pii_guard"
+              },
+              {
+                "message": "Not a tool call.",
+                "status": "skipped",
+                "type": "schema_validity"
+              }
+            ],
+            "destructive": false,
+            "raw_risk": "low",
+            "recommended_action": "allow",
+            "reflex_ms": 0.03,
+            "requires_review": false,
+            "risk_level": "low",
+            "status": "passed",
+            "verifier": "deterministic/schema+regex",
+            "verifier_error": null,
+            "verifier_model": null,
+            "verifier_ms": 0,
+            "verifier_ran": false,
+            "verifier_tokens": null,
+            "verifier_verdict": null
+          },
+          "debate": null,
+          "decision_id": "req_vlikuhr7",
+          "deliberation": null,
+          "egress": {
+            "coverage": "pattern_floor",
+            "destination": "none",
+            "never_eligible": [],
+            "sent": {
+              "context_sources": [
+                "messages"
+              ],
+              "prompt_chars": 854,
+              "redacted": []
+            },
+            "withheld": []
+          },
+          "eligible": null,
+          "error": "",
+          "fusion": null,
+          "gen_verifier": null,
+          "graded_weight": null,
+          "hmem": null,
+          "host_pressure": {
+            "battery": null,
+            "pressure": {
+              "battery": {
+                "hard": 0.5,
+                "label": "nominal",
+                "score": 0.18,
+                "sensor": "battery%, charging",
+                "soft": 0.3
+              },
+              "cpu": {
+                "hard": 0.9,
+                "label": "nominal",
+                "score": 0.34,
+                "sensor": "30s load avg",
+                "soft": 0.7
+              },
+              "gpu": {
+                "hard": 0.92,
+                "label": "nominal",
+                "score": 0.38,
+                "sensor": "GPU + VRAM",
+                "soft": 0.75
+              },
+              "memory": {
+                "hard": 0.85,
+                "label": "warm",
+                "score": 0.51,
+                "sensor": "committed/swap",
+                "soft": 0.7
+              },
+              "network": {
+                "hard": 0.85,
+                "label": "nominal",
+                "score": 0.12,
+                "sensor": "RTT to providers",
+                "soft": 0.5
+              },
+              "quota": {
+                "hard": 0.95,
+                "label": "nominal",
+                "score": 0.28,
+                "sensor": "per-key window",
+                "soft": 0.8
+              },
+              "thermal": {
+                "hard": 0.8,
+                "label": "nominal",
+                "score": 0.22,
+                "sensor": "thermal API",
+                "soft": 0.55
+              }
+            },
+            "thermal": "nominal"
+          },
+          "job": null,
+          "mcp": null,
+          "method": null,
+          "mode": "auto",
+          "optimistic": null,
+          "phases": [
+            {
+              "coherence": null,
+              "model": "local-runtime/llama-3.2-1b-instruct",
+              "ms": 360,
+              "outputTps": 66.66666666666667,
+              "phase": "final_synthesis",
+              "reflex_decided_in_ms": 0,
+              "tier": "B",
+              "tokensIn": 332,
+              "tokensOut": 24
+            }
+          ],
+          "privacy": {
+            "path": "local-only",
+            "redaction": {
+              "applied": false,
+              "spans": 0
+            }
+          },
+          "prompt_preview": "{\"task\":\"Extract the rule from evidence. Return the extracted rule, not the input object. Examples: \\\"Applicants must have at most 7 employees.\\\" gives {\\\"kind\\\":\\\"staff_limit\\\",\\\"",
+          "quality_race": null,
+          "reasoning_scaffold": null,
+          "receipt_id": "rcpt_req_vlikuhr7",
+          "refine": null,
+          "request_id": "chatcmpl-d4fd97ea-cca3-4ce3-b7e9-ef4ec0e095b9",
+          "requested_mode": "meterless/auto",
+          "routing": {
+            "confidence": null,
+            "escalated": null,
+            "escalated_on_divergence": false,
+            "hedge": null,
+            "hedges_skipped": 0,
+            "of": 6,
+            "policy": "learned-router",
+            "predicted": "local-runtime/llama-3.2-1b-instruct",
+            "reason": "single-candidate",
+            "width": 6,
+            "winner": "local-runtime/llama-3.2-1b-instruct"
+          },
+          "savings": {
+            "amount": 0.001356,
+            "baseline_source": "fixed-reference",
+            "currency": "USD",
+            "vs": "Claude 4.5 Sonnet"
+          },
+          "schema": "meterless.compute_receipt.v1",
+          "score": null,
+          "scorecard": null,
+          "status": "ok",
+          "summary": "ok \u00c2\u00b7 Llama 3.2 1B (Runtime GGUF) \u00c2\u00b7 miss \u00c2\u00b7 $0.0014 saved",
+          "synthesis": null,
+          "test_time_compute": null,
+          "tool_degraded": null,
+          "unmet": null,
+          "usage": {
+            "input_tokens": 332,
+            "latency_ms": 360,
+            "output_tokens": 24,
+            "output_tps": 66.66666666666667,
+            "total_tokens": 356
+          },
+          "verdict": null,
+          "verification": null,
+          "winning_route": {
+            "kind": "local",
+            "label": "Llama 3.2 1B (Runtime GGUF)",
+            "model": "local-runtime/llama-3.2-1b-instruct",
+            "provider": "local-runtime",
+            "tier": "A"
+          }
+        },
+        "receipt_envelope": {
+          "body": {
+            "llama_cpp_ref": "08659901c43b51de735740f1cf61bb82fbe0c4e4",
+            "manifest_hash": "3ab17256e7b9415e1fee0dae51fb8b13800978230bac280022e65c0fccffa2f5",
+            "receipt": {
+              "app": "evidence-change-sentinel",
+              "app_policy": {
+                "app": "evidence-change-sentinel",
+                "bound_mode": "auto",
+                "cross_check": "auto",
+                "has_rule": true,
+                "lanes": null,
+                "mode_coerced": true,
+                "premium_budget": null,
+                "privacy": "cloud-ok",
+                "race_width": 6,
+                "requested_mode": "local",
+                "routed_mode": "auto"
+              },
+              "autopilot": {
+                "ctx_dropped": [],
+                "ctx_unfilterable": false,
+                "envelope": {
+                  "allocatable_mb": 0,
+                  "pressure": "unknown",
+                  "remaining_mb": 0,
+                  "used_mb": 0
+                },
+                "needs": {
+                  "coding": true,
+                  "tools": false,
+                  "vision": false
+                },
+                "prompt_tokens": 329,
+                "scout": {
+                  "candidates": [
+                    {
+                      "id": "CODE_SPLITTER",
+                      "score": 8
+                    },
+                    {
+                      "id": "ABSTRACTION_EXTRACTOR",
+                      "score": 7
+                    },
+                    {
+                      "id": "FEATURE_TOGGLER",
+                      "score": 7
+                    }
+                  ],
+                  "category": "Workspace",
+                  "confident": false,
+                  "mode": "CODE_SPLITTER",
+                  "ms": 1.01,
+                  "score": 8,
+                  "source": "detected",
+                  "tier": "B"
+                },
+                "tier_hint": null,
+                "why": [
+                  "scout read CODE_SPLITTER (not confident \u00e2\u20ac\u201d no tier opinion)",
+                  "a coder is preferred",
+                  "~329 prompt tokens \u00e2\u20ac\u201d lanes whose slot cannot hold them are not asked"
+                ]
+              },
+              "bar": null,
+              "budget_degrade": null,
+              "cache": {
+                "losers_reclaimed": 0,
+                "partials_reclaimed": 0,
+                "status": "miss"
+              },
+              "consensus": {
+                "agree": 1,
+                "coherence": null,
+                "detail": "one model handled this \u00e2\u20ac\u201d no cross-model agreement to check",
+                "label": "single route",
+                "level": "solo",
+                "raced": 1,
+                "tone": "neutral",
+                "verified": null
+              },
+              "consensus_escalation": null,
+              "cost": {
+                "actual_usd": 0,
+                "baseline": {
+                  "label": "Claude 4.5 Sonnet",
+                  "model": "claude-sonnet-4-5-20250929",
+                  "source": "fixed-reference"
+                },
+                "naive_usd": 0.001356,
+                "race_overhead_usd": 0,
+                "verifier_usd": 0
+              },
+              "created_at": 1792722084573,
+              "cross_check": {
+                "app": "evidence-change-sentinel",
+                "blocking": false,
+                "checks": [
+                  {
+                    "message": "No destructive ops detected.",
+                    "status": "passed",
+                    "type": "destructive_action"
+                  },
+                  {
+                    "message": "No PII/credential detected in response.",
+                    "status": "passed",
+                    "type": "pii_guard"
+                  },
+                  {
+                    "message": "Not a tool call.",
+                    "status": "skipped",
+                    "type": "schema_validity"
+                  }
+                ],
+                "destructive": false,
+                "raw_risk": "low",
+                "recommended_action": "allow",
+                "reflex_ms": 0.03,
+                "requires_review": false,
+                "risk_level": "low",
+                "status": "passed",
+                "verifier": "deterministic/schema+regex",
+                "verifier_error": null,
+                "verifier_model": null,
+                "verifier_ms": 0,
+                "verifier_ran": false,
+                "verifier_tokens": null,
+                "verifier_verdict": null
+              },
+              "debate": null,
+              "decision_id": "req_vlikuhr7",
+              "deliberation": null,
+              "egress": {
+                "coverage": "pattern_floor",
+                "destination": "none",
+                "never_eligible": [],
+                "sent": {
+                  "context_sources": [
+                    "messages"
+                  ],
+                  "prompt_chars": 854,
+                  "redacted": []
+                },
+                "withheld": []
+              },
+              "eligible": null,
+              "error": "",
+              "fusion": null,
+              "gen_verifier": null,
+              "graded_weight": null,
+              "hmem": null,
+              "host_pressure": {
+                "battery": null,
+                "pressure": {
+                  "battery": {
+                    "hard": 0.5,
+                    "label": "nominal",
+                    "score": 0.18,
+                    "sensor": "battery%, charging",
+                    "soft": 0.3
+                  },
+                  "cpu": {
+                    "hard": 0.9,
+                    "label": "nominal",
+                    "score": 0.34,
+                    "sensor": "30s load avg",
+                    "soft": 0.7
+                  },
+                  "gpu": {
+                    "hard": 0.92,
+                    "label": "nominal",
+                    "score": 0.38,
+                    "sensor": "GPU + VRAM",
+                    "soft": 0.75
+                  },
+                  "memory": {
+                    "hard": 0.85,
+                    "label": "warm",
+                    "score": 0.51,
+                    "sensor": "committed/swap",
+                    "soft": 0.7
+                  },
+                  "network": {
+                    "hard": 0.85,
+                    "label": "nominal",
+                    "score": 0.12,
+                    "sensor": "RTT to providers",
+                    "soft": 0.5
+                  },
+                  "quota": {
+                    "hard": 0.95,
+                    "label": "nominal",
+                    "score": 0.28,
+                    "sensor": "per-key window",
+                    "soft": 0.8
+                  },
+                  "thermal": {
+                    "hard": 0.8,
+                    "label": "nominal",
+                    "score": 0.22,
+                    "sensor": "thermal API",
+                    "soft": 0.55
+                  }
+                },
+                "thermal": "nominal"
+              },
+              "job": null,
+              "mcp": null,
+              "method": null,
+              "mode": "auto",
+              "optimistic": null,
+              "phases": [
+                {
+                  "coherence": null,
+                  "model": "local-runtime/llama-3.2-1b-instruct",
+                  "ms": 360,
+                  "outputTps": 66.66666666666667,
+                  "phase": "final_synthesis",
+                  "reflex_decided_in_ms": 0,
+                  "tier": "B",
+                  "tokensIn": 332,
+                  "tokensOut": 24
+                }
+              ],
+              "privacy": {
+                "path": "local-only",
+                "redaction": {
+                  "applied": false,
+                  "spans": 0
+                }
+              },
+              "prompt_preview": "{\"task\":\"Extract the rule from evidence. Return the extracted rule, not the input object. Examples: \\\"Applicants must have at most 7 employees.\\\" gives {\\\"kind\\\":\\\"staff_limit\\\",\\\"",
+              "quality_race": null,
+              "reasoning_scaffold": null,
+              "receipt_id": "rcpt_req_vlikuhr7",
+              "refine": null,
+              "request_id": "chatcmpl-d4fd97ea-cca3-4ce3-b7e9-ef4ec0e095b9",
+              "requested_mode": "meterless/auto",
+              "routing": {
+                "confidence": null,
+                "escalated": null,
+                "escalated_on_divergence": false,
+                "hedge": null,
+                "hedges_skipped": 0,
+                "of": 6,
+                "policy": "learned-router",
+                "predicted": "local-runtime/llama-3.2-1b-instruct",
+                "reason": "single-candidate",
+                "width": 6,
+                "winner": "local-runtime/llama-3.2-1b-instruct"
+              },
+              "savings": {
+                "amount": 0.001356,
+                "baseline_source": "fixed-reference",
+                "currency": "USD",
+                "vs": "Claude 4.5 Sonnet"
+              },
+              "schema": "meterless.compute_receipt.v1",
+              "score": null,
+              "scorecard": null,
+              "status": "ok",
+              "summary": "ok \u00c2\u00b7 Llama 3.2 1B (Runtime GGUF) \u00c2\u00b7 miss \u00c2\u00b7 $0.0014 saved",
+              "synthesis": null,
+              "test_time_compute": null,
+              "tool_degraded": null,
+              "unmet": null,
+              "usage": {
+                "input_tokens": 332,
+                "latency_ms": 360,
+                "output_tokens": 24,
+                "output_tps": 66.66666666666667,
+                "total_tokens": 356
+              },
+              "verdict": null,
+              "verification": null,
+              "winning_route": {
+                "kind": "local",
+                "label": "Llama 3.2 1B (Runtime GGUF)",
+                "model": "local-runtime/llama-3.2-1b-instruct",
+                "provider": "local-runtime",
+                "tier": "A"
+              }
+            },
+            "signer": "meterlessd",
+            "ts_ms": 1792722084576
+          },
+          "pubkey_b64": "lT7gJtDSmUz3umk2Vplm5r7y5NkEicv2ljdCGARusco=",
+          "sig_b64": "Yv65XbUStuJuP9T9rKM6oJMtDIMJLPZcsx2oIgKtYy/RauxLmjeQ4b/qh4L2+WZbPwCBNBPYqryYxzOrp04wDg=="
+        },
+        "mcp": null,
+        "job": {
+          "id": "job_mvjtft9y01",
+          "kind": "app_stream",
+          "lane": "auto",
+          "turn": 26,
+          "cluster": 6
+        },
+        "egress": {
+          "destination": "none",
+          "coverage": "pattern_floor",
+          "sent": {
+            "prompt_chars": 854,
+            "context_sources": [
+              "messages"
+            ],
+            "redacted": []
+          },
+          "withheld": [],
+          "never_eligible": []
+        },
+        "consensus": {
+          "level": "solo",
+          "raced": 1,
+          "agreed": null,
+          "coherence": null,
+          "label": "single route",
+          "basis": "lexical"
+        },
+        "lineage": {
+          "families": [
+            "unknown"
+          ],
+          "distinct": 1,
+          "note": "1 distinct lineages across 1 panelists"
+        },
+        "app": "evidence-change-sentinel",
+        "mode": "auto",
+        "scope": "user"
+      }
+    },
+    {
+      "request_id": "chatcmpl-e09a7676-e6b1-46ce-a222-18c73bd095d4",
+      "model": "local-runtime/llama-3.2-1b-instruct",
+      "http_status": 200,
+      "text": "{\"kind\":\"staff_limit\",\"value\":20,\"quote\":\"Applicants must have at most 20 employees.\"}",
+      "meterless": {
+        "schema": "meterless.compute_receipt.v1",
+        "receipt_id": "rcpt_req_6u5a8wku",
+        "decision_id": "req_6u5a8wku",
+        "requested_model": "meterless/local",
+        "provider_model": "meterless/auto",
+        "routed_model": "local-runtime/llama-3.2-1b-instruct",
+        "winning_route": {
+          "model": "local-runtime/llama-3.2-1b-instruct",
+          "label": "Llama 3.2 1B (Runtime GGUF)",
+          "provider": "local-runtime",
+          "kind": "local",
+          "tier": "A"
+        },
+        "requires_review": false,
+        "phases": [
+          {
+            "phase": "final_synthesis",
+            "model": "local-runtime/llama-3.2-1b-instruct",
+            "ms": 129,
+            "tokensIn": 332,
+            "tokensOut": 24,
+            "outputTps": 186.04651162790697,
+            "coherence": null,
+            "tier": "B",
+            "reflex_decided_in_ms": 0.01
+          }
+        ],
+        "usage": {
+          "input_tokens": 332,
+          "output_tokens": 24,
+          "total_tokens": 356,
+          "output_tps": 186.04651162790697,
+          "latency_ms": 129
+        },
+        "cost": {
+          "actual_usd": 0,
+          "naive_usd": 0.001356,
+          "baseline": {
+            "model": "claude-sonnet-4-5-20250929",
+            "label": "Claude 4.5 Sonnet",
+            "source": "fixed-reference"
+          },
+          "verifier_usd": 0,
+          "race_overhead_usd": 0
+        },
+        "savings": {
+          "amount": 0.001356,
+          "currency": "USD",
+          "vs": "Claude 4.5 Sonnet",
+          "baseline_source": "fixed-reference"
+        },
+        "cache": {
+          "status": "miss",
+          "losers_reclaimed": 0,
+          "partials_reclaimed": 0
+        },
+        "privacy": {
+          "path": "local-only",
+          "redaction": {
+            "applied": false,
+            "spans": 0
+          }
+        },
+        "from_cache": false,
+        "losers_reclaimed": 0,
+        "receipt": {
+          "app": "evidence-change-sentinel",
+          "app_policy": {
+            "app": "evidence-change-sentinel",
+            "bound_mode": "auto",
+            "cross_check": "auto",
+            "has_rule": true,
+            "lanes": null,
+            "mode_coerced": true,
+            "premium_budget": null,
+            "privacy": "cloud-ok",
+            "race_width": 6,
+            "requested_mode": "local",
+            "routed_mode": "auto"
+          },
+          "autopilot": {
+            "ctx_dropped": [],
+            "ctx_unfilterable": false,
+            "envelope": {
+              "allocatable_mb": 0,
+              "pressure": "unknown",
+              "remaining_mb": 0,
+              "used_mb": 0
+            },
+            "needs": {
+              "coding": true,
+              "tools": false,
+              "vision": false
+            },
+            "prompt_tokens": 329,
+            "scout": {
+              "candidates": [
+                {
+                  "id": "CODE_SPLITTER",
+                  "score": 8
+                },
+                {
+                  "id": "ABSTRACTION_EXTRACTOR",
+                  "score": 7
+                },
+                {
+                  "id": "FEATURE_TOGGLER",
+                  "score": 7
+                }
+              ],
+              "category": "Workspace",
+              "confident": false,
+              "mode": "CODE_SPLITTER",
+              "ms": 0.93,
+              "score": 8,
+              "source": "detected",
+              "tier": "B"
+            },
+            "tier_hint": null,
+            "why": [
+              "scout read CODE_SPLITTER (not confident \u00e2\u20ac\u201d no tier opinion)",
+              "a coder is preferred",
+              "~329 prompt tokens \u00e2\u20ac\u201d lanes whose slot cannot hold them are not asked"
+            ]
+          },
+          "bar": null,
+          "budget_degrade": null,
+          "cache": {
+            "losers_reclaimed": 0,
+            "partials_reclaimed": 0,
+            "status": "miss"
+          },
+          "consensus": {
+            "agree": 1,
+            "coherence": null,
+            "detail": "one model handled this \u00e2\u20ac\u201d no cross-model agreement to check",
+            "label": "single route",
+            "level": "solo",
+            "raced": 1,
+            "tone": "neutral",
+            "verified": null
+          },
+          "consensus_escalation": null,
+          "cost": {
+            "actual_usd": 0,
+            "baseline": {
+              "label": "Claude 4.5 Sonnet",
+              "model": "claude-sonnet-4-5-20250929",
+              "source": "fixed-reference"
+            },
+            "naive_usd": 0.001356,
+            "race_overhead_usd": 0,
+            "verifier_usd": 0
+          },
+          "created_at": 1792722084739,
+          "cross_check": {
+            "app": "evidence-change-sentinel",
+            "blocking": false,
+            "checks": [
+              {
+                "message": "No destructive ops detected.",
+                "status": "passed",
+                "type": "destructive_action"
+              },
+              {
+                "message": "No PII/credential detected in response.",
+                "status": "passed",
+                "type": "pii_guard"
+              },
+              {
+                "message": "Not a tool call.",
+                "status": "skipped",
+                "type": "schema_validity"
+              }
+            ],
+            "destructive": false,
+            "raw_risk": "low",
+            "recommended_action": "allow",
+            "reflex_ms": 0.03,
+            "requires_review": false,
+            "risk_level": "low",
+            "status": "passed",
+            "verifier": "deterministic/schema+regex",
+            "verifier_error": null,
+            "verifier_model": null,
+            "verifier_ms": 0,
+            "verifier_ran": false,
+            "verifier_tokens": null,
+            "verifier_verdict": null
+          },
+          "debate": null,
+          "decision_id": "req_6u5a8wku",
+          "deliberation": null,
+          "egress": {
+            "coverage": "pattern_floor",
+            "destination": "none",
+            "never_eligible": [],
+            "sent": {
+              "context_sources": [
+                "messages"
+              ],
+              "prompt_chars": 854,
+              "redacted": []
+            },
+            "withheld": []
+          },
+          "eligible": null,
+          "error": "",
+          "fusion": null,
+          "gen_verifier": null,
+          "graded_weight": null,
+          "hmem": null,
+          "host_pressure": {
+            "battery": null,
+            "pressure": {
+              "battery": {
+                "hard": 0.5,
+                "label": "nominal",
+                "score": 0.18,
+                "sensor": "battery%, charging",
+                "soft": 0.3
+              },
+              "cpu": {
+                "hard": 0.9,
+                "label": "nominal",
+                "score": 0.34,
+                "sensor": "30s load avg",
+                "soft": 0.7
+              },
+              "gpu": {
+                "hard": 0.92,
+                "label": "nominal",
+                "score": 0.38,
+                "sensor": "GPU + VRAM",
+                "soft": 0.75
+              },
+              "memory": {
+                "hard": 0.85,
+                "label": "warm",
+                "score": 0.51,
+                "sensor": "committed/swap",
+                "soft": 0.7
+              },
+              "network": {
+                "hard": 0.85,
+                "label": "nominal",
+                "score": 0.12,
+                "sensor": "RTT to providers",
+                "soft": 0.5
+              },
+              "quota": {
+                "hard": 0.95,
+                "label": "nominal",
+                "score": 0.28,
+                "sensor": "per-key window",
+                "soft": 0.8
+              },
+              "thermal": {
+                "hard": 0.8,
+                "label": "nominal",
+                "score": 0.22,
+                "sensor": "thermal API",
+                "soft": 0.55
+              }
+            },
+            "thermal": "nominal"
+          },
+          "job": null,
+          "mcp": null,
+          "method": null,
+          "mode": "auto",
+          "optimistic": null,
+          "phases": [
+            {
+              "coherence": null,
+              "model": "local-runtime/llama-3.2-1b-instruct",
+              "ms": 129,
+              "outputTps": 186.04651162790697,
+              "phase": "final_synthesis",
+              "reflex_decided_in_ms": 0.01,
+              "tier": "B",
+              "tokensIn": 332,
+              "tokensOut": 24
+            }
+          ],
+          "privacy": {
+            "path": "local-only",
+            "redaction": {
+              "applied": false,
+              "spans": 0
+            }
+          },
+          "prompt_preview": "{\"task\":\"Extract the rule from evidence. Return the extracted rule, not the input object. Examples: \\\"Applicants must have at most 7 employees.\\\" gives {\\\"kind\\\":\\\"staff_limit\\\",\\\"",
+          "quality_race": null,
+          "reasoning_scaffold": null,
+          "receipt_id": "rcpt_req_6u5a8wku",
+          "refine": null,
+          "request_id": "chatcmpl-e09a7676-e6b1-46ce-a222-18c73bd095d4",
+          "requested_mode": "meterless/auto",
+          "routing": {
+            "confidence": null,
+            "escalated": null,
+            "escalated_on_divergence": false,
+            "hedge": null,
+            "hedges_skipped": 0,
+            "of": 6,
+            "policy": "learned-router",
+            "predicted": "local-runtime/llama-3.2-1b-instruct",
+            "reason": "single-candidate",
+            "width": 6,
+            "winner": "local-runtime/llama-3.2-1b-instruct"
+          },
+          "savings": {
+            "amount": 0.001356,
+            "baseline_source": "fixed-reference",
+            "currency": "USD",
+            "vs": "Claude 4.5 Sonnet"
+          },
+          "schema": "meterless.compute_receipt.v1",
+          "score": null,
+          "scorecard": null,
+          "status": "ok",
+          "summary": "ok \u00c2\u00b7 Llama 3.2 1B (Runtime GGUF) \u00c2\u00b7 miss \u00c2\u00b7 $0.0014 saved",
+          "synthesis": null,
+          "test_time_compute": null,
+          "tool_degraded": null,
+          "unmet": null,
+          "usage": {
+            "input_tokens": 332,
+            "latency_ms": 129,
+            "output_tokens": 24,
+            "output_tps": 186.04651162790697,
+            "total_tokens": 356
+          },
+          "verdict": null,
+          "verification": null,
+          "winning_route": {
+            "kind": "local",
+            "label": "Llama 3.2 1B (Runtime GGUF)",
+            "model": "local-runtime/llama-3.2-1b-instruct",
+            "provider": "local-runtime",
+            "tier": "A"
+          }
+        },
+        "receipt_envelope": {
+          "body": {
+            "llama_cpp_ref": "08659901c43b51de735740f1cf61bb82fbe0c4e4",
+            "manifest_hash": "3ab17256e7b9415e1fee0dae51fb8b13800978230bac280022e65c0fccffa2f5",
+            "receipt": {
+              "app": "evidence-change-sentinel",
+              "app_policy": {
+                "app": "evidence-change-sentinel",
+                "bound_mode": "auto",
+                "cross_check": "auto",
+                "has_rule": true,
+                "lanes": null,
+                "mode_coerced": true,
+                "premium_budget": null,
+                "privacy": "cloud-ok",
+                "race_width": 6,
+                "requested_mode": "local",
+                "routed_mode": "auto"
+              },
+              "autopilot": {
+                "ctx_dropped": [],
+                "ctx_unfilterable": false,
+                "envelope": {
+                  "allocatable_mb": 0,
+                  "pressure": "unknown",
+                  "remaining_mb": 0,
+                  "used_mb": 0
+                },
+                "needs": {
+                  "coding": true,
+                  "tools": false,
+                  "vision": false
+                },
+                "prompt_tokens": 329,
+                "scout": {
+                  "candidates": [
+                    {
+                      "id": "CODE_SPLITTER",
+                      "score": 8
+                    },
+                    {
+                      "id": "ABSTRACTION_EXTRACTOR",
+                      "score": 7
+                    },
+                    {
+                      "id": "FEATURE_TOGGLER",
+                      "score": 7
+                    }
+                  ],
+                  "category": "Workspace",
+                  "confident": false,
+                  "mode": "CODE_SPLITTER",
+                  "ms": 0.93,
+                  "score": 8,
+                  "source": "detected",
+                  "tier": "B"
+                },
+                "tier_hint": null,
+                "why": [
+                  "scout read CODE_SPLITTER (not confident \u00e2\u20ac\u201d no tier opinion)",
+                  "a coder is preferred",
+                  "~329 prompt tokens \u00e2\u20ac\u201d lanes whose slot cannot hold them are not asked"
+                ]
+              },
+              "bar": null,
+              "budget_degrade": null,
+              "cache": {
+                "losers_reclaimed": 0,
+                "partials_reclaimed": 0,
+                "status": "miss"
+              },
+              "consensus": {
+                "agree": 1,
+                "coherence": null,
+                "detail": "one model handled this \u00e2\u20ac\u201d no cross-model agreement to check",
+                "label": "single route",
+                "level": "solo",
+                "raced": 1,
+                "tone": "neutral",
+                "verified": null
+              },
+              "consensus_escalation": null,
+              "cost": {
+                "actual_usd": 0,
+                "baseline": {
+                  "label": "Claude 4.5 Sonnet",
+                  "model": "claude-sonnet-4-5-20250929",
+                  "source": "fixed-reference"
+                },
+                "naive_usd": 0.001356,
+                "race_overhead_usd": 0,
+                "verifier_usd": 0
+              },
+              "created_at": 1792722084739,
+              "cross_check": {
+                "app": "evidence-change-sentinel",
+                "blocking": false,
+                "checks": [
+                  {
+                    "message": "No destructive ops detected.",
+                    "status": "passed",
+                    "type": "destructive_action"
+                  },
+                  {
+                    "message": "No PII/credential detected in response.",
+                    "status": "passed",
+                    "type": "pii_guard"
+                  },
+                  {
+                    "message": "Not a tool call.",
+                    "status": "skipped",
+                    "type": "schema_validity"
+                  }
+                ],
+                "destructive": false,
+                "raw_risk": "low",
+                "recommended_action": "allow",
+                "reflex_ms": 0.03,
+                "requires_review": false,
+                "risk_level": "low",
+                "status": "passed",
+                "verifier": "deterministic/schema+regex",
+                "verifier_error": null,
+                "verifier_model": null,
+                "verifier_ms": 0,
+                "verifier_ran": false,
+                "verifier_tokens": null,
+                "verifier_verdict": null
+              },
+              "debate": null,
+              "decision_id": "req_6u5a8wku",
+              "deliberation": null,
+              "egress": {
+                "coverage": "pattern_floor",
+                "destination": "none",
+                "never_eligible": [],
+                "sent": {
+                  "context_sources": [
+                    "messages"
+                  ],
+                  "prompt_chars": 854,
+                  "redacted": []
+                },
+                "withheld": []
+              },
+              "eligible": null,
+              "error": "",
+              "fusion": null,
+              "gen_verifier": null,
+              "graded_weight": null,
+              "hmem": null,
+              "host_pressure": {
+                "battery": null,
+                "pressure": {
+                  "battery": {
+                    "hard": 0.5,
+                    "label": "nominal",
+                    "score": 0.18,
+                    "sensor": "battery%, charging",
+                    "soft": 0.3
+                  },
+                  "cpu": {
+                    "hard": 0.9,
+                    "label": "nominal",
+                    "score": 0.34,
+                    "sensor": "30s load avg",
+                    "soft": 0.7
+                  },
+                  "gpu": {
+                    "hard": 0.92,
+                    "label": "nominal",
+                    "score": 0.38,
+                    "sensor": "GPU + VRAM",
+                    "soft": 0.75
+                  },
+                  "memory": {
+                    "hard": 0.85,
+                    "label": "warm",
+                    "score": 0.51,
+                    "sensor": "committed/swap",
+                    "soft": 0.7
+                  },
+                  "network": {
+                    "hard": 0.85,
+                    "label": "nominal",
+                    "score": 0.12,
+                    "sensor": "RTT to providers",
+                    "soft": 0.5
+                  },
+                  "quota": {
+                    "hard": 0.95,
+                    "label": "nominal",
+                    "score": 0.28,
+                    "sensor": "per-key window",
+                    "soft": 0.8
+                  },
+                  "thermal": {
+                    "hard": 0.8,
+                    "label": "nominal",
+                    "score": 0.22,
+                    "sensor": "thermal API",
+                    "soft": 0.55
+                  }
+                },
+                "thermal": "nominal"
+              },
+              "job": null,
+              "mcp": null,
+              "method": null,
+              "mode": "auto",
+              "optimistic": null,
+              "phases": [
+                {
+                  "coherence": null,
+                  "model": "local-runtime/llama-3.2-1b-instruct",
+                  "ms": 129,
+                  "outputTps": 186.04651162790697,
+                  "phase": "final_synthesis",
+                  "reflex_decided_in_ms": 0.01,
+                  "tier": "B",
+                  "tokensIn": 332,
+                  "tokensOut": 24
+                }
+              ],
+              "privacy": {
+                "path": "local-only",
+                "redaction": {
+                  "applied": false,
+                  "spans": 0
+                }
+              },
+              "prompt_preview": "{\"task\":\"Extract the rule from evidence. Return the extracted rule, not the input object. Examples: \\\"Applicants must have at most 7 employees.\\\" gives {\\\"kind\\\":\\\"staff_limit\\\",\\\"",
+              "quality_race": null,
+              "reasoning_scaffold": null,
+              "receipt_id": "rcpt_req_6u5a8wku",
+              "refine": null,
+              "request_id": "chatcmpl-e09a7676-e6b1-46ce-a222-18c73bd095d4",
+              "requested_mode": "meterless/auto",
+              "routing": {
+                "confidence": null,
+                "escalated": null,
+                "escalated_on_divergence": false,
+                "hedge": null,
+                "hedges_skipped": 0,
+                "of": 6,
+                "policy": "learned-router",
+                "predicted": "local-runtime/llama-3.2-1b-instruct",
+                "reason": "single-candidate",
+                "width": 6,
+                "winner": "local-runtime/llama-3.2-1b-instruct"
+              },
+              "savings": {
+                "amount": 0.001356,
+                "baseline_source": "fixed-reference",
+                "currency": "USD",
+                "vs": "Claude 4.5 Sonnet"
+              },
+              "schema": "meterless.compute_receipt.v1",
+              "score": null,
+              "scorecard": null,
+              "status": "ok",
+              "summary": "ok \u00c2\u00b7 Llama 3.2 1B (Runtime GGUF) \u00c2\u00b7 miss \u00c2\u00b7 $0.0014 saved",
+              "synthesis": null,
+              "test_time_compute": null,
+              "tool_degraded": null,
+              "unmet": null,
+              "usage": {
+                "input_tokens": 332,
+                "latency_ms": 129,
+                "output_tokens": 24,
+                "output_tps": 186.04651162790697,
+                "total_tokens": 356
+              },
+              "verdict": null,
+              "verification": null,
+              "winning_route": {
+                "kind": "local",
+                "label": "Llama 3.2 1B (Runtime GGUF)",
+                "model": "local-runtime/llama-3.2-1b-instruct",
+                "provider": "local-runtime",
+                "tier": "A"
+              }
+            },
+            "signer": "meterlessd",
+            "ts_ms": 1792722084742
+          },
+          "pubkey_b64": "lT7gJtDSmUz3umk2Vplm5r7y5NkEicv2ljdCGARusco=",
+          "sig_b64": "JGaSIrlOFFz6qRJPFJSzfYZCoa+hQ+twUHDQbedQXj3xCpM5zg9+g6RS+bkqDs48rWIPRDPo+qELJvhmq1kgBQ=="
+        },
+        "mcp": null,
+        "job": {
+          "id": "job_mvjtft9y01",
+          "kind": "app_stream",
+          "lane": "auto",
+          "turn": 27,
+          "cluster": 6
+        },
+        "egress": {
+          "destination": "none",
+          "coverage": "pattern_floor",
+          "sent": {
+            "prompt_chars": 854,
+            "context_sources": [
+              "messages"
+            ],
+            "redacted": []
+          },
+          "withheld": [],
+          "never_eligible": []
+        },
+        "consensus": {
+          "level": "solo",
+          "raced": 1,
+          "agreed": null,
+          "coherence": null,
+          "label": "single route",
+          "basis": "lexical"
+        },
+        "lineage": {
+          "families": [
+            "unknown"
+          ],
+          "distinct": 1,
+          "note": "1 distinct lineages across 1 panelists"
+        },
+        "app": "evidence-change-sentinel",
+        "mode": "auto",
+        "scope": "user"
+      }
+    },
+    {
+      "request_id": "chatcmpl-e9d20878-6bcd-4f19-8540-232c34324621",
+      "model": "local-runtime/llama-3.2-1b-instruct",
+      "http_status": 200,
+      "text": "{\"kind\":\"deadline\",\"value\":\"2026-11-30\",\"quote\":\"Applications must be submitted by 2026-11-30.\"}",
+      "meterless": {
+        "schema": "meterless.compute_receipt.v1",
+        "receipt_id": "rcpt_req_cp75y6r2",
+        "decision_id": "req_cp75y6r2",
+        "requested_model": "meterless/local",
+        "provider_model": "meterless/auto",
+        "routed_model": "local-runtime/llama-3.2-1b-instruct",
+        "winning_route": {
+          "model": "local-runtime/llama-3.2-1b-instruct",
+          "label": "Llama 3.2 1B (Runtime GGUF)",
+          "provider": "local-runtime",
+          "kind": "local",
+          "tier": "A"
+        },
+        "requires_review": false,
+        "phases": [
+          {
+            "phase": "final_synthesis",
+            "model": "local-runtime/llama-3.2-1b-instruct",
+            "ms": 162,
+            "tokensIn": 334,
+            "tokensOut": 31,
+            "outputTps": 191.35802469135803,
+            "coherence": null,
+            "tier": "B",
+            "reflex_decided_in_ms": 0
+          }
+        ],
+        "usage": {
+          "input_tokens": 334,
+          "output_tokens": 31,
+          "total_tokens": 365,
+          "output_tps": 191.35802469135803,
+          "latency_ms": 162
+        },
+        "cost": {
+          "actual_usd": 0,
+          "naive_usd": 0.001467,
+          "baseline": {
+            "model": "claude-sonnet-4-5-20250929",
+            "label": "Claude 4.5 Sonnet",
+            "source": "fixed-reference"
+          },
+          "verifier_usd": 0,
+          "race_overhead_usd": 0
+        },
+        "savings": {
+          "amount": 0.001467,
+          "currency": "USD",
+          "vs": "Claude 4.5 Sonnet",
+          "baseline_source": "fixed-reference"
+        },
+        "cache": {
+          "status": "miss",
+          "losers_reclaimed": 0,
+          "partials_reclaimed": 0
+        },
+        "privacy": {
+          "path": "local-only",
+          "redaction": {
+            "applied": false,
+            "spans": 0
+          }
+        },
+        "from_cache": false,
+        "losers_reclaimed": 0,
+        "receipt": {
+          "app": "evidence-change-sentinel",
+          "app_policy": {
+            "app": "evidence-change-sentinel",
+            "bound_mode": "auto",
+            "cross_check": "auto",
+            "has_rule": true,
+            "lanes": null,
+            "mode_coerced": true,
+            "premium_budget": null,
+            "privacy": "cloud-ok",
+            "race_width": 6,
+            "requested_mode": "local",
+            "routed_mode": "auto"
+          },
+          "autopilot": {
+            "ctx_dropped": [],
+            "ctx_unfilterable": false,
+            "envelope": {
+              "allocatable_mb": 0,
+              "pressure": "unknown",
+              "remaining_mb": 0,
+              "used_mb": 0
+            },
+            "needs": {
+              "coding": true,
+              "tools": false,
+              "vision": false
+            },
+            "prompt_tokens": 329,
+            "scout": {
+              "candidates": [
+                {
+                  "id": "CODE_SPLITTER",
+                  "score": 8
+                },
+                {
+                  "id": "ABSTRACTION_EXTRACTOR",
+                  "score": 7
+                },
+                {
+                  "id": "FEATURE_TOGGLER",
+                  "score": 7
+                }
+              ],
+              "category": "Workspace",
+              "confident": false,
+              "mode": "CODE_SPLITTER",
+              "ms": 0.79,
+              "score": 8,
+              "source": "detected",
+              "tier": "B"
+            },
+            "tier_hint": null,
+            "why": [
+              "scout read CODE_SPLITTER (not confident \u00e2\u20ac\u201d no tier opinion)",
+              "a coder is preferred",
+              "~329 prompt tokens \u00e2\u20ac\u201d lanes whose slot cannot hold them are not asked"
+            ]
+          },
+          "bar": null,
+          "budget_degrade": null,
+          "cache": {
+            "losers_reclaimed": 0,
+            "partials_reclaimed": 0,
+            "status": "miss"
+          },
+          "consensus": {
+            "agree": 1,
+            "coherence": null,
+            "detail": "one model handled this \u00e2\u20ac\u201d no cross-model agreement to check",
+            "label": "single route",
+            "level": "solo",
+            "raced": 1,
+            "tone": "neutral",
+            "verified": null
+          },
+          "consensus_escalation": null,
+          "cost": {
+            "actual_usd": 0,
+            "baseline": {
+              "label": "Claude 4.5 Sonnet",
+              "model": "claude-sonnet-4-5-20250929",
+              "source": "fixed-reference"
+            },
+            "naive_usd": 0.001467,
+            "race_overhead_usd": 0,
+            "verifier_usd": 0
+          },
+          "created_at": 1792722084931,
+          "cross_check": {
+            "app": "evidence-change-sentinel",
+            "blocking": false,
+            "checks": [
+              {
+                "message": "No destructive ops detected.",
+                "status": "passed",
+                "type": "destructive_action"
+              },
+              {
+                "message": "No PII/credential detected in response.",
+                "status": "passed",
+                "type": "pii_guard"
+              },
+              {
+                "message": "Not a tool call.",
+                "status": "skipped",
+                "type": "schema_validity"
+              }
+            ],
+            "destructive": false,
+            "raw_risk": "low",
+            "recommended_action": "allow",
+            "reflex_ms": 0.03,
+            "requires_review": false,
+            "risk_level": "low",
+            "status": "passed",
+            "verifier": "deterministic/schema+regex",
+            "verifier_error": null,
+            "verifier_model": null,
+            "verifier_ms": 0,
+            "verifier_ran": false,
+            "verifier_tokens": null,
+            "verifier_verdict": null
+          },
+          "debate": null,
+          "decision_id": "req_cp75y6r2",
+          "deliberation": null,
+          "egress": {
+            "coverage": "pattern_floor",
+            "destination": "none",
+            "never_eligible": [],
+            "sent": {
+              "context_sources": [
+                "messages"
+              ],
+              "prompt_chars": 854,
+              "redacted": []
+            },
+            "withheld": []
+          },
+          "eligible": null,
+          "error": "",
+          "fusion": null,
+          "gen_verifier": null,
+          "graded_weight": null,
+          "hmem": null,
+          "host_pressure": {
+            "battery": null,
+            "pressure": {
+              "battery": {
+                "hard": 0.5,
+                "label": "nominal",
+                "score": 0.18,
+                "sensor": "battery%, charging",
+                "soft": 0.3
+              },
+              "cpu": {
+                "hard": 0.9,
+                "label": "nominal",
+                "score": 0.34,
+                "sensor": "30s load avg",
+                "soft": 0.7
+              },
+              "gpu": {
+                "hard": 0.92,
+                "label": "nominal",
+                "score": 0.38,
+                "sensor": "GPU + VRAM",
+                "soft": 0.75
+              },
+              "memory": {
+                "hard": 0.85,
+                "label": "warm",
+                "score": 0.51,
+                "sensor": "committed/swap",
+                "soft": 0.7
+              },
+              "network": {
+                "hard": 0.85,
+                "label": "nominal",
+                "score": 0.12,
+                "sensor": "RTT to providers",
+                "soft": 0.5
+              },
+              "quota": {
+                "hard": 0.95,
+                "label": "nominal",
+                "score": 0.28,
+                "sensor": "per-key window",
+                "soft": 0.8
+              },
+              "thermal": {
+                "hard": 0.8,
+                "label": "nominal",
+                "score": 0.22,
+                "sensor": "thermal API",
+                "soft": 0.55
+              }
+            },
+            "thermal": "nominal"
+          },
+          "job": null,
+          "mcp": null,
+          "method": null,
+          "mode": "auto",
+          "optimistic": null,
+          "phases": [
+            {
+              "coherence": null,
+              "model": "local-runtime/llama-3.2-1b-instruct",
+              "ms": 162,
+              "outputTps": 191.35802469135805,
+              "phase": "final_synthesis",
+              "reflex_decided_in_ms": 0,
+              "tier": "B",
+              "tokensIn": 334,
+              "tokensOut": 31
+            }
+          ],
+          "privacy": {
+            "path": "local-only",
+            "redaction": {
+              "applied": false,
+              "spans": 0
+            }
+          },
+          "prompt_preview": "{\"task\":\"Extract the rule from evidence. Return the extracted rule, not the input object. Examples: \\\"Applicants must have at most 7 employees.\\\" gives {\\\"kind\\\":\\\"staff_limit\\\",\\\"",
+          "quality_race": null,
+          "reasoning_scaffold": null,
+          "receipt_id": "rcpt_req_cp75y6r2",
+          "refine": null,
+          "request_id": "chatcmpl-e9d20878-6bcd-4f19-8540-232c34324621",
+          "requested_mode": "meterless/auto",
+          "routing": {
+            "confidence": null,
+            "escalated": null,
+            "escalated_on_divergence": false,
+            "hedge": null,
+            "hedges_skipped": 0,
+            "of": 6,
+            "policy": "learned-router",
+            "predicted": "local-runtime/llama-3.2-1b-instruct",
+            "reason": "single-candidate",
+            "width": 6,
+            "winner": "local-runtime/llama-3.2-1b-instruct"
+          },
+          "savings": {
+            "amount": 0.001467,
+            "baseline_source": "fixed-reference",
+            "currency": "USD",
+            "vs": "Claude 4.5 Sonnet"
+          },
+          "schema": "meterless.compute_receipt.v1",
+          "score": null,
+          "scorecard": null,
+          "status": "ok",
+          "summary": "ok \u00c2\u00b7 Llama 3.2 1B (Runtime GGUF) \u00c2\u00b7 miss \u00c2\u00b7 $0.0015 saved",
+          "synthesis": null,
+          "test_time_compute": null,
+          "tool_degraded": null,
+          "unmet": null,
+          "usage": {
+            "input_tokens": 334,
+            "latency_ms": 162,
+            "output_tokens": 31,
+            "output_tps": 191.35802469135805,
+            "total_tokens": 365
+          },
+          "verdict": null,
+          "verification": null,
+          "winning_route": {
+            "kind": "local",
+            "label": "Llama 3.2 1B (Runtime GGUF)",
+            "model": "local-runtime/llama-3.2-1b-instruct",
+            "provider": "local-runtime",
+            "tier": "A"
+          }
+        },
+        "receipt_envelope": {
+          "body": {
+            "llama_cpp_ref": "08659901c43b51de735740f1cf61bb82fbe0c4e4",
+            "manifest_hash": "3ab17256e7b9415e1fee0dae51fb8b13800978230bac280022e65c0fccffa2f5",
+            "receipt": {
+              "app": "evidence-change-sentinel",
+              "app_policy": {
+                "app": "evidence-change-sentinel",
+                "bound_mode": "auto",
+                "cross_check": "auto",
+                "has_rule": true,
+                "lanes": null,
+                "mode_coerced": true,
+                "premium_budget": null,
+                "privacy": "cloud-ok",
+                "race_width": 6,
+                "requested_mode": "local",
+                "routed_mode": "auto"
+              },
+              "autopilot": {
+                "ctx_dropped": [],
+                "ctx_unfilterable": false,
+                "envelope": {
+                  "allocatable_mb": 0,
+                  "pressure": "unknown",
+                  "remaining_mb": 0,
+                  "used_mb": 0
+                },
+                "needs": {
+                  "coding": true,
+                  "tools": false,
+                  "vision": false
+                },
+                "prompt_tokens": 329,
+                "scout": {
+                  "candidates": [
+                    {
+                      "id": "CODE_SPLITTER",
+                      "score": 8
+                    },
+                    {
+                      "id": "ABSTRACTION_EXTRACTOR",
+                      "score": 7
+                    },
+                    {
+                      "id": "FEATURE_TOGGLER",
+                      "score": 7
+                    }
+                  ],
+                  "category": "Workspace",
+                  "confident": false,
+                  "mode": "CODE_SPLITTER",
+                  "ms": 0.79,
+                  "score": 8,
+                  "source": "detected",
+                  "tier": "B"
+                },
+                "tier_hint": null,
+                "why": [
+                  "scout read CODE_SPLITTER (not confident \u00e2\u20ac\u201d no tier opinion)",
+                  "a coder is preferred",
+                  "~329 prompt tokens \u00e2\u20ac\u201d lanes whose slot cannot hold them are not asked"
+                ]
+              },
+              "bar": null,
+              "budget_degrade": null,
+              "cache": {
+                "losers_reclaimed": 0,
+                "partials_reclaimed": 0,
+                "status": "miss"
+              },
+              "consensus": {
+                "agree": 1,
+                "coherence": null,
+                "detail": "one model handled this \u00e2\u20ac\u201d no cross-model agreement to check",
+                "label": "single route",
+                "level": "solo",
+                "raced": 1,
+                "tone": "neutral",
+                "verified": null
+              },
+              "consensus_escalation": null,
+              "cost": {
+                "actual_usd": 0,
+                "baseline": {
+                  "label": "Claude 4.5 Sonnet",
+                  "model": "claude-sonnet-4-5-20250929",
+                  "source": "fixed-reference"
+                },
+                "naive_usd": 0.001467,
+                "race_overhead_usd": 0,
+                "verifier_usd": 0
+              },
+              "created_at": 1792722084931,
+              "cross_check": {
+                "app": "evidence-change-sentinel",
+                "blocking": false,
+                "checks": [
+                  {
+                    "message": "No destructive ops detected.",
+                    "status": "passed",
+                    "type": "destructive_action"
+                  },
+                  {
+                    "message": "No PII/credential detected in response.",
+                    "status": "passed",
+                    "type": "pii_guard"
+                  },
+                  {
+                    "message": "Not a tool call.",
+                    "status": "skipped",
+                    "type": "schema_validity"
+                  }
+                ],
+                "destructive": false,
+                "raw_risk": "low",
+                "recommended_action": "allow",
+                "reflex_ms": 0.03,
+                "requires_review": false,
+                "risk_level": "low",
+                "status": "passed",
+                "verifier": "deterministic/schema+regex",
+                "verifier_error": null,
+                "verifier_model": null,
+                "verifier_ms": 0,
+                "verifier_ran": false,
+                "verifier_tokens": null,
+                "verifier_verdict": null
+              },
+              "debate": null,
+              "decision_id": "req_cp75y6r2",
+              "deliberation": null,
+              "egress": {
+                "coverage": "pattern_floor",
+                "destination": "none",
+                "never_eligible": [],
+                "sent": {
+                  "context_sources": [
+                    "messages"
+                  ],
+                  "prompt_chars": 854,
+                  "redacted": []
+                },
+                "withheld": []
+              },
+              "eligible": null,
+              "error": "",
+              "fusion": null,
+              "gen_verifier": null,
+              "graded_weight": null,
+              "hmem": null,
+              "host_pressure": {
+                "battery": null,
+                "pressure": {
+                  "battery": {
+                    "hard": 0.5,
+                    "label": "nominal",
+                    "score": 0.18,
+                    "sensor": "battery%, charging",
+                    "soft": 0.3
+                  },
+                  "cpu": {
+                    "hard": 0.9,
+                    "label": "nominal",
+                    "score": 0.34,
+                    "sensor": "30s load avg",
+                    "soft": 0.7
+                  },
+                  "gpu": {
+                    "hard": 0.92,
+                    "label": "nominal",
+                    "score": 0.38,
+                    "sensor": "GPU + VRAM",
+                    "soft": 0.75
+                  },
+                  "memory": {
+                    "hard": 0.85,
+                    "label": "warm",
+                    "score": 0.51,
+                    "sensor": "committed/swap",
+                    "soft": 0.7
+                  },
+                  "network": {
+                    "hard": 0.85,
+                    "label": "nominal",
+                    "score": 0.12,
+                    "sensor": "RTT to providers",
+                    "soft": 0.5
+                  },
+                  "quota": {
+                    "hard": 0.95,
+                    "label": "nominal",
+                    "score": 0.28,
+                    "sensor": "per-key window",
+                    "soft": 0.8
+                  },
+                  "thermal": {
+                    "hard": 0.8,
+                    "label": "nominal",
+                    "score": 0.22,
+                    "sensor": "thermal API",
+                    "soft": 0.55
+                  }
+                },
+                "thermal": "nominal"
+              },
+              "job": null,
+              "mcp": null,
+              "method": null,
+              "mode": "auto",
+              "optimistic": null,
+              "phases": [
+                {
+                  "coherence": null,
+                  "model": "local-runtime/llama-3.2-1b-instruct",
+                  "ms": 162,
+                  "outputTps": 191.35802469135805,
+                  "phase": "final_synthesis",
+                  "reflex_decided_in_ms": 0,
+                  "tier": "B",
+                  "tokensIn": 334,
+                  "tokensOut": 31
+                }
+              ],
+              "privacy": {
+                "path": "local-only",
+                "redaction": {
+                  "applied": false,
+                  "spans": 0
+                }
+              },
+              "prompt_preview": "{\"task\":\"Extract the rule from evidence. Return the extracted rule, not the input object. Examples: \\\"Applicants must have at most 7 employees.\\\" gives {\\\"kind\\\":\\\"staff_limit\\\",\\\"",
+              "quality_race": null,
+              "reasoning_scaffold": null,
+              "receipt_id": "rcpt_req_cp75y6r2",
+              "refine": null,
+              "request_id": "chatcmpl-e9d20878-6bcd-4f19-8540-232c34324621",
+              "requested_mode": "meterless/auto",
+              "routing": {
+                "confidence": null,
+                "escalated": null,
+                "escalated_on_divergence": false,
+                "hedge": null,
+                "hedges_skipped": 0,
+                "of": 6,
+                "policy": "learned-router",
+                "predicted": "local-runtime/llama-3.2-1b-instruct",
+                "reason": "single-candidate",
+                "width": 6,
+                "winner": "local-runtime/llama-3.2-1b-instruct"
+              },
+              "savings": {
+                "amount": 0.001467,
+                "baseline_source": "fixed-reference",
+                "currency": "USD",
+                "vs": "Claude 4.5 Sonnet"
+              },
+              "schema": "meterless.compute_receipt.v1",
+              "score": null,
+              "scorecard": null,
+              "status": "ok",
+              "summary": "ok \u00c2\u00b7 Llama 3.2 1B (Runtime GGUF) \u00c2\u00b7 miss \u00c2\u00b7 $0.0015 saved",
+              "synthesis": null,
+              "test_time_compute": null,
+              "tool_degraded": null,
+              "unmet": null,
+              "usage": {
+                "input_tokens": 334,
+                "latency_ms": 162,
+                "output_tokens": 31,
+                "output_tps": 191.35802469135805,
+                "total_tokens": 365
+              },
+              "verdict": null,
+              "verification": null,
+              "winning_route": {
+                "kind": "local",
+                "label": "Llama 3.2 1B (Runtime GGUF)",
+                "model": "local-runtime/llama-3.2-1b-instruct",
+                "provider": "local-runtime",
+                "tier": "A"
+              }
+            },
+            "signer": "meterlessd",
+            "ts_ms": 1792722084934
+          },
+          "pubkey_b64": "lT7gJtDSmUz3umk2Vplm5r7y5NkEicv2ljdCGARusco=",
+          "sig_b64": "7YDMYlY9bGxaj3GvHzRS6uTmtVvNNZE+MT0cVOM6Cppps+uY3BWUkDU/cijopUc0kpPE8/xKBTl5ecqip3aFAw=="
+        },
+        "mcp": null,
+        "job": {
+          "id": "job_mvjtft9y01",
+          "kind": "app_stream",
+          "lane": "auto",
+          "turn": 28,
+          "cluster": 6
+        },
+        "egress": {
+          "destination": "none",
+          "coverage": "pattern_floor",
+          "sent": {
+            "prompt_chars": 854,
+            "context_sources": [
+              "messages"
+            ],
+            "redacted": []
+          },
+          "withheld": [],
+          "never_eligible": []
+        },
+        "consensus": {
+          "level": "solo",
+          "raced": 1,
+          "agreed": null,
+          "coherence": null,
+          "label": "single route",
+          "basis": "lexical"
+        },
+        "lineage": {
+          "families": [
+            "unknown"
+          ],
+          "distinct": 1,
+          "note": "1 distinct lineages across 1 panelists"
+        },
+        "app": "evidence-change-sentinel",
+        "mode": "auto",
+        "scope": "user"
+      }
+    },
+    {
+      "request_id": "chatcmpl-01d55902-e869-42ea-9a19-0daaeba2f933",
+      "model": "local-runtime/llama-3.2-1b-instruct",
+      "http_status": 200,
+      "text": "{\"kind\":\"regions\",\"value\":[\"ES\",\"PT\"],\"quote\":\"Eligible regions: ES, PT.\"}",
+      "meterless": {
+        "schema": "meterless.compute_receipt.v1",
+        "receipt_id": "rcpt_req_9q26223r",
+        "decision_id": "req_9q26223r",
+        "requested_model": "meterless/local",
+        "provider_model": "meterless/auto",
+        "routed_model": "local-runtime/llama-3.2-1b-instruct",
+        "winning_route": {
+          "model": "local-runtime/llama-3.2-1b-instruct",
+          "label": "Llama 3.2 1B (Runtime GGUF)",
+          "provider": "local-runtime",
+          "kind": "local",
+          "tier": "A"
+        },
+        "requires_review": false,
+        "phases": [
+          {
+            "phase": "final_synthesis",
+            "model": "local-runtime/llama-3.2-1b-instruct",
+            "ms": 151,
+            "tokensIn": 330,
+            "tokensOut": 24,
+            "outputTps": 158.94039735099338,
+            "coherence": null,
+            "tier": "B",
+            "reflex_decided_in_ms": 0
+          }
+        ],
+        "usage": {
+          "input_tokens": 330,
+          "output_tokens": 24,
+          "total_tokens": 354,
+          "output_tps": 158.94039735099338,
+          "latency_ms": 151
+        },
+        "cost": {
+          "actual_usd": 0,
+          "naive_usd": 0.00135,
+          "baseline": {
+            "model": "claude-sonnet-4-5-20250929",
+            "label": "Claude 4.5 Sonnet",
+            "source": "fixed-reference"
+          },
+          "verifier_usd": 0,
+          "race_overhead_usd": 0
+        },
+        "savings": {
+          "amount": 0.00135,
+          "currency": "USD",
+          "vs": "Claude 4.5 Sonnet",
+          "baseline_source": "fixed-reference"
+        },
+        "cache": {
+          "status": "miss",
+          "losers_reclaimed": 0,
+          "partials_reclaimed": 0
+        },
+        "privacy": {
+          "path": "local-only",
+          "redaction": {
+            "applied": false,
+            "spans": 0
+          }
+        },
+        "from_cache": false,
+        "losers_reclaimed": 0,
+        "receipt": {
+          "app": "evidence-change-sentinel",
+          "app_policy": {
+            "app": "evidence-change-sentinel",
+            "bound_mode": "auto",
+            "cross_check": "auto",
+            "has_rule": true,
+            "lanes": null,
+            "mode_coerced": true,
+            "premium_budget": null,
+            "privacy": "cloud-ok",
+            "race_width": 6,
+            "requested_mode": "local",
+            "routed_mode": "auto"
+          },
+          "autopilot": {
+            "ctx_dropped": [],
+            "ctx_unfilterable": false,
+            "envelope": {
+              "allocatable_mb": 0,
+              "pressure": "unknown",
+              "remaining_mb": 0,
+              "used_mb": 0
+            },
+            "needs": {
+              "coding": true,
+              "tools": false,
+              "vision": false
+            },
+            "prompt_tokens": 324,
+            "scout": {
+              "candidates": [
+                {
+                  "id": "CODE_SPLITTER",
+                  "score": 8
+                },
+                {
+                  "id": "ABSTRACTION_EXTRACTOR",
+                  "score": 7
+                },
+                {
+                  "id": "FEATURE_TOGGLER",
+                  "score": 7
+                }
+              ],
+              "category": "Workspace",
+              "confident": false,
+              "mode": "CODE_SPLITTER",
+              "ms": 0.61,
+              "score": 8,
+              "source": "detected",
+              "tier": "B"
+            },
+            "tier_hint": null,
+            "why": [
+              "scout read CODE_SPLITTER (not confident \u00e2\u20ac\u201d no tier opinion)",
+              "a coder is preferred",
+              "~324 prompt tokens \u00e2\u20ac\u201d lanes whose slot cannot hold them are not asked"
+            ]
+          },
+          "bar": null,
+          "budget_degrade": null,
+          "cache": {
+            "losers_reclaimed": 0,
+            "partials_reclaimed": 0,
+            "status": "miss"
+          },
+          "consensus": {
+            "agree": 1,
+            "coherence": null,
+            "detail": "one model handled this \u00e2\u20ac\u201d no cross-model agreement to check",
+            "label": "single route",
+            "level": "solo",
+            "raced": 1,
+            "tone": "neutral",
+            "verified": null
+          },
+          "consensus_escalation": null,
+          "cost": {
+            "actual_usd": 0,
+            "baseline": {
+              "label": "Claude 4.5 Sonnet",
+              "model": "claude-sonnet-4-5-20250929",
+              "source": "fixed-reference"
+            },
+            "naive_usd": 0.00135,
+            "race_overhead_usd": 0,
+            "verifier_usd": 0
+          },
+          "created_at": 1792722085117,
+          "cross_check": {
+            "app": "evidence-change-sentinel",
+            "blocking": false,
+            "checks": [
+              {
+                "message": "No destructive ops detected.",
+                "status": "passed",
+                "type": "destructive_action"
+              },
+              {
+                "message": "No PII/credential detected in response.",
+                "status": "passed",
+                "type": "pii_guard"
+              },
+              {
+                "message": "Not a tool call.",
+                "status": "skipped",
+                "type": "schema_validity"
+              }
+            ],
+            "destructive": false,
+            "raw_risk": "low",
+            "recommended_action": "allow",
+            "reflex_ms": 0.04,
+            "requires_review": false,
+            "risk_level": "low",
+            "status": "passed",
+            "verifier": "deterministic/schema+regex",
+            "verifier_error": null,
+            "verifier_model": null,
+            "verifier_ms": 0,
+            "verifier_ran": false,
+            "verifier_tokens": null,
+            "verifier_verdict": null
+          },
+          "debate": null,
+          "decision_id": "req_9q26223r",
+          "deliberation": null,
+          "egress": {
+            "coverage": "pattern_floor",
+            "destination": "none",
+            "never_eligible": [],
+            "sent": {
+              "context_sources": [
+                "messages"
+              ],
+              "prompt_chars": 833,
+              "redacted": []
+            },
+            "withheld": []
+          },
+          "eligible": null,
+          "error": "",
+          "fusion": null,
+          "gen_verifier": null,
+          "graded_weight": null,
+          "hmem": null,
+          "host_pressure": {
+            "battery": null,
+            "pressure": {
+              "battery": {
+                "hard": 0.5,
+                "label": "nominal",
+                "score": 0.18,
+                "sensor": "battery%, charging",
+                "soft": 0.3
+              },
+              "cpu": {
+                "hard": 0.9,
+                "label": "nominal",
+                "score": 0.34,
+                "sensor": "30s load avg",
+                "soft": 0.7
+              },
+              "gpu": {
+                "hard": 0.92,
+                "label": "nominal",
+                "score": 0.38,
+                "sensor": "GPU + VRAM",
+                "soft": 0.75
+              },
+              "memory": {
+                "hard": 0.85,
+                "label": "warm",
+                "score": 0.51,
+                "sensor": "committed/swap",
+                "soft": 0.7
+              },
+              "network": {
+                "hard": 0.85,
+                "label": "nominal",
+                "score": 0.12,
+                "sensor": "RTT to providers",
+                "soft": 0.5
+              },
+              "quota": {
+                "hard": 0.95,
+                "label": "nominal",
+                "score": 0.28,
+                "sensor": "per-key window",
+                "soft": 0.8
+              },
+              "thermal": {
+                "hard": 0.8,
+                "label": "nominal",
+                "score": 0.22,
+                "sensor": "thermal API",
+                "soft": 0.55
+              }
+            },
+            "thermal": "nominal"
+          },
+          "job": null,
+          "mcp": null,
+          "method": null,
+          "mode": "auto",
+          "optimistic": null,
+          "phases": [
+            {
+              "coherence": null,
+              "model": "local-runtime/llama-3.2-1b-instruct",
+              "ms": 151,
+              "outputTps": 158.94039735099338,
+              "phase": "final_synthesis",
+              "reflex_decided_in_ms": 0,
+              "tier": "B",
+              "tokensIn": 330,
+              "tokensOut": 24
+            }
+          ],
+          "privacy": {
+            "path": "local-only",
+            "redaction": {
+              "applied": false,
+              "spans": 0
+            }
+          },
+          "prompt_preview": "{\"task\":\"Extract the rule from evidence. Return the extracted rule, not the input object. Examples: \\\"Applicants must have at most 7 employees.\\\" gives {\\\"kind\\\":\\\"staff_limit\\\",\\\"",
+          "quality_race": null,
+          "reasoning_scaffold": null,
+          "receipt_id": "rcpt_req_9q26223r",
+          "refine": null,
+          "request_id": "chatcmpl-01d55902-e869-42ea-9a19-0daaeba2f933",
+          "requested_mode": "meterless/auto",
+          "routing": {
+            "confidence": null,
+            "escalated": null,
+            "escalated_on_divergence": false,
+            "hedge": null,
+            "hedges_skipped": 0,
+            "of": 6,
+            "policy": "learned-router",
+            "predicted": "local-runtime/llama-3.2-1b-instruct",
+            "reason": "single-candidate",
+            "width": 6,
+            "winner": "local-runtime/llama-3.2-1b-instruct"
+          },
+          "savings": {
+            "amount": 0.00135,
+            "baseline_source": "fixed-reference",
+            "currency": "USD",
+            "vs": "Claude 4.5 Sonnet"
+          },
+          "schema": "meterless.compute_receipt.v1",
+          "score": null,
+          "scorecard": null,
+          "status": "ok",
+          "summary": "ok \u00c2\u00b7 Llama 3.2 1B (Runtime GGUF) \u00c2\u00b7 miss \u00c2\u00b7 $0.0014 saved",
+          "synthesis": null,
+          "test_time_compute": null,
+          "tool_degraded": null,
+          "unmet": null,
+          "usage": {
+            "input_tokens": 330,
+            "latency_ms": 151,
+            "output_tokens": 24,
+            "output_tps": 158.94039735099338,
+            "total_tokens": 354
+          },
+          "verdict": null,
+          "verification": null,
+          "winning_route": {
+            "kind": "local",
+            "label": "Llama 3.2 1B (Runtime GGUF)",
+            "model": "local-runtime/llama-3.2-1b-instruct",
+            "provider": "local-runtime",
+            "tier": "A"
+          }
+        },
+        "receipt_envelope": {
+          "body": {
+            "llama_cpp_ref": "08659901c43b51de735740f1cf61bb82fbe0c4e4",
+            "manifest_hash": "3ab17256e7b9415e1fee0dae51fb8b13800978230bac280022e65c0fccffa2f5",
+            "receipt": {
+              "app": "evidence-change-sentinel",
+              "app_policy": {
+                "app": "evidence-change-sentinel",
+                "bound_mode": "auto",
+                "cross_check": "auto",
+                "has_rule": true,
+                "lanes": null,
+                "mode_coerced": true,
+                "premium_budget": null,
+                "privacy": "cloud-ok",
+                "race_width": 6,
+                "requested_mode": "local",
+                "routed_mode": "auto"
+              },
+              "autopilot": {
+                "ctx_dropped": [],
+                "ctx_unfilterable": false,
+                "envelope": {
+                  "allocatable_mb": 0,
+                  "pressure": "unknown",
+                  "remaining_mb": 0,
+                  "used_mb": 0
+                },
+                "needs": {
+                  "coding": true,
+                  "tools": false,
+                  "vision": false
+                },
+                "prompt_tokens": 324,
+                "scout": {
+                  "candidates": [
+                    {
+                      "id": "CODE_SPLITTER",
+                      "score": 8
+                    },
+                    {
+                      "id": "ABSTRACTION_EXTRACTOR",
+                      "score": 7
+                    },
+                    {
+                      "id": "FEATURE_TOGGLER",
+                      "score": 7
+                    }
+                  ],
+                  "category": "Workspace",
+                  "confident": false,
+                  "mode": "CODE_SPLITTER",
+                  "ms": 0.61,
+                  "score": 8,
+                  "source": "detected",
+                  "tier": "B"
+                },
+                "tier_hint": null,
+                "why": [
+                  "scout read CODE_SPLITTER (not confident \u00e2\u20ac\u201d no tier opinion)",
+                  "a coder is preferred",
+                  "~324 prompt tokens \u00e2\u20ac\u201d lanes whose slot cannot hold them are not asked"
+                ]
+              },
+              "bar": null,
+              "budget_degrade": null,
+              "cache": {
+                "losers_reclaimed": 0,
+                "partials_reclaimed": 0,
+                "status": "miss"
+              },
+              "consensus": {
+                "agree": 1,
+                "coherence": null,
+                "detail": "one model handled this \u00e2\u20ac\u201d no cross-model agreement to check",
+                "label": "single route",
+                "level": "solo",
+                "raced": 1,
+                "tone": "neutral",
+                "verified": null
+              },
+              "consensus_escalation": null,
+              "cost": {
+                "actual_usd": 0,
+                "baseline": {
+                  "label": "Claude 4.5 Sonnet",
+                  "model": "claude-sonnet-4-5-20250929",
+                  "source": "fixed-reference"
+                },
+                "naive_usd": 0.00135,
+                "race_overhead_usd": 0,
+                "verifier_usd": 0
+              },
+              "created_at": 1792722085117,
+              "cross_check": {
+                "app": "evidence-change-sentinel",
+                "blocking": false,
+                "checks": [
+                  {
+                    "message": "No destructive ops detected.",
+                    "status": "passed",
+                    "type": "destructive_action"
+                  },
+                  {
+                    "message": "No PII/credential detected in response.",
+                    "status": "passed",
+                    "type": "pii_guard"
+                  },
+                  {
+                    "message": "Not a tool call.",
+                    "status": "skipped",
+                    "type": "schema_validity"
+                  }
+                ],
+                "destructive": false,
+                "raw_risk": "low",
+                "recommended_action": "allow",
+                "reflex_ms": 0.04,
+                "requires_review": false,
+                "risk_level": "low",
+                "status": "passed",
+                "verifier": "deterministic/schema+regex",
+                "verifier_error": null,
+                "verifier_model": null,
+                "verifier_ms": 0,
+                "verifier_ran": false,
+                "verifier_tokens": null,
+                "verifier_verdict": null
+              },
+              "debate": null,
+              "decision_id": "req_9q26223r",
+              "deliberation": null,
+              "egress": {
+                "coverage": "pattern_floor",
+                "destination": "none",
+                "never_eligible": [],
+                "sent": {
+                  "context_sources": [
+                    "messages"
+                  ],
+                  "prompt_chars": 833,
+                  "redacted": []
+                },
+                "withheld": []
+              },
+              "eligible": null,
+              "error": "",
+              "fusion": null,
+              "gen_verifier": null,
+              "graded_weight": null,
+              "hmem": null,
+              "host_pressure": {
+                "battery": null,
+                "pressure": {
+                  "battery": {
+                    "hard": 0.5,
+                    "label": "nominal",
+                    "score": 0.18,
+                    "sensor": "battery%, charging",
+                    "soft": 0.3
+                  },
+                  "cpu": {
+                    "hard": 0.9,
+                    "label": "nominal",
+                    "score": 0.34,
+                    "sensor": "30s load avg",
+                    "soft": 0.7
+                  },
+                  "gpu": {
+                    "hard": 0.92,
+                    "label": "nominal",
+                    "score": 0.38,
+                    "sensor": "GPU + VRAM",
+                    "soft": 0.75
+                  },
+                  "memory": {
+                    "hard": 0.85,
+                    "label": "warm",
+                    "score": 0.51,
+                    "sensor": "committed/swap",
+                    "soft": 0.7
+                  },
+                  "network": {
+                    "hard": 0.85,
+                    "label": "nominal",
+                    "score": 0.12,
+                    "sensor": "RTT to providers",
+                    "soft": 0.5
+                  },
+                  "quota": {
+                    "hard": 0.95,
+                    "label": "nominal",
+                    "score": 0.28,
+                    "sensor": "per-key window",
+                    "soft": 0.8
+                  },
+                  "thermal": {
+                    "hard": 0.8,
+                    "label": "nominal",
+                    "score": 0.22,
+                    "sensor": "thermal API",
+                    "soft": 0.55
+                  }
+                },
+                "thermal": "nominal"
+              },
+              "job": null,
+              "mcp": null,
+              "method": null,
+              "mode": "auto",
+              "optimistic": null,
+              "phases": [
+                {
+                  "coherence": null,
+                  "model": "local-runtime/llama-3.2-1b-instruct",
+                  "ms": 151,
+                  "outputTps": 158.94039735099338,
+                  "phase": "final_synthesis",
+                  "reflex_decided_in_ms": 0,
+                  "tier": "B",
+                  "tokensIn": 330,
+                  "tokensOut": 24
+                }
+              ],
+              "privacy": {
+                "path": "local-only",
+                "redaction": {
+                  "applied": false,
+                  "spans": 0
+                }
+              },
+              "prompt_preview": "{\"task\":\"Extract the rule from evidence. Return the extracted rule, not the input object. Examples: \\\"Applicants must have at most 7 employees.\\\" gives {\\\"kind\\\":\\\"staff_limit\\\",\\\"",
+              "quality_race": null,
+              "reasoning_scaffold": null,
+              "receipt_id": "rcpt_req_9q26223r",
+              "refine": null,
+              "request_id": "chatcmpl-01d55902-e869-42ea-9a19-0daaeba2f933",
+              "requested_mode": "meterless/auto",
+              "routing": {
+                "confidence": null,
+                "escalated": null,
+                "escalated_on_divergence": false,
+                "hedge": null,
+                "hedges_skipped": 0,
+                "of": 6,
+                "policy": "learned-router",
+                "predicted": "local-runtime/llama-3.2-1b-instruct",
+                "reason": "single-candidate",
+                "width": 6,
+                "winner": "local-runtime/llama-3.2-1b-instruct"
+              },
+              "savings": {
+                "amount": 0.00135,
+                "baseline_source": "fixed-reference",
+                "currency": "USD",
+                "vs": "Claude 4.5 Sonnet"
+              },
+              "schema": "meterless.compute_receipt.v1",
+              "score": null,
+              "scorecard": null,
+              "status": "ok",
+              "summary": "ok \u00c2\u00b7 Llama 3.2 1B (Runtime GGUF) \u00c2\u00b7 miss \u00c2\u00b7 $0.0014 saved",
+              "synthesis": null,
+              "test_time_compute": null,
+              "tool_degraded": null,
+              "unmet": null,
+              "usage": {
+                "input_tokens": 330,
+                "latency_ms": 151,
+                "output_tokens": 24,
+                "output_tps": 158.94039735099338,
+                "total_tokens": 354
+              },
+              "verdict": null,
+              "verification": null,
+              "winning_route": {
+                "kind": "local",
+                "label": "Llama 3.2 1B (Runtime GGUF)",
+                "model": "local-runtime/llama-3.2-1b-instruct",
+                "provider": "local-runtime",
+                "tier": "A"
+              }
+            },
+            "signer": "meterlessd",
+            "ts_ms": 1792722085120
+          },
+          "pubkey_b64": "lT7gJtDSmUz3umk2Vplm5r7y5NkEicv2ljdCGARusco=",
+          "sig_b64": "gDlxPc7s+Y5WUAy0qBBj7hT+8m9MpK3De62ehL0xoggdiqgwK6WwjbKLYGgawUWtA+KvYTlNHkb+VcQFICxMBg=="
+        },
+        "mcp": null,
+        "job": {
+          "id": "job_mvjtft9y01",
+          "kind": "app_stream",
+          "lane": "auto",
+          "turn": 29,
+          "cluster": 6
+        },
+        "egress": {
+          "destination": "none",
+          "coverage": "pattern_floor",
+          "sent": {
+            "prompt_chars": 833,
+            "context_sources": [
+              "messages"
+            ],
+            "redacted": []
+          },
+          "withheld": [],
+          "never_eligible": []
+        },
+        "consensus": {
+          "level": "solo",
+          "raced": 1,
+          "agreed": null,
+          "coherence": null,
+          "label": "single route",
+          "basis": "lexical"
+        },
+        "lineage": {
+          "families": [
+            "unknown"
+          ],
+          "distinct": 1,
+          "note": "1 distinct lineages across 1 panelists"
+        },
+        "app": "evidence-change-sentinel",
+        "mode": "auto",
+        "scope": "user"
+      }
+    }
+  ],
+  "source_sha256": {
+    "app/adapters.mjs": "71f9154b6f32524ea1f375e45f83e6dd30ae537b0c8f7618c2e5c10eb064364c",
+    "app/core.mjs": "2e13aee1083b84c0bc0697ea6ac5990afe9c6a99d7f9b6671287ca67a40d9020",
+    "scripts/assert-live-result.mjs": "bb209f4c2a7b2c4294e8703ec386ed198facf6bb3ef4ab1ee9616a53be56c8ff"
+  }
+}

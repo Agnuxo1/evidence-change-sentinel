@@ -2,7 +2,7 @@
 
 A funding-call evidence review prototype: when a source passage changes, identify the affected assessments, quote the evidence, preserve unaffected assessments and queue uncertainty for human review.
 
-**Status, 22 October 2026:** working offline prototype with synthetic data. Real local Zetaris SQL and the six-row versioned view are now **verified**. The combined Zetaris / Meterless Nightshift feature is **not yet verified**. This is not a completed hackathon submission. The offline path is deterministic, not an autonomous LLM demonstration. It does not determine official eligibility.
+**Status, 23 October 2026:** the real local Zetaris / Meterless Nightshift feature is **verified with synthetic evidence**: four new local-model responses, three validated requirements, one changed assessment and two preserved assessments. H-MEM records provenance. Cursor development and the final video/deck remain pending. This is not a completed hackathon submission. The offline path is deterministic, not an autonomous LLM demonstration. It does not determine official eligibility.
 
 ![Actual offline run](evidence/demo-screen.png)
 
@@ -59,7 +59,7 @@ flowchart LR
   O --> M
 ```
 
-These names are software responsibilities, not claims that several autonomous agents ran in sample mode. The offline proposer interprets a deliberately narrow grammar. The live proposer calls Meterless Runtime; its validator can reject a proposal, request one repair and abstain after two failed attempts. That live loop has been exercised with a mock HTTP/provider contract, not with an authenticated Nightshift instance yet. The run has a five-minute application budget and each model request is capped at the remaining budget, up to 180 seconds. An upstream outage returns an explicit error; it never masquerades as a live successful sample run.
+These names are software responsibilities, not claims that several autonomous agents ran in sample mode. The offline proposer interprets a deliberately narrow grammar. The live proposer calls Meterless Runtime; its validator can reject a proposal, request one repair and abstain after two failed attempts. That live loop is covered by mock contract tests and a separate actual authenticated Zetaris/Nightshift run; see `evidence/live-feature-20261023.json`. Structured JSON output constrains syntax and value types; the independent source validator still decides whether a proposal is supported. The run has a five-minute application budget and each model request is capped at the remaining budget, up to 180 seconds. An upstream outage returns an explicit error; it never masquerades as a live successful sample run.
 
 An assessment is tied to source ID, passage ID, exact quotation, source URL and SHA-256 of the passage. Changed applicant facts also invalidate a conclusion. Missing referenced passages and new unmapped clauses trigger review. Changed clauses with unrelated content are not guessed away. No entire document is represented as unchanged simply because one old requirement still matches.
 
@@ -70,10 +70,10 @@ H-MEM stores assessments with provenance, source fingerprints and a mutation led
 | Technology | Implemented role | Verified status |
 |---|---|---|
 | Meterless H-MEM | Assessment provenance, exact evidence recall, supersession and ledger | Reference conformance 13/13; application persistence test passes |
-| Meterless Nightshift | OpenAI-compatible rule proposals, discovery, authentication and review feedback | Adapter/mock tests pass; authenticated discovery previously passed, then a real proposal failed with no_provider_configured; Runtime currently unreachable during setup |
+| Meterless Nightshift | OpenAI-compatible rule proposals, discovery, authentication and review feedback | Real local Llama 3.2 1B proposals and complete controlled feature pass; signed provider envelopes retained in evidence/live-feature-20261023.json |
 | Zetaris | SQL retrieval from one view joining versioned call and notice evidence | Real authenticated SELECT 1 and six versioned view rows verified; see evidence/zetaris-20261022.json |
-| Cursor | Required development environment | Installed executable located; interactive development verification pending; code in this snapshot was authored with Codex |
-| NVIDIA | Optional Nemotron provider routed through Nightshift | Not configured or claimed; verify actual provider/model receipt before any award claim |
+| Cursor | Required development environment | Cursor 3.2.11 and official Windows CLI located; account login requires human verification; development proof remains pending; Codex assisted |
+| NVIDIA | CUDA acceleration for Nightshift local inference on RTX 3090 | Real lane placement and GPU process verified; no Nemotron special-prize claim |
 
 ### Live setup
 
@@ -97,7 +97,7 @@ FROM sentinel_review.sentinel_passages
 
 The adapter uses the REST shape in the official 21 October Participant Setup Guide: `POST /api/v1.0/sql-editor/sqls/run`, bearer token, `X-Org-ID`, `X-Request-ID`, `queryId`, `sql`, `source`, `limit`. Meterless implements the [official Runtime provider contract](https://meterless.ai/engines.html): normalized `/v1`, model discovery, bearer authentication, `meterless-app`, `meterless-scope`, and distinct unauthorized/offline errors. `meterless/auto` is a routing mode, not proof that Nemotron executed anything.
 
-Run `npm run preflight` with the configured environment, then an actual live example and verify quotes, traces and the Nightshift model receipt. The latest committed preflight verifies real Zetaris connectivity and six rows, while Meterless Runtime is currently unreachable during setup; `submission_ready:false` remains explicit. A separate fail-closed script, `node --env-file=.env --import tsx scripts/live-acceptance.mjs`, demands a real authenticated SQL query, a populated versioned view, Nightshift model discovery, an actual model proposal, evidence validation and H-MEM writes. Mock-backed tests are explicitly distinct from that live check.
+Run `npm run preflight` with the configured environment, then an actual live example and verify quotes, traces and the Nightshift model receipt. The latest preflight verifies both endpoint connections and six Zetaris rows; `submission_ready:false` remains explicit. A separate fail-closed script, `node --env-file=.env --import tsx scripts/live-acceptance.mjs`, demands a real authenticated SQL query, a populated versioned view, Nightshift model discovery, an actual model proposal, evidence validation and H-MEM writes. Mock-backed tests are explicitly distinct from that live check.
 
 ## Hackathon demonstration and live acceptance
 
@@ -130,8 +130,14 @@ For hackathon rules and the current deadline use the [official event page](https
 
 ## Audit checkpoint: 22 October 2026
 
-29/29 application tests pass. The previous clean-install audit also passed 13/13 H-MEM checks, 55/55 synthetic cases, the Docker sample HTTP workflow and npm dependency auditing with zero known vulnerabilities. The acceptance gate rejects all-abstention runs and verifies each controlled outcome and its exact evidence. Real Zetaris SQL and the versioned view now pass. Combined acceptance remains false: the Nightshift Runtime is currently unreachable during desktop setup. Cursor use and the final sponsor-connected video/deck remain pending. Historical receipts are retained rather than rewritten.
+29/29 application tests pass. The previous clean-install audit also passed 13/13 H-MEM checks, 55/55 synthetic cases, the Docker sample HTTP workflow and npm dependency auditing with zero known vulnerabilities. The acceptance gate rejects all-abstention runs and verifies each controlled outcome and its exact evidence. Real Zetaris SQL and the versioned view now pass. The complete real sponsor feature now passes on the controlled synthetic fixture; the original failed receipts remain as history. Cursor use and the final sponsor-connected video/deck remain pending. Historical receipts are retained rather than rewritten.
 
-### Real Zetaris milestone, 22 October 2026, 18:41 UTC
+### Historical Zetaris milestone, 22 October 2026, 18:41 UTC
 
 The official local Docker stack is installed and isolated on localhost. Its REST API executed SELECT 1 and the application adapter read six exact fixture rows from `sentinel_review.sentinel_passages`, unioning two separately registered CSV sources. Authentication used an existing local user session bearer in a temporary child environment; no permanent API key is published or claimed. The official installer verification passes 8/9 checks while its optional example-data bootstrap is still running. Combined acceptance fails because Nightshift currently has no responding Runtime; earlier it reported no configured provider. This remains an unsubmitted prototype. [Detailed receipt](evidence/zetaris-20261022.json).
+
+### Real complete feature, 23 October 2026, 02:21 UTC
+
+[Captured result and provider receipts](evidence/live-feature-20261023.json): actual Zetaris rows, four fresh Nightshift responses from Llama 3.2 1B, independent quotation/value validation, four H-MEM records, one changed assessment, two preserved, zero abstentions. Every captured response reports local-only execution and actual cost $0. The narrow rule grammar remains a limitation; this is not independent real-world accuracy. Output schemas avoid an observed small-model input-echo failure and require separate country-code array entries. A real llama.cpp grammar failure with \d was fixed using explicit ASCII digit ranges. [CUDA placement](evidence/nvidia-local-20261023.json) records full GPU weight placement on RTX 3090 and the same PID in NVIDIA's compute-process list. No Nemotron model was used.
+
+The official Zetaris installation check subsequently completed **9/9** after its sample bootstrap finished; the earlier 8/9 snapshot is retained as a historical receipt. All four captured receipt signatures verify with Ed25519 against the returned local daemon public key; this establishes local receipt integrity, not external organizer acceptance. Cursor authentication, final presentation/recording and HackOS delivery remain open gates. No submission ID or acceptance is claimed.

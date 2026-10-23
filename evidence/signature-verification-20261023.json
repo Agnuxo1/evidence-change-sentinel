@@ -1,0 +1,22 @@
+{
+  "utc": "2026-10-23T02:28:38.742Z",
+  "method": "Ed25519 over serialized envelope body",
+  "report": [
+    {
+      "request_id": "chatcmpl-d4fd97ea-cca3-4ce3-b7e9-ef4ec0e095b9",
+      "verified": true
+    },
+    {
+      "request_id": "chatcmpl-e09a7676-e6b1-46ce-a222-18c73bd095d4",
+      "verified": true
+    },
+    {
+      "request_id": "chatcmpl-e9d20878-6bcd-4f19-8540-232c34324621",
+      "verified": true
+    },
+    {
+      "request_id": "chatcmpl-01d55902-e869-42ea-9a19-0daaeba2f933",
+      "verified": true
+    }
+  ]
+}

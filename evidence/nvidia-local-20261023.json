@@ -1,0 +1,32 @@
+{
+  "utc": "2026-10-23T02:26:52.327Z",
+  "backend": "cuda",
+  "gpu": {
+    "label": "NVIDIA GeForce RTX 3090",
+    "source": "pc-discrete"
+  },
+  "lane": {
+    "id": "sentinel-local",
+    "pid": 140084,
+    "model": "Llama-3.2-1B-Instruct-Q4_K_M.gguf",
+    "state": "ready",
+    "placement": {
+      "device_mb": [
+        1862
+      ],
+      "devices": [
+        "CUDA0"
+      ],
+      "full_device_mb": 1862,
+      "gpu_weight_pct": 100,
+      "host_mb": 206,
+      "kind": "full",
+      "n_cpu_moe": 0,
+      "n_gpu_layers": null,
+      "tensor_split": null
+    }
+  },
+  "nvidia_compute_process": [
+    "140084, [Insufficient Permissions], [N/A]\r"
+  ]
+}
