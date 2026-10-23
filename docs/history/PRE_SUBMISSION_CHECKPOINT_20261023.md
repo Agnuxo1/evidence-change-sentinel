@@ -2,16 +2,16 @@
 
 # Open Agent Hackathon 2026 — Final acceptance gate & submission handoff
 
-**Team:** Evidence Change Sentinel (solo). **Candidate:** Francisco Angulo de Lafuente. **Track:** The Agent That Can Explain Why.  
-**Official build window:** 22–27 October 2026. **Submission deadline:** 27 October 2026, 23:45 UTC (28 October, 00:45 Europe/Madrid).  
+**Team:** Evidence Change Sentinel (solo). **Candidate:** Francisco Angulo de Lafuente. **Track:** The Agent That Can Explain Why.
+**Official build window:** 22–27 October 2026. **Submission deadline:** 27 October 2026, 23:45 UTC (28 October, 00:45 Europe/Madrid).
 **Status, 23 October 2026:** REAL SPONSOR FEATURE VERIFIED WITH SYNTHETIC DATA; **NOT SUBMITTED**. Actual Zetaris SQL, four fresh local Nightshift responses and H-MEM provenance pass the controlled acceptance gate. The final narrated demonstration and deck are prepared. Cursor is optional under the official Build update; Codex was used. HackOS delivery remains pending.
 
 > Source of truth: the [live event's Rules](https://hackathon.genai.works/event/open-agent-hackathon-2026), the [participant guide](https://docs.google.com/document/d/1_d3osxbXZRpp4Ln80w6Obc5xx06SmkIMrgp6BOj0Ofc/edit), the repo's code and explicit evidence JSON. Some older Academy and HackOS resources describe obsolete dates/prizes; use the event's updated deadline. Confirm current judge requirements in HackOS.
 
 ## 1. One product, one track, explicit evidence
 
-**Who:** Grant-application advisers and public-funding reviewers who track changes between official calls and amendment notices.  
-**Problem:** A changed passage can silently invalidate an old assessment; rechecking unrelated criteria wastes staff time.  
+**Who:** Grant-application advisers and public-funding reviewers who track changes between official calls and amendment notices.
+**Problem:** A changed passage can silently invalidate an old assessment; rechecking unrelated criteria wastes staff time.
 **Solution:** A traceable review workflow that references exact passages, invalidates affected conclusions, preserves unaffected ones and abstains on unsupported or missing evidence.
 
 The working offline example uses **fictional** sources and a fictional applicant; 35 employees meet a 50-employee limit before a change, then fail a 20-employee limit afterwards, while unchanged region/date results are preserved. It is not a legal eligibility determination, not a claimed real-world grant-case accuracy test.
