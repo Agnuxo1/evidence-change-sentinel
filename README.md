@@ -4,6 +4,11 @@ A funding-call evidence review prototype: when a source passage changes, identif
 
 **Status, 23 October 2026:** the real local Zetaris / Meterless Nightshift feature is **verified with synthetic evidence**: four new local-model responses, three validated requirements, one changed assessment and two preserved assessments. H-MEM records provenance. A narrated 3:41 demonstration and eight-slide deck document this run. **Submitted in HackOS on 23 October at 07:06:59 UTC**, ID `01a16795-98e3-765a-a05d-a699ba45c5f8`, Track 02. Status `submitted` persists after a full reload; organizer eligibility/judging approval is not yet evidenced. [Delivery receipt](evidence/submission-receipt-20261023.json). The offline path is deterministic, not an autonomous LLM demonstration. It does not determine official eligibility.
 
+
+**Operational audit, 26 October 2026:** the private HackOS panel was rechecked and still shows **Submitted 1/1**, with the original submission ID and materials. The 23 October live run below is historical evidence. The current Zetaris server backend is not running; Nightshift 1.2.1 has been restored, but no fresh inference completed. Its CPU-lane start was refused by the runtime's memory admission protection. No current combined sponsor verification or organizer acceptance is claimed. [Recovery and diagnostics](docs/OPERATIONS.md).
+
+New preflight and acceptance diagnostics use distinct `.state/diagnostics/` directories and cannot overwrite an existing receipt. The submission and historical live artifacts remain unchanged.
+
 ![Actual offline run](evidence/demo-screen.png)
 
 ## Run from a clean checkout

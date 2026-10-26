@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { runSentinel } from '../app/core.mjs';
 import { Meterless, Zetaris } from '../app/adapters.mjs';
 import { assertLiveResult } from './assert-live-result.mjs';
+import { writeDiagnostic } from './evidence-output.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const json = file => JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
@@ -14,7 +15,7 @@ const template = json('input_examples/example_1.json');
 const report = {
   checked_at: new Date().toISOString(), evidence_kind: 'live_sponsor_connectivity',
   dataset_kind: 'synthetic_example', checked: {}, integration_verified: false,
-  submitted_to_hackos: false,
+  submission_check: 'not_performed_by_this_script',
 };
 
 try {
@@ -72,9 +73,8 @@ try {
   report.integration_verified = false;
   report.note = 'A failed or incomplete live check must never be reported as a successful sponsor integration.';
 } finally {
-  const target = path.join(root, 'evidence', 'live-acceptance.json');
-  fs.mkdirSync(path.dirname(target), { recursive: true });
-  fs.writeFileSync(target, JSON.stringify(report, null, 2) + '\n');
+  const target = writeDiagnostic('live-acceptance.json', report);
   console.log(JSON.stringify(report, null, 2));
+  console.error(`Diagnostic saved: ${target}`);
   if (!report.integration_verified) process.exitCode = 1;
 }
