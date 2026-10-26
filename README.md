@@ -2,6 +2,8 @@
 
 A funding-call evidence review prototype: when a source passage changes, identify the affected assessments, quote the evidence, preserve unaffected assessments and queue uncertainty for human review.
 
+**For judges:** [delivered packet and receipt](docs/FINAL_ACCEPTANCE_AND_SUBMISSION.md), [model versus validator and sponsor roles](docs/MODEL_AND_VALIDATOR.md), [model per request in the captured trace](evidence/model-request-index-20261023.json), and [current service recovery](docs/OPERATIONS.md). The credential-free sample commands below reproduce the deterministic path. The dated connected run is separate evidence; current services are under recovery.
+
 **Status, 23 October 2026:** the real local Zetaris / Meterless Nightshift feature is **verified with synthetic evidence**: four new local-model responses, three validated requirements, one changed assessment and two preserved assessments. H-MEM records provenance. A narrated 3:41 demonstration and eight-slide deck document this run. **Submitted in HackOS on 23 October at 07:06:59 UTC**, ID `01a16795-98e3-765a-a05d-a699ba45c5f8`, Track 02. Status `submitted` persists after a full reload; organizer eligibility/judging approval is not yet evidenced. [Delivery receipt](evidence/submission-receipt-20261023.json). The offline path is deterministic, not an autonomous LLM demonstration. It does not determine official eligibility.
 
 
