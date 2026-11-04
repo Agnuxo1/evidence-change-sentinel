@@ -1,5 +1,10 @@
 # Evidence Change Sentinel
 
+![Evidence Change Sentinel: Targeted reassessment when source passages change. Illustrative cover, not data.](docs/science-figures/header.gif)
+
+**Project citation:** [Francisco Angulo de Lafuente](https://orcid.org/0009-0001-1634-7063) · [CITATION.cff](CITATION.cff) · [Software metadata](codemeta.json).
+
+
 A funding-call evidence review prototype: when a source passage changes, identify the affected assessments, quote the evidence, preserve unaffected assessments and queue uncertainty for human review.
 
 **For judges:** [delivered packet and receipt](docs/FINAL_ACCEPTANCE_AND_SUBMISSION.md), [model versus validator and sponsor roles](docs/MODEL_AND_VALIDATOR.md), [model per request in the captured trace](evidence/model-request-index-20261023.json), and [current service recovery](docs/OPERATIONS.md). The credential-free sample commands below reproduce the deterministic path. The dated connected run is separate evidence; current services are under recovery.
@@ -14,6 +19,10 @@ New preflight and acceptance diagnostics use distinct `.state/diagnostics/` dire
 ![Actual offline run](evidence/demo-screen.png)
 
 ## Run from a clean checkout
+
+![The offline path: Install — Use npm ci; Test — Check the contract; Evaluate — Synthetic cases; Run — Bind to localhost](docs/science-figures/01.gif)
+
+*Figure 1. The offline path.*
 
 Requires Node.js 22 or later and npm; no Python, GPU, model download or service credentials are needed for sample mode.
 
@@ -52,6 +61,10 @@ docker run --rm -p 127.0.0.1:8788:8788 evidence-change-sentinel
 
 ## What the workflow actually does
 
+![Assess only affected requirements: Versioned source — Keep evidence IDs; Find change — Map dependencies; Re-evaluate — Quote the source; Preserve rest — Escalate uncertainty](docs/science-figures/02.gif)
+
+*Figure 2. Assess only affected requirements.*
+
 ```mermaid
 flowchart LR
   D[Versioned evidence: call and notice] --> E[EvidenceReader]
@@ -74,6 +87,10 @@ H-MEM stores assessments with provenance, source fingerprints and a mutation led
 
 ## Sponsor integration and remaining work
 
+![Separate sponsor integrations: Zetaris — Versioned records; Nightshift — Model proposals; H-MEM — Audit memory; Offline mode — Deterministic path](docs/science-figures/03.gif)
+
+*Figure 3. Separate sponsor integrations.*
+
 | Technology | Implemented role | Verified status |
 |---|---|---|
 | Meterless H-MEM | Assessment provenance, exact evidence recall, supersession and ledger | Reference conformance 13/13; application persistence test passes |
@@ -83,6 +100,10 @@ H-MEM stores assessments with provenance, source fingerprints and a mutation led
 | NVIDIA | CUDA acceleration for Nightshift local inference on RTX 3090 | Real lane placement and GPU process verified; no Nemotron special-prize claim |
 
 ### Live setup
+
+![Supply the live environment separately: Provision local services — No secrets in Git; Connect adapters — Record actual versions; Run preflight — Inspect current health](docs/science-figures/04.gif)
+
+*Figure 4. Supply the live environment separately.*
 
 Use `.env.example` as a list of variable names; keep credentials in your own local environment. Node 22 can read a private env file:
 
@@ -108,6 +129,10 @@ Run `npm run preflight` with the configured environment, then an actual live exa
 
 ## Historical prototype files and live acceptance
 
+![Historical and current evidence: Captured requests — Dated integration; Validate proposals — Require evidence; Historical trace — Do not assume current service](docs/science-figures/05.gif)
+
+*Figure 5. Historical and current evidence.*
+
 - [3-minute narrated **offline-prototype** video](deliverables/evidence-change-sentinel-offline-demonstration.mp4), composed of screenshots captured by a real automated browser run on the sample application. **This is not the required live sponsor demonstration, and is not a completed HackOS entry.**
 - [8-slide prototype presentation](deliverables/evidence-change-sentinel-prototype.pptx), labelled as an interim deck.
 - [Step-by-step sponsor acceptance and HackOS delivery gates](docs/FINAL_ACCEPTANCE_AND_SUBMISSION.md).
@@ -116,6 +141,10 @@ Run `npm run preflight` with the configured environment, then an actual live exa
 
 ## Evidence and evaluation
 
+![A bounded test ladder: Unit tests — Application checks; Conformance — Memory contracts; Synthetic outcomes — Known fixture cases; Portal receipt — Delivery only](docs/science-figures/06.gif)
+
+*Figure 6. A bounded test ladder.*
+
 - 29 application tests: dependency invalidation, missing/added evidence, applicant changes, abstention, invented quotes, source instructions as data, bounded repair, time budgets, failure reporting and H-MEM persistence. Adapter checks use a **local mock service**, never a claimed sponsor endpoint.
 - Upstream H-MEM conformance: 13/13 checks.
 - `npm run evaluate`: 55 controlled synthetic cases; correct expected outcomes in all 55 and preservation of unaffected criteria. This measures the documented grammar and change propagation only. It is not independent, natural-language, real-world, legal or model-quality validation.
@@ -123,11 +152,19 @@ Run `npm run preflight` with the configured environment, then an actual live exa
 
 ## Limitations
 
+![When a person reviews the result: Ambiguous source — Do not guess; Unsupported rule — Avoid invented criteria; Human review — Keep source trail](docs/science-figures/07.gif)
+
+*Figure 7. When a person reviews the result.*
+
 Only exact English clauses for employee limits, ISO dates and two-letter region lists are automatically interpreted. Unknown wording, exceptions, cross-references, jurisdiction-specific interpretation, time-of-day deadlines and missing facts require human review. Full extraction from arbitrary PDFs, Spanish BOE calls, source crawling, source authority verification and robust segmentation are future work. Source URLs are provenance supplied by the caller; the prototype does not certify their authenticity. Synthetic URLs use `example.org` and are not real funding notices. Adding, removing or changing unmapped passages is detected; silently dropping a requirement from the input contract is not independently detected.
 
 Do not deploy the unauthenticated local HTTP demo to the public Internet. It binds to localhost by default; Docker users should publish only to localhost. Memory/logs are local research artifacts. No automatic application, legal advice or real funding decision is performed.
 
 ## Provenance and rights
+
+![Keep the rights attached: Original snapshot — Research provenance; H-MEM vendor — Preserve Apache 2.0; New graphics — Separate renderer MIT](docs/science-figures/08.gif)
+
+*Figure 8. Keep the rights attached.*
 
 Project concept, team description and pre-event planning existed before the build window and must be declared. The application source in this snapshot was newly authored on 22 October 2026, after the published build-window opening. No code was copied from other local product projects. Synthetic fixtures were authored for this build.
 
@@ -137,13 +174,25 @@ For hackathon rules and the current deadline use the [official event page](https
 
 ## Audit checkpoint: 22 October 2026
 
+![Read each audit as a dated record: Offline checks — Synthetic evidence; Sponsor SQL — Versioned source rows; Historical live demo — Recorded controlled run](docs/science-figures/09.gif)
+
+*Figure 9. Read each audit as a dated record.*
+
 29/29 application tests pass. The previous clean-install audit also passed 13/13 H-MEM checks, 55/55 synthetic cases, the Docker sample HTTP workflow and npm dependency auditing with zero known vulnerabilities. The acceptance gate rejects all-abstention runs and verifies each controlled outcome and its exact evidence. Real Zetaris SQL and the versioned view now pass. The complete real sponsor feature now passes on the controlled synthetic fixture; the original failed receipts remain as history. The connected demonstration and deck were submitted in HackOS; see the delivery receipt above. Historical receipts are retained rather than rewritten.
 
 ### Historical Zetaris milestone, 22 October 2026, 18:41 UTC
 
+![Read passage versions: Initial passage — Keep stable IDs; Revised passage — Compare exact text; Evidence view — Record trace](docs/science-figures/10.gif)
+
+*Figure 10. Read passage versions.*
+
 The official local Docker stack is installed and isolated on localhost. Its REST API executed SELECT 1 and the application adapter read six exact fixture rows from `sentinel_review.sentinel_passages`, unioning two separately registered CSV sources. Authentication used an existing local user session bearer in a temporary child environment; no permanent API key is published or claimed. The official installer verification passes 8/9 checks while its optional example-data bootstrap is still running. Combined acceptance fails because Nightshift currently has no responding Runtime; earlier it reported no configured provider. This remains an unsubmitted prototype. [Detailed receipt](evidence/zetaris-20261022.json).
 
 ### Real complete feature, 23 October 2026, 02:21 UTC
+
+![Follow the controlled evidence trace: Model proposal — Synthetic example; Validator check — Verify quotation; Assessment update — Preserve unaffected rows](docs/science-figures/11.gif)
+
+*Figure 11. Follow the controlled evidence trace.*
 
 [Captured result and provider receipts](evidence/live-feature-20261023.json): actual Zetaris rows, four fresh Nightshift responses from Llama 3.2 1B, independent quotation/value validation, four H-MEM records, one changed assessment, two preserved, zero abstentions. Every captured response reports local-only execution and actual cost $0. The narrow rule grammar remains a limitation; this is not independent real-world accuracy. Output schemas avoid an observed small-model input-echo failure and require separate country-code array entries. A real llama.cpp grammar failure with \d was fixed using explicit ASCII digit ranges. [CUDA placement](evidence/nvidia-local-20261023.json) records full GPU weight placement on RTX 3090 and the same PID in NVIDIA's compute-process list. No Nemotron model was used.
 
@@ -151,8 +200,27 @@ The official Zetaris installation check subsequently completed **9/9** after its
 
 ### Submission materials, 23 October 2026
 
+![Separate delivery from judging: Recorded materials — Use the documented version; Portal receipt — Track 02 submitted; Judging — Outcome not established](docs/science-figures/12.gif)
+
+*Figure 12. Separate delivery from judging.*
+
 - [3:41 narrated live-feature demonstration](deliverables/evidence-change-sentinel-live-demo.mp4): real connected-workflow browser captures and slides, with synthetic narration. This is a narrated capture sequence, not an uninterrupted screen recording.
 - [Eight-slide live-feature deck](deliverables/evidence-change-sentinel-live-v3.pptx).
 - [Prepared description](docs/submission-description.md), [judge questions](docs/judges-qa.md) and [official coding-tool update](docs/RULE_UPDATE_20261022.md).
 
 The prototype deck and offline video remain historical artifacts. These new files were delivered in the Track 02 submission. The receipt records the server-assigned identifier; organizer eligibility/judging remains pending.
+
+## Bibliography and research directions
+
+![Use provenance to audit change: Source entity — Version inputs; Activity — Record responsible step; Decision record — Keep affected links](docs/science-figures/13.gif)
+
+*Figure 13. Use provenance to audit change.*
+
+The following primary sources inform proposed checks. Their text, code, figures, and data are not included in this documentation update.
+
+- [W3C (2013), PROV-O: The PROV Ontology](https://www.w3.org/TR/prov-o/). Represent a changed source and each reassessment as linked versions, then test that unaffected decisions retain their provenance.
+- [Lewis et al. (2020), Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401). For model-assisted proposals, compare quoted-source support with and without retrieval on the same fixtures.
+
+**Attribution and reuse.** Please credit [Francisco Angulo de Lafuente](https://orcid.org/0009-0001-1634-7063) in academic and software reuse and do not present this work as your own. The new figure renderer is MIT-licensed; the existing snapshot retains its original terms. When distributing copies or substantial portions of MIT software, preserve the copyright and permission notice. Upstream material keeps its own terms. [License](LICENSE.docs-renderer) · [Figure provenance](docs/science-figures/PROVENANCE.md).
+
+<!-- research-provenance: project=evidence-change-sentinel; date=2026-11-04; author=Francisco Angulo de Lafuente; orcid=https://orcid.org/0009-0001-1634-7063; new-renderer-license=MIT -->

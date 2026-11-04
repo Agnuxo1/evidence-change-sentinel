@@ -1,0 +1,200 @@
+{
+  "title": "Evidence Change Sentinel",
+  "sub": "Targeted reassessment when source passages change",
+  "issue": "HackOS Track 02 · research snapshot",
+  "license_scope": "renderer",
+  "sections": [
+    [
+      "Run from a clean checkout",
+      "The offline path",
+      [
+        "Install",
+        "Test",
+        "Evaluate",
+        "Run"
+      ],
+      [
+        "Use npm ci",
+        "Check the contract",
+        "Synthetic cases",
+        "Bind to localhost"
+      ]
+    ],
+    [
+      "What the workflow",
+      "Assess only affected requirements",
+      [
+        "Versioned source",
+        "Find change",
+        "Re-evaluate",
+        "Preserve rest"
+      ],
+      [
+        "Keep evidence IDs",
+        "Map dependencies",
+        "Quote the source",
+        "Escalate uncertainty"
+      ]
+    ],
+    [
+      "Sponsor integration",
+      "Separate sponsor integrations",
+      [
+        "Zetaris",
+        "Nightshift",
+        "H-MEM",
+        "Offline mode"
+      ],
+      [
+        "Versioned records",
+        "Model proposals",
+        "Audit memory",
+        "Deterministic path"
+      ]
+    ],
+    [
+      "Live setup",
+      "Supply the live environment separately",
+      [
+        "Provision local services",
+        "Connect adapters",
+        "Run preflight"
+      ],
+      [
+        "No secrets in Git",
+        "Record actual versions",
+        "Inspect current health"
+      ]
+    ],
+    [
+      "Historical prototype",
+      "Historical and current evidence",
+      [
+        "Captured requests",
+        "Validate proposals",
+        "Historical trace"
+      ],
+      [
+        "Dated integration",
+        "Require evidence",
+        "Do not assume current service"
+      ]
+    ],
+    [
+      "Evidence and evaluation",
+      "A bounded test ladder",
+      [
+        "Unit tests",
+        "Conformance",
+        "Synthetic outcomes",
+        "Portal receipt"
+      ],
+      [
+        "Application checks",
+        "Memory contracts",
+        "Known fixture cases",
+        "Delivery only"
+      ]
+    ],
+    [
+      "Limitations",
+      "When a person reviews the result",
+      [
+        "Ambiguous source",
+        "Unsupported rule",
+        "Human review"
+      ],
+      [
+        "Do not guess",
+        "Avoid invented criteria",
+        "Keep source trail"
+      ]
+    ],
+    [
+      "Provenance and rights",
+      "Keep the rights attached",
+      [
+        "Original snapshot",
+        "H-MEM vendor",
+        "New graphics"
+      ],
+      [
+        "Research provenance",
+        "Preserve Apache 2.0",
+        "Separate renderer MIT"
+      ]
+    ],
+    [
+      "Audit checkpoint",
+      "Read each audit as a dated record",
+      [
+        "Offline checks",
+        "Sponsor SQL",
+        "Historical live demo"
+      ],
+      [
+        "Synthetic evidence",
+        "Versioned source rows",
+        "Recorded controlled run"
+      ]
+    ],
+    [
+      "Historical Zetaris",
+      "Read passage versions",
+      [
+        "Initial passage",
+        "Revised passage",
+        "Evidence view"
+      ],
+      [
+        "Keep stable IDs",
+        "Compare exact text",
+        "Record trace"
+      ]
+    ],
+    [
+      "Real complete feature",
+      "Follow the controlled evidence trace",
+      [
+        "Model proposal",
+        "Validator check",
+        "Assessment update"
+      ],
+      [
+        "Synthetic example",
+        "Verify quotation",
+        "Preserve unaffected rows"
+      ]
+    ],
+    [
+      "Submission materials",
+      "Separate delivery from judging",
+      [
+        "Recorded materials",
+        "Portal receipt",
+        "Judging"
+      ],
+      [
+        "Use the documented version",
+        "Track 02 submitted",
+        "Outcome not established"
+      ]
+    ],
+    [
+      "Bibliography and research directions",
+      "Use provenance to audit change",
+      [
+        "Source entity",
+        "Activity",
+        "Decision record"
+      ],
+      [
+        "Version inputs",
+        "Record responsible step",
+        "Keep affected links"
+      ]
+    ]
+  ],
+  "header_source": "docs/science-figures/cover-art.jpg",
+  "repository": "evidence-change-sentinel"
+}
