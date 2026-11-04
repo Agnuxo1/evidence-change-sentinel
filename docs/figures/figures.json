@@ -1,0 +1,530 @@
+{
+  "title": "Evidence Change Sentinel",
+  "subtitle": "Targeted reassessment when source passages change",
+  "figures": [
+    {
+      "kind": "flow",
+      "id": "fig-01",
+      "basis": "Technical schematic",
+      "title": "The offline path",
+      "subtitle": "Use npm ci   /   Check the contract   /   Synthetic cases   /   Bind to localhost",
+      "source": "Source: README.md · conceptual relations, no measured values",
+      "nodes": [
+        [
+          0.115,
+          0.52,
+          "Install"
+        ],
+        [
+          0.38,
+          0.52,
+          "Test"
+        ],
+        [
+          0.62,
+          0.52,
+          "Evaluate"
+        ],
+        [
+          0.885,
+          0.52,
+          "Run"
+        ]
+      ],
+      "edges": [
+        [
+          0,
+          1,
+          ""
+        ],
+        [
+          1,
+          2,
+          ""
+        ],
+        [
+          2,
+          3,
+          ""
+        ]
+      ],
+      "alt": "The offline path. Install: Use npm ci; Test: Check the contract; Evaluate: Synthetic cases; Run: Bind to localhost"
+    },
+    {
+      "kind": "flow",
+      "id": "fig-02",
+      "basis": "Technical schematic",
+      "title": "Assess only affected requirements",
+      "subtitle": "Keep evidence IDs   /   Map dependencies   /   Quote the source   /   Escalate uncertainty",
+      "source": "Source: README.md · conceptual relations, no measured values",
+      "nodes": [
+        [
+          0.115,
+          0.52,
+          "Versioned source"
+        ],
+        [
+          0.38,
+          0.52,
+          "Find change"
+        ],
+        [
+          0.62,
+          0.52,
+          "Re-evaluate"
+        ],
+        [
+          0.885,
+          0.52,
+          "Preserve rest"
+        ]
+      ],
+      "edges": [
+        [
+          0,
+          1,
+          ""
+        ],
+        [
+          1,
+          2,
+          ""
+        ],
+        [
+          2,
+          3,
+          ""
+        ]
+      ],
+      "alt": "Assess only affected requirements. Versioned source: Keep evidence IDs; Find change: Map dependencies; Re-evaluate: Quote the source; Preserve rest: Escalate uncertainty"
+    },
+    {
+      "kind": "flow",
+      "id": "fig-03",
+      "basis": "Technical schematic",
+      "title": "Separate sponsor integrations",
+      "subtitle": "Versioned records   /   Model proposals   /   Audit memory   /   Deterministic path",
+      "source": "Source: README.md · conceptual relations, no measured values",
+      "nodes": [
+        [
+          0.115,
+          0.52,
+          "Zetaris"
+        ],
+        [
+          0.38,
+          0.52,
+          "Nightshift"
+        ],
+        [
+          0.62,
+          0.52,
+          "H-MEM"
+        ],
+        [
+          0.885,
+          0.52,
+          "Offline mode"
+        ]
+      ],
+      "edges": [
+        [
+          0,
+          1,
+          ""
+        ],
+        [
+          1,
+          2,
+          ""
+        ],
+        [
+          2,
+          3,
+          ""
+        ]
+      ],
+      "alt": "Separate sponsor integrations. Zetaris: Versioned records; Nightshift: Model proposals; H-MEM: Audit memory; Offline mode: Deterministic path"
+    },
+    {
+      "kind": "flow",
+      "id": "fig-04",
+      "basis": "Technical schematic",
+      "title": "Supply the live environment separately",
+      "subtitle": "No secrets in Git   /   Record actual versions   /   Inspect current health",
+      "source": "Source: README.md · conceptual relations, no measured values",
+      "nodes": [
+        [
+          0.16,
+          0.52,
+          "Provision local services"
+        ],
+        [
+          0.5,
+          0.52,
+          "Connect adapters"
+        ],
+        [
+          0.84,
+          0.52,
+          "Run preflight"
+        ]
+      ],
+      "edges": [
+        [
+          0,
+          1,
+          ""
+        ],
+        [
+          1,
+          2,
+          ""
+        ]
+      ],
+      "alt": "Supply the live environment separately. Provision local services: No secrets in Git; Connect adapters: Record actual versions; Run preflight: Inspect current health"
+    },
+    {
+      "kind": "flow",
+      "id": "fig-05",
+      "basis": "Technical schematic",
+      "title": "Historical and current evidence",
+      "subtitle": "Dated integration   /   Require evidence   /   Do not assume current service",
+      "source": "Source: README.md · conceptual relations, no measured values",
+      "nodes": [
+        [
+          0.16,
+          0.52,
+          "Captured requests"
+        ],
+        [
+          0.5,
+          0.52,
+          "Validate proposals"
+        ],
+        [
+          0.84,
+          0.52,
+          "Historical trace"
+        ]
+      ],
+      "edges": [
+        [
+          0,
+          1,
+          ""
+        ],
+        [
+          1,
+          2,
+          ""
+        ]
+      ],
+      "alt": "Historical and current evidence. Captured requests: Dated integration; Validate proposals: Require evidence; Historical trace: Do not assume current service"
+    },
+    {
+      "kind": "bars",
+      "basis": "Recorded local evidence",
+      "title": "Historical local verification suite",
+      "subtitle": "These are distinct fixture checks, not official judging criteria",
+      "source": "Source: README, audit checkpoint of 22 October 2026",
+      "labels": [
+        "Application tests",
+        "H-MEM conformance",
+        "Synthetic cases"
+      ],
+      "values": [
+        29,
+        13,
+        55
+      ],
+      "lim": [
+        0,
+        66
+      ],
+      "xlabel": "Passing cases (count)",
+      "alt": "Historical local verification suite: Application tests: 29; H-MEM conformance: 13; Synthetic cases: 55",
+      "ticks": [
+        0,
+        10,
+        20,
+        30,
+        40,
+        50,
+        60
+      ],
+      "formats": [
+        "29 / 29",
+        "13 / 13",
+        "55 / 55"
+      ],
+      "id": "fig-06"
+    },
+    {
+      "kind": "flow",
+      "id": "fig-07",
+      "basis": "Technical schematic",
+      "title": "When a person reviews the result",
+      "subtitle": "Do not guess   /   Avoid invented criteria   /   Keep source trail",
+      "source": "Source: README.md · conceptual relations, no measured values",
+      "nodes": [
+        [
+          0.16,
+          0.52,
+          "Ambiguous source"
+        ],
+        [
+          0.5,
+          0.52,
+          "Unsupported rule"
+        ],
+        [
+          0.84,
+          0.52,
+          "Human review"
+        ]
+      ],
+      "edges": [
+        [
+          0,
+          1,
+          ""
+        ],
+        [
+          1,
+          2,
+          ""
+        ]
+      ],
+      "alt": "When a person reviews the result. Ambiguous source: Do not guess; Unsupported rule: Avoid invented criteria; Human review: Keep source trail"
+    },
+    {
+      "kind": "flow",
+      "id": "fig-08",
+      "basis": "Technical schematic",
+      "title": "Keep the rights attached",
+      "subtitle": "Research provenance   /   Preserve Apache 2.0   /   Separate renderer MIT",
+      "source": "Source: README.md · conceptual relations, no measured values",
+      "nodes": [
+        [
+          0.16,
+          0.52,
+          "Original snapshot"
+        ],
+        [
+          0.5,
+          0.52,
+          "H-MEM vendor"
+        ],
+        [
+          0.84,
+          0.52,
+          "New graphics"
+        ]
+      ],
+      "edges": [
+        [
+          0,
+          1,
+          ""
+        ],
+        [
+          1,
+          2,
+          ""
+        ]
+      ],
+      "alt": "Keep the rights attached. Original snapshot: Research provenance; H-MEM vendor: Preserve Apache 2.0; New graphics: Separate renderer MIT"
+    },
+    {
+      "kind": "flow",
+      "id": "fig-09",
+      "basis": "Technical schematic",
+      "title": "Read each audit as a dated record",
+      "subtitle": "Synthetic evidence   /   Versioned source rows   /   Recorded controlled run",
+      "source": "Source: README.md · conceptual relations, no measured values",
+      "nodes": [
+        [
+          0.16,
+          0.52,
+          "Offline checks"
+        ],
+        [
+          0.5,
+          0.52,
+          "Sponsor SQL"
+        ],
+        [
+          0.84,
+          0.52,
+          "Historical live demo"
+        ]
+      ],
+      "edges": [
+        [
+          0,
+          1,
+          ""
+        ],
+        [
+          1,
+          2,
+          ""
+        ]
+      ],
+      "alt": "Read each audit as a dated record. Offline checks: Synthetic evidence; Sponsor SQL: Versioned source rows; Historical live demo: Recorded controlled run"
+    },
+    {
+      "kind": "flow",
+      "id": "fig-10",
+      "basis": "Technical schematic",
+      "title": "Read passage versions",
+      "subtitle": "Keep stable IDs   /   Compare exact text   /   Record trace",
+      "source": "Source: README.md · conceptual relations, no measured values",
+      "nodes": [
+        [
+          0.16,
+          0.52,
+          "Initial passage"
+        ],
+        [
+          0.5,
+          0.52,
+          "Revised passage"
+        ],
+        [
+          0.84,
+          0.52,
+          "Evidence view"
+        ]
+      ],
+      "edges": [
+        [
+          0,
+          1,
+          ""
+        ],
+        [
+          1,
+          2,
+          ""
+        ]
+      ],
+      "alt": "Read passage versions. Initial passage: Keep stable IDs; Revised passage: Compare exact text; Evidence view: Record trace"
+    },
+    {
+      "kind": "flow",
+      "id": "fig-11",
+      "basis": "Technical schematic",
+      "title": "Follow the controlled evidence trace",
+      "subtitle": "Synthetic example   /   Verify quotation   /   Preserve unaffected rows",
+      "source": "Source: README.md · conceptual relations, no measured values",
+      "nodes": [
+        [
+          0.16,
+          0.52,
+          "Model proposal"
+        ],
+        [
+          0.5,
+          0.52,
+          "Validator check"
+        ],
+        [
+          0.84,
+          0.52,
+          "Assessment update"
+        ]
+      ],
+      "edges": [
+        [
+          0,
+          1,
+          ""
+        ],
+        [
+          1,
+          2,
+          ""
+        ]
+      ],
+      "alt": "Follow the controlled evidence trace. Model proposal: Synthetic example; Validator check: Verify quotation; Assessment update: Preserve unaffected rows"
+    },
+    {
+      "kind": "flow",
+      "id": "fig-12",
+      "basis": "Technical schematic",
+      "title": "Separate delivery from judging",
+      "subtitle": "Use the documented version   /   Track 02 submitted   /   Outcome not established",
+      "source": "Source: README.md · conceptual relations, no measured values",
+      "nodes": [
+        [
+          0.16,
+          0.52,
+          "Recorded materials"
+        ],
+        [
+          0.5,
+          0.52,
+          "Portal receipt"
+        ],
+        [
+          0.84,
+          0.52,
+          "Judging"
+        ]
+      ],
+      "edges": [
+        [
+          0,
+          1,
+          ""
+        ],
+        [
+          1,
+          2,
+          ""
+        ]
+      ],
+      "alt": "Separate delivery from judging. Recorded materials: Use the documented version; Portal receipt: Track 02 submitted; Judging: Outcome not established"
+    },
+    {
+      "kind": "flow",
+      "id": "fig-13",
+      "basis": "Technical schematic",
+      "title": "Use provenance to audit change",
+      "subtitle": "Version inputs   /   Record responsible step   /   Keep affected links",
+      "source": "Source: README.md · conceptual relations, no measured values",
+      "nodes": [
+        [
+          0.16,
+          0.52,
+          "Source entity"
+        ],
+        [
+          0.5,
+          0.52,
+          "Activity"
+        ],
+        [
+          0.84,
+          0.52,
+          "Decision record"
+        ]
+      ],
+      "edges": [
+        [
+          0,
+          1,
+          ""
+        ],
+        [
+          1,
+          2,
+          ""
+        ]
+      ],
+      "alt": "Use provenance to audit change. Source entity: Version inputs; Activity: Record responsible step; Decision record: Keep affected links"
+    }
+  ]
+}
