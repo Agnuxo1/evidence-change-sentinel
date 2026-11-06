@@ -6,16 +6,25 @@
 **Project citation:** [Francisco Angulo de Lafuente](https://orcid.org/0009-0001-1634-7063) · [CITATION.cff](CITATION.cff) · [Software metadata](codemeta.json).
 
 
-A funding-call evidence review prototype: when a source passage changes, identify the affected assessments, quote the evidence, preserve unaffected assessments and queue uncertainty for human review.
+**When a funding call changes, Evidence Change Sentinel finds which assessments the change affects, quotes the evidence, keeps the rest intact and sends anything uncertain to a person.**
+
+## Results at a glance
+
+| What was shown | Result | Evidence |
+|---|---|---|
+| Connected run on the sponsor stack, 23 October 2026 | Zetaris SQL, Meterless Nightshift and H-MEM end to end on a controlled synthetic call: 3 of 3 requirements validated, the 1 affected decision changed correctly, the 2 unaffected assessments preserved from memory, 4 local model calls, 0 abstentions | [Run record](evidence/live-feature-20261023.json) · [acceptance](evidence/live-acceptance.json) |
+| Signed provider receipts | 4 of 4 Ed25519 envelopes verified | [Verification](evidence/signature-verification-20261023.json) |
+| Local inference | Llama 3.2 1B fully on an RTX 3090 through CUDA | [Placement record](evidence/nvidia-local-20261023.json) |
+| Controlled evaluation | 55 of 55 synthetic cases correct, unaffected criteria preserved | `npm run evaluate` |
+| Application tests | 31 of 31 pass | `npm test` |
+| H-MEM conformance | 13 of 13 checks pass | `npm run conformance` |
+| Dependencies | 0 known vulnerabilities | `npm audit --omit=dev` |
+| Delivery | Submitted to the Open Agent Hackathon 2026, Track 02, on 23 October 2026 at 07:06:59 UTC, ID `01a16795-98e3-765a-a05d-a699ba45c5f8`, with a narrated 3:41 demonstration and an eight-slide deck | [Receipt](evidence/submission-receipt-20261023.json) |
+
+The tests, conformance checks, evaluation and dependency audit were re-run from a clean checkout on 6 November 2026.
 
 **For judges:** [delivered packet and receipt](docs/FINAL_ACCEPTANCE_AND_SUBMISSION.md), [model versus validator and sponsor roles](docs/MODEL_AND_VALIDATOR.md), [model per request in the captured trace](evidence/model-request-index-20261023.json), and [current service recovery](docs/OPERATIONS.md). The credential-free sample commands below reproduce the deterministic path. The dated connected run is separate evidence; current services are under recovery.
 
-**Status, 23 October 2026:** the real local Zetaris / Meterless Nightshift feature is **verified with synthetic evidence**: four new local-model responses, three validated requirements, one changed assessment and two preserved assessments. H-MEM records provenance. A narrated 3:41 demonstration and eight-slide deck document this run. **Submitted in HackOS on 23 October at 07:06:59 UTC**, ID `01a16795-98e3-765a-a05d-a699ba45c5f8`, Track 02. Status `submitted` persists after a full reload; organizer eligibility/judging approval is not yet evidenced. [Delivery receipt](evidence/submission-receipt-20261023.json). The offline path is deterministic, not an autonomous LLM demonstration. It does not determine official eligibility.
-
-
-**Operational audit, 26 October 2026:** the private HackOS panel was rechecked and still shows **Submitted 1/1**, with the original submission ID and materials. The 23 October live run below is historical evidence. The current Zetaris server backend is not running; Nightshift 1.2.1 has been restored, but no fresh inference completed. Its CPU-lane start was refused by the runtime's memory admission protection. No current combined sponsor verification or organizer acceptance is claimed. [Recovery and diagnostics](docs/OPERATIONS.md).
-
-New preflight and acceptance diagnostics use distinct `.state/diagnostics/` directories and cannot overwrite an existing receipt. The submission and historical live artifacts remain unchanged.
 
 ![Actual offline run](evidence/demo-screen.png)
 
@@ -90,7 +99,7 @@ An assessment is tied to source ID, passage ID, exact quotation, source URL and 
 
 H-MEM stores assessments with provenance, source fingerprints and a mutation ledger. It is the real, unmodified upstream reference, including its deterministic hash embedder and JSON persistence. Reuse requires an exact fingerprint of project, applicant, requirement, text, URL and sample/live mode; semantic similarity alone never authorizes reuse. The CLI starts each run in a fresh memory by default; the library's `persistDir` option enables persistence and is tested across sessions. This prototype is single-process and its JSON persistence is not a concurrent multi-user database.
 
-## Sponsor integration and remaining work
+## Sponsor integration
 
 ![Separate sponsor integrations. Zetaris: Versioned records; Nightshift: Model proposals; H-MEM: Audit memory; Offline mode: Deterministic path](docs/figures/fig-03.gif)
 
@@ -134,9 +143,9 @@ FROM sentinel_review.sentinel_passages
 
 The adapter uses the REST shape in the official 21 October Participant Setup Guide: `POST /api/v1.0/sql-editor/sqls/run`, bearer token, `X-Org-ID`, `X-Request-ID`, `queryId`, `sql`, `source`, `limit`. Meterless implements the [official Runtime provider contract](https://meterless.ai/engines.html): normalized `/v1`, model discovery, bearer authentication, `meterless-app`, `meterless-scope`, and distinct unauthorized/offline errors. `meterless/auto` is a routing mode, not proof that Nemotron executed anything.
 
-Run `npm run preflight` with the configured environment, then an actual live example and verify quotes, traces and the Nightshift model receipt. The latest preflight verifies both endpoint connections and six Zetaris rows; `submission_ready:false` remains explicit. A separate fail-closed script, `node --env-file=.env --import tsx scripts/live-acceptance.mjs`, demands a real authenticated SQL query, a populated versioned view, Nightshift model discovery, an actual model proposal, evidence validation and H-MEM writes. Mock-backed tests are explicitly distinct from that live check.
+Run `npm run preflight` with the configured environment, then an actual live example and verify quotes, traces and the Nightshift model receipt. The 23 October preflight verified both endpoint connections and six Zetaris rows. A separate fail-closed script, `node --env-file=.env --import tsx scripts/live-acceptance.mjs`, demands a real authenticated SQL query, a populated versioned view, Nightshift model discovery, an actual model proposal, evidence validation and H-MEM writes. Mock-backed tests are explicitly distinct from that live check.
 
-## Historical prototype files and live acceptance
+## Prototype files and live acceptance
 
 ![Historical and current evidence. Captured requests: Dated integration; Validate proposals: Require evidence; Historical trace: Do not assume current service](docs/figures/fig-05.gif)
 
@@ -144,7 +153,7 @@ Run `npm run preflight` with the configured environment, then an actual live exa
 
 
 
-- [3-minute narrated **offline-prototype** video](deliverables/evidence-change-sentinel-offline-demonstration.mp4), composed of screenshots captured by a real automated browser run on the sample application. **This is not the required live sponsor demonstration, and is not a completed HackOS entry.**
+- [3-minute narrated **offline-prototype** video](deliverables/evidence-change-sentinel-offline-demonstration.mp4), composed of screenshots captured by a real automated browser run on the sample application. The delivered entry uses the connected 3:41 demonstration listed in the results above.
 - [8-slide prototype presentation](deliverables/evidence-change-sentinel-prototype.pptx), labelled as an interim deck.
 - [Step-by-step sponsor acceptance and HackOS delivery gates](docs/FINAL_ACCEPTANCE_AND_SUBMISSION.md).
 - For real authenticated sponsor testing: `npm run preflight` and `npm run live:accept` after loading private credentials, e.g. `node --env-file=.env --import tsx scripts/live-acceptance.mjs`.
@@ -158,12 +167,12 @@ Run `npm run preflight` with the configured environment, then an actual live exa
 
 
 
-- 29 application tests: dependency invalidation, missing/added evidence, applicant changes, abstention, invented quotes, source instructions as data, bounded repair, time budgets, failure reporting and H-MEM persistence. Adapter checks use a **local mock service**, never a claimed sponsor endpoint.
+- 31 application tests: dependency invalidation, missing/added evidence, applicant changes, abstention, invented quotes, source instructions as data, bounded repair, time budgets, failure reporting and H-MEM persistence. Adapter checks use a **local mock service**, never a claimed sponsor endpoint.
 - Upstream H-MEM conformance: 13/13 checks.
 - `npm run evaluate`: 55 controlled synthetic cases; correct expected outcomes in all 55 and preservation of unaffected criteria. This measures the documented grammar and change propagation only. It is not independent, natural-language, real-world, legal or model-quality validation.
-- `evidence/evaluation.json`: every case and its expected/actual label. `evidence/preflight.json`: current live blockers. `output_examples/`: actual results. `evidence/demo-screen.png`: browser screenshot of the offline workflow.
+- `evidence/evaluation.json`: every case and its expected/actual label. `evidence/preflight.json`: connectivity record of 23 October. `output_examples/`: actual results. `evidence/demo-screen.png`: browser screenshot of the offline workflow.
 
-## Limitations
+## Observations and limits
 
 ![When a person reviews the result. Ambiguous source: Do not guess; Unsupported rule: Avoid invented criteria; Human review: Keep source trail](docs/figures/fig-07.gif)
 
@@ -174,6 +183,12 @@ Run `npm run preflight` with the configured environment, then an actual live exa
 Only exact English clauses for employee limits, ISO dates and two-letter region lists are automatically interpreted. Unknown wording, exceptions, cross-references, jurisdiction-specific interpretation, time-of-day deadlines and missing facts require human review. Full extraction from arbitrary PDFs, Spanish BOE calls, source crawling, source authority verification and robust segmentation are future work. Source URLs are provenance supplied by the caller; the prototype does not certify their authenticity. Synthetic URLs use `example.org` and are not real funding notices. Adding, removing or changing unmapped passages is detected; silently dropping a requirement from the input contract is not independently detected.
 
 Do not deploy the unauthenticated local HTTP demo to the public Internet. It binds to localhost by default; Docker users should publish only to localhost. Memory/logs are local research artifacts. No automatic application, legal advice or real funding decision is performed.
+
+### Service status and next steps
+
+The connected run above is dated evidence from 23 October 2026. An operational audit on 26 October found the private HackOS panel still showing **Submitted 1/1**, with the original submission ID and materials. The same audit found the Zetaris server backend stopped, and Nightshift 1.2.1 restored without a fresh inference, because the runtime's memory admission protection refused its CPU-lane start. **Next step:** bring both services back and run `npm run live:accept`, following the [recovery notes](docs/OPERATIONS.md). New diagnostics use separate `.state/diagnostics/` directories, so the delivered receipts stay unchanged.
+
+The connected evidence comes from a controlled synthetic call, H-MEM records its provenance, and the offline path is deterministic rather than an autonomous LLM demonstration. **Next step:** the real-document work listed above, starting with PDF extraction and Spanish BOE calls. The receipt evidences delivery; organiser eligibility and judging results have not been published.
 
 ## Provenance and rights
 
@@ -251,3 +266,16 @@ The following primary sources inform proposed checks. Their text, code, figures,
 **Attribution and reuse.** Please credit [Francisco Angulo de Lafuente](https://orcid.org/0009-0001-1634-7063) in academic and software reuse and do not present this work as your own. The new figure renderer is MIT-licensed; the existing snapshot retains its original terms. When distributing copies or substantial portions of MIT software, preserve the copyright and permission notice. Upstream material keeps its own terms. [License](LICENSE.docs-renderer) · [Figure methods and provenance](docs/figures/README.md).
 
 <!-- research-provenance: project=evidence-change-sentinel; date=2026-11-04; author=Francisco Angulo de Lafuente; orcid=https://orcid.org/0009-0001-1634-7063; new-renderer-license=MIT -->
+
+<!-- author-background:start -->
+## Author background
+
+**Francisco Angulo de Lafuente**, independent AI researcher · [ORCID](https://orcid.org/0009-0001-1634-7063) · [arXiv](https://arxiv.org/a/angulodelafuente_f_1.html) · [Google Scholar](https://scholar.google.com/citations?user=6nOpJ9IAAAAJ) · [ResearchGate](https://www.researchgate.net/profile/Francisco-Angulo-Lafuente-3) · [Figshare](https://figshare.com/authors/Francisco_Angulo_de_Lafuente/22601234) · [Wikipedia](https://es.wikipedia.org/wiki/Francisco_Angulo_de_Lafuente)
+
+Earlier research at ECOFA focused on biotechnology for clean energy and on second-generation biofuels obtained by microbiological processing of organic waste. Two Spanish patents document that work:
+
+- **ES 2273594 B1**, *Process for obtaining fuels from organic waste*. Filed 5 September 2005, grant published 16 February 2008. [OEPM](https://www.oepm.es/pdf/ES/0000/000/02/27/35/ES-2273594_B1.pdf) · [Google Patents](https://patents.google.com/patent/ES2273594B1/en)
+- **ES 2341194 B1**, *Method for obtaining paraffin by a biological process with microorganisms from organic matter, and its refining for use as fuel*. Filed 11 September 2007, grant published 26 April 2011. Also published as EP2196519 and WO2009034217. [OEPM](https://www.oepm.es/pdf/ES/0000/000/02/34/11/ES-2341194_B1.pdf) · [Google Patents](https://patents.google.com/patent/ES2341194B1/en)
+
+These are historical publication and grant records under the inventor name Francisco Angulo Lafuente, and both have since lapsed. They are cited as evidence of a research trajectory and make no statement about current enforceability.
+<!-- author-background:end -->
