@@ -8,6 +8,10 @@
 
 **When a funding call changes, Evidence Change Sentinel finds which assessments the change affects, quotes the evidence, keeps the rest intact and sends anything uncertain to a person.**
 
+<!-- impact-note:start -->
+<sub><strong>Efficiency and practical value.</strong> Evidence Change Sentinel tracks which source changes affect an assessment and reuses unaffected results only when their evidence fingerprints still match. This targets repeated review work while preserving quotations, provenance and a human-review path for uncertainty. The <a href="#what-the-workflow-actually-does">documented workflow</a> demonstrates selective reassessment on controlled synthetic cases, giving future real-document evaluations a precise mechanism to test.</sub>
+<!-- impact-note:end -->
+
 ## Results at a glance
 
 | What was shown | Result | Evidence |
